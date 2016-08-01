@@ -1,5 +1,6 @@
 import re
 
+
 def count_the_words(path):
     with open(path) as f:
         text = f.read()
@@ -7,6 +8,7 @@ def count_the_words(path):
         count = len(words_list)
     return count
 
+
 if __name__ == '__main__':
     nums = count_the_words('text.txt')
-    print (nums)
+    print(nums)
