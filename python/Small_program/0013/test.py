@@ -9,10 +9,5 @@
 # # reg = r'<img pic_type="0" class="BDE_Image src="(.*?.jpg)"'
 # imgre = re.compile(r'<img pic_type="0" class="BDE_Image" src="(.*?.jpg)"')  # re.compile() 可以把正则表达式编译成一个正则表达式对象.
 # imglist = re.findall(imgre, url)  # re.findall() 方法读取html 中包含 imgre（正则表达式）的数据
-# i = 0  # 记录图片数量
-# for imgurl in imglist:
-#     i += 1
-#     urllib.urlretrieve(imglist, '%s.jpg' % i)
-#     print('生成%s.jpg' % i)
-for a in range(1,10):
-    print(a)
+
+

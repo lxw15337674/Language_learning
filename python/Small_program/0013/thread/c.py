@@ -1,11 +1,15 @@
-# 此为单线程的爬虫,作用:对贴吧中一个帖子中所有图片爬取,其中页数需手动输入,需要解决
+from multiprocessing import Pool
 import time
 from bs4 import BeautifulSoup
 import urllib.request
 import os
 
+global all
+all = 0  # 总张数
+
 
 def downloading(url, page):
+    global all
     t = 1  # 图片张数
     html = urllib.request.urlopen(url).read()
     soup = BeautifulSoup(html, 'html.parser')
@@ -15,18 +19,24 @@ def downloading(url, page):
         urllib.request.urlretrieve(img_src, img_name)  # 下载到本地
         print('在第%s页成功下载第%s张图片' % (page, t))
         t += 1
-    return t
+    all += t
 
 
-if __name__ == '__main__':
-    start = time.time()
+def create_folder():
     try:
         os.mkdir('photo')
     except:
         print('photo文件夹已建立')
     os.chdir('photo')
-    all = 0  # 总张数
+
+
+def main():
+    start = time.time()
+    create_folder()
+    p = Pool(4)
     for a in range(1, 4):
-        all += downloading('http://tieba.baidu.com/p/4153594193?pn=%s' % a, a)
+        p.apply_async(downloading, args=('http://tieba.baidu.com/p/4153594193?pn=%s' % a, a,))
+    p.close()
+    p.join()
     end = time.time()
     print("共爬取%s张,用时%s秒" % (all, round(end - start, 3)))

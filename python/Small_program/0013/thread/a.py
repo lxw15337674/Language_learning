@@ -18,7 +18,7 @@ def downloading(url, page):
     return t
 
 
-if __name__ == '__main__':
+def main():
     start = time.time()
     try:
         os.mkdir('photo')
