@@ -1,4 +1,4 @@
-from flask import Flask, request, make_response, redirect,abort
+from flask import Flask, request, make_response, redirect, abort
 
 app = Flask(__name__)
 
@@ -35,7 +35,15 @@ def use_cookie():
 def use_redirect():
     return redirect('lixiwang.com')
 
-@
+
+# # 利用abort用于处理错误
+# @app.route('/lol/<id>')
+# def get_user(id):
+#     user = load_user(id)
+#     if not user:
+#         abort(404)
+#     return '<h1>hello,%s</h1>' % user.name
+
 
 if __name__ == '__main__':
     app.run()
