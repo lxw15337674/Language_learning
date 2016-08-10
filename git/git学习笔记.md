@@ -142,40 +142,31 @@
 
 `master`分支是一条线，git用`master`指向最新的提交，在用`HEAD`指向`master`，以此才确定当前分支，和提交点。
 
-<img src="master.png">
-
 <br>
 **1. 创建分支**
 
 当我们创建新的分支，例如`newBranch`,git就会新建一个指针`newBranch`,指向`master`相同的提交，再把`HEAD`指向`newBranch`,就表示当前分支在`newBrach`上
-
-<img src="newBranch.png">
 
 <br>
 **2. 新分支的修改和提交**
 
 现在对工作区的修改和提交就是针对`newBranch`分支了，比如新提交一次后，`newBranch`指针就向前移动一步，指向最新提交，而`master`指针指向不变。
 
-<img src="commitAtNewBranch.png">
 
 <br>
 **3. 分支的合并**
 
 把`newBranch`合并到`master`上，直接把`master`指向`newBranch`的当前提交，就完成了合并。
 
-<img src="merge.png">
 
 <br>
 **4. 合并完成删除分支**
 
 删除分支`newBranch`，就剩下一个`master`分支
 
-<img src="masterBranch.png">
-
 <br>
 **5. 查看分支合并图解**
 
-<img src="branch.png">
 
 
 <br>
