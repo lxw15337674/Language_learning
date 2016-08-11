@@ -9,7 +9,7 @@
 
 **第 0002 题**：将 0001 题生成的 200 个激活码（或者优惠券）保存到 **MySQL** 关系型数据库中。 
 
-**第 0003 题：**将 0001 题生成的 200 个激活码（或者优惠券）保存到 **Redis** 非关系型数据库中。 
+**第 0003 题：**将 0001 题生成的 200 个激活码（或者优惠券）保存到 **Redis** 非关系型数据库中。 	**(未完成)**
 
 **第 0004 题：**任一个英文的纯文本文件，统计其中的单词出现的个数。
 
@@ -47,18 +47,17 @@
 
 **第 0013 题：** 用 Python 写一个爬图片的程序，爬 [这个链接里的日本妹子图片 :-)](http://tieba.baidu.com/p/2166231880)
 
-**第 0014 题: ** 图片转字符画
+**第 0014 题:** 图片转字符画
 [效果如下](https://dn-anything-about-doc.qbox.me/document-uid8834labid1191timestamp1437128425410.png?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10
 
-**第 0015 题: ** 冒泡排序（Bubble sort）
+**第 0015 题:** 冒泡排序（Bubble sort）
 
 **第 0016 题:**  快速排序 (Fast sort)
 
-**第 0017 题:**  希尔排序（Shell sort）(未完成)
+**第 0017 题:**  希尔排序（Shell sort）**(未完成)**
 
 **第 0018 题:**  直接插入排序（Insert sort）
 
-**第 0019 题:**  归并排序（Merge sort）(未完成)
+**第 0019 题:**  归并排序（Merge sort）**(未完成)**
 
-**第 0020 题:**  堆排序 (Heap sort) (未完成)
-
+**第 0020 题:**  堆排序 (Heap sort) **(未完成)**
