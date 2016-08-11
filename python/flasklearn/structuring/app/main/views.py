@@ -1,15 +1,15 @@
 from datetime import datetime
-from flask import  render_template,session,redirect,url_for
-
+from flask import render_template, session, redirect, url_for, current_app
 from . import main
-from . forms import NameForm
+from .forms import NameForm
 from .. import db
 from ..models import User
 
-@main.route('/',method=['GET','POST'])
+
+@main.route('/', method=['GET', 'POST'])
 def index():
     form = NameForm()
-    if form validate_on_submit():
+    if form.validate_on_submit():
         user = User.query.filter_by(username=form.name.data).first()
         if user is None:
             user = User(username=form.name.data)
