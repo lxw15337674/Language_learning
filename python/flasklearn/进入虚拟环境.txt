@@ -1,4 +1,0 @@
-C:\python project\flask\flasky\venv\Scripts
-到venv\Scripts后
-在窗口命令中输入activate，即进入到虚拟环境 
-退出用deactivate
