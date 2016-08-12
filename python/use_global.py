@@ -1,7 +1,9 @@
 # 统计目录中所有py文件的全部代码行数
 import os
 
-path = 'Small_program'
+
+path = os.getcwd()#此为统计整个目录,但是flasklearn中有虚拟环境中的库
+path = 'Small_program'#此为统计samll_program文件夹
 path_list = []
 
 

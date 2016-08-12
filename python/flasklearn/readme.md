@@ -1,5 +1,3 @@
-#Flask Web开发：基于Python的Web应用开发实战 
-
 
 ####依赖包的记录与安装
 		pip freeze >requirements.txt  用于记录所有依赖包及版本号
