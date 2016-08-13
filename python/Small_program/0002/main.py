@@ -4,7 +4,7 @@ from rancode import *
 
 
 def connectmysql():
-    return pymysql.connect(host="localhost", user='root', password='password')
+    return pymysql.connect(host="localhost", user='root', password='lxw123456')
 
 def create_db(cursor):
     cursor.execute('create database if not exists db')
