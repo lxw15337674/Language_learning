@@ -1,3 +1,4 @@
+#sql语法
 ###[mysql数据类型](http://www.w3school.com.cn/sql/sql_datatypes.asp)
 ##SQL 约束
 ####NOT NULL 非空约束
