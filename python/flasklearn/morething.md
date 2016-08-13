@@ -1,10 +1,10 @@
 #### **上下文全局变量: **
 | 变量名      | 上下文          | 说明  |
-| ------------- |:-------------:| -----:|
-		| urrent_app     |程序上下文 |当前激活程序的程序实例 |
-		| .g  	     | 程序上下文     |   处理请求时用作临时存储的对象.每次请求都会重设这个变量 |
-		| request | 请求上下文      |    请求对象,封装了客户端发出的HTTP请求中的内容|
-		| session |请求上下文|用户会话,用于存储请求之间需要'记住'的值的词典
+|:---------- :|:---------:|: ---------------------------------------------------------------------------:|
+| urrent_app     |程序上下文 |当前激活程序的程序实例 |
+| .g  	     | 程序上下文     |   处理请求时用作临时存储的对象.每次请求都会重设这个变量 |
+| request | 请求上下文      |    请求对象,封装了客户端发出的HTTP请求中的内容|
+| session |请求上下文|用户会话,用于存储请求之间需要'记住'的值的词典
 
 ####  **4种请求钩子,使用修饰器实现用以实现注册通用函数: **
 		before_first_request：注册一个函数，在处理第一个请求之前运行。
@@ -72,24 +72,24 @@
 ###第四章
 ####最常用的SQLAlchemy列类型
 | 类型名      | python类型         | 说明  |
-| ------------- |:-------------:| -----:|
-		|Integer |int |普通整数，一般是 32 位
-		|SmallInteger |int| 取值范围小的整数，一般是 16 位|
-		|BigInteger |int 或 long| 不限制精度的整数
-		|Float |float| 浮点数
-		|Numeric |decimal.Decimal| 定点数
-		|String| str| 变长字符串
-		|Text |str |变长字符串，对较长或不限长度的字符串做了优化
-		|Unicode |unicode| 变长 Unicode 字符串
-		|UnicodeText |unicode| 变长 Unicode 字符串，对较长或不限长度的字符串做了优化
-		|Boolean |bool| 布尔值
-		|Date |datetime.date |日期
-		|Time |datetime.time| 时间
-		|DateTime |datetime.datetime| 日期和时间
-		|Interval| datetime.timedelta| 时间间隔
-		|Enum |str |一组字符串
-		|PickleType |任何 Python 对象| 自动使用 Pickle 序列化
-		|LargeBinary |str| 二进制文件
+|: -----------: |:-------------:|: -------------------------------------------------:|
+|Integer |int |普通整数，一般是 32 位
+|SmallInteger |int| 取值范围小的整数，一般是 16 位|
+|BigInteger |int 或 long| 不限制精度的整数
+|Float |float| 浮点数
+|Numeric |decimal.Decimal| 定点数
+|String| str| 变长字符串
+|Text |str |变长字符串，对较长或不限长度的字符串做了优化
+|Unicode |unicode| 变长 Unicode 字符串
+|UnicodeText |unicode| 变长 Unicode 字符串，对较长或不限长度的字符串做了优化
+|Boolean |bool| 布尔值
+|Date |datetime.date |日期
+|Time |datetime.time| 时间
+|DateTime |datetime.datetime| 日期和时间
+|Interval| datetime.timedelta| 时间间隔
+|Enum |str |一组字符串
+|PickleType |任何 Python 对象| 自动使用 Pickle 序列化
+|LargeBinary |str| 二进制文件
 
 ####最常使用的SQLAlchemy列选项
 		primary_key 如果设为 True，这列就是表的主键
