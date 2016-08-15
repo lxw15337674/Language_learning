@@ -1,1 +1,0 @@
-@"C:\Users\40417\Desktop\Language _learning\python\flasklearn\venv\Scripts\python.exe" "C:\Users\40417\Desktop\Language _learning\python\flasklearn\venv\Scripts\markdown_py" %*
