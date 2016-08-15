@@ -1,10 +1,11 @@
 from datetime import datetime
-from flask import Flask, render_template, session, redirect, url_for, flash
+from flask import Flask, render_template, session, redirect, url_for, flash,make_response
 from flask.ext.bootstrap import Bootstrap
 from flask.ext.moment import Moment
 from flask.ext.wtf import Form
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required
+from flask import request
 
 app = Flask(__name__)
 bootstap = Bootstrap(app)
@@ -40,10 +41,15 @@ def index():
                            form=form, name=session.get('name'))
 
 
+@app.route('/about')
+def about():
+    return 'the about page'
+
+
 @app.route('/user/<name>')
 def user(name):
     return render_template('user.html', name=name)
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)  # 启动调试模式
