@@ -61,3 +61,4 @@ GET /users/:user/repos
 调用时，需要把:user替换为实际用户名。如果我们能写出这样的链式调用：
 Chain().users('michael').repos
 就可以非常方便地调用API了。
+"""

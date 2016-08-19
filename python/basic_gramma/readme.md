@@ -22,6 +22,12 @@
 		3、max(list)：返回列表元素最大值 
 		4、min(list)：返回列表元素最小值 
 		5、list(seq)：将元组转换为列表 
+		6.enumerate 函数用于遍历序列中的元素以及它们的下标：
+				>>> for i,j in enumerate(('a','b','c')):
+				 print (i,j)
+					0 a
+					1 b
+					2 c
 		列表操作包含以下方法:
 		1、list.append(obj)：在列表末尾添加新的对象
 		2、list.count(obj)：统计某个元素在列表中出现的次数
