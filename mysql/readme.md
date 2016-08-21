@@ -379,10 +379,89 @@
 				请注意，OrderDate 列规定 NOW() 作为默认值。作为结果，当您向表中插入行时，当前日期和时间自动插入列中。
 				现在，我们希望在 "Orders" 表中插入一条新记录：
 				INSERT INTO Orders (ProductName) VALUES ('Computer')
-	
+##SQL函数
+####AVG()函数：
+	返回数值列的平均值
+		语法：
+			SELECT AVG(column_name) FROM table_name
+####COUNT()函数
+	返回匹配制定条件的行数
+		语法：
+			SELECT COUNT(*) FROM table_name;
+####First()函数
+	返回指定的列中第一个记录的值。
+		MYSQL语法：
+			SELECT column_name FROM table_name
+			ORDER BY column_name ASC
+			LIMIT 1;
+####LAST() 函数
+	函数返回指定的列中最后一个记录的值。
+		MySQL 语法：
+			SELECT column_name FROM table_name
+			ORDER BY column_name DESC
+			LIMIT 1;
+####MAX，MIN() 函数
+	函数返回指定列的最大，最小值。
+		语法：
+			SELECT MAX(column_name) FROM table_name
+			SELECT MIN(column_name) FROM table_name;
+####SUM() 函数
+	函数返回数值列的总数
+		语法:
+			SELECT SUM(column_name) FROM table_name;
+####GROUP BY 语句
+		GROUP BY 语句用于结合聚合函数，根据一个或多个列对结果集进行分组。
+			语法：
+				SELECT column_name, aggregate_function(column_name)
+				FROM table_name
+				WHERE column_name operator value
+				GROUP BY column_name;
+	HAVING子句
+		在 SQL 中增加 HAVING 子句原因是，WHERE 关键字无法与聚合函数一起使用。
+		HAVING 子句可以让我们筛选分组后的各组数据。
+			语法：	
+				SELECT column_name, aggregate_function(column_name)
+				FROM table_name
+				WHERE column_name operator value
+				GROUP BY column_name
+				HAVING aggregate_function(column_name) operator value;
+			实例：
+				http://www.runoob.com/sql/sql-having.html
+####UCASE()， LCASE()  函数
+	UCASE() 函数把字段的值转换为大写。
+	LCASE() 函数把字段的值转换为小写。
+			语法：	
+				SELECT UCASE(column_name) FROM table_name;
+				SELECT LCASE(column_name) FROM table_name;
+####MID() 函数
+	函数用于从文本字段中提取字符。
+			语法：
+				SELECT MID(column_name,start,length) FROM table_name;
+		参数		描述
+		column_name	必需。要提取字符的字段。
+		start		必需。规定开始位置（起始值是 1）。
+		length		可选。要返回的字符数。如果省略，则 MID() 函数返回剩余文本。
+			
+####LEN() 函数
+	返回文本字段中值的长度。
+		MySQL 中函数为 LENGTH():
+			语法：
+				SELECT LENGTH(column_name) FROM table_name;
+####ROUND() 函数
+	用于把数值字段舍入为指定的小数位数。
+			语法：
+				SELECT ROUND(column_name,decimals) FROM table_name;
+			参数	描述
+			column_name	必需。要舍入的字段。
+			decimals	必需。规定要返回的小数位数。
+####FORMAT() 函数
+	用于对字段的显示进行格式化。
+			语法：
+			SELECT FORMAT(column_name,format) FROM table_name;
+			实例:
+			SELECT name, url, DATE_FORMAT(Now(),'%Y-%m-%d') AS date
+			FROM Websites;
 
-		
-	
 	
 			
 
