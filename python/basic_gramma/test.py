@@ -1,18 +1,18 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+class Student(object):
+    def __init__(self, name):
+        self.name = name
 
-__author__ = 'lixiwang'
 
-import sys
+print(Student('lixiwang'))
 
-def test():
-    args = sys.argv
-    if len(args)==1:
-            print('Hello, world!')
-    elif len(args)==2:
-        print('Hello, %s!' % args[1])
-    else:
-        print('Too many arguments!')
 
-if __name__=='__main__':
-    test()
+# 为了让打印的好看，只需要定义__str__()方法，返回一个好看的字符串
+class Student(object):
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return 'Student object (name:%s)' % self.name
+
+
+print(Student('lixiwang'))
