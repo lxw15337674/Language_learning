@@ -70,7 +70,41 @@
 	需导入import java.utill.Arrays
 	1.填充替换数组元素
 		fill(int[]a,int value) 将指定的int值分配给int型数组的每个元素
-		
+		fill(int[]a,int fromindex,int toindex,int value)将指定的int值分配给int型数组指定范围中的每个元素.填充的范围从fromindex到toindex.
+	2.排序
+		Arrays.sort(object) 排序算法是根据字典编排顺序排序,因此数字排在字母前面,大写字母排在小写字母前面.
+	3.复制数组
+		copyOf(arr,int newlength) newlength指复制后的新数组的长度,如果新数组长度大于arr长度,用0填充.
+		copyOfRange(arr,int formlndex,int toindex)	
+	4.数组查询
+		binarySearch()使用二分搜索法(所以必须是通过sort()方法对数组进行排序)来搜索指定数组.如果不存在返回-1或"-"(插入点).插入点是搜索键将要插入数组的那一点.即第一个大于此键的元素索引.
+			binarySearch(Object[]a.Object key) a:要搜索的数组 key:要搜索的值
+			binarySearch(object[].a,int fromindex,int toindex,object key)
+####权限修饰符
+	访问报位置			private 	protected		public
+	本类				可见		可见			可见
+	同包其他类或子类	不可见		可见			可见
+	其他包的类或子类	不可见 		不可见			可见
+	当声明类时不使用修饰符设置类的权限,则这个类预设为包存取范围,即只有一个包中的类可以调用这个类的成员变量或成员方法.
+####静态成员 ,用于全局变量
+		例如:static int id
+	不能将方法体内的局部变量声明为static
+		例如:
+			public class example{
+				public void method(){
+					static int = 0;
+				}
+			}
+	可以用static定义一个静态区域:
+			public class example{
+				static{
+				}
+			}
+			
+	静态方法:	
+		例如:public static lol(){
+			}	
+	在静态方法中不可以使用this关键字.不可以直接调用非静态方法.
 
 		  
 		
