@@ -12,8 +12,4 @@ public class StaticTest {
         System.out.println(StaticTest.id);
         StaticTest.method1();
     }
-    public static StaticTest method3(){
-        method2();
-        return this;
-    }
 }

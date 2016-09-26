@@ -105,7 +105,26 @@
 		例如:public static lol(){
 			}	
 	在静态方法中不可以使用this关键字.不可以直接调用非静态方法.
-
+####Integer 
+		1.Integer.toString(int x)			获取x的十进制表示
+				.toBinaryString(int x) 	获取二进制
+				.toHexString(int x)	 	获取十六进制
+				.toOctalString(int x)	获取数字的八进制
+		2.intValue() 以int型返回此Integer对象
+		3.常量
+			MAX_VALUE:表示int类型可取的最大值,即2**31-1.
+			MIN_VALUE:表示最小值,即-2**31
+####数字处理
+		Math.pow(x,y)		取x的y次方
+		Math.max(x,y)		取x,b的最大值
+		Math.abs(x)			取x的绝对值
+		Math.random()		0到1之间的double型数字
+####随机数
+	Random r = new Random();
+		r.nextInt(int n) 返回大于等于0小于n的随机整数
+		r.nextDouble()   返回一个随机double值
+		
+	
 		  
 		
 	  
