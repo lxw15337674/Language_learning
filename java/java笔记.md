@@ -123,6 +123,13 @@
 	Random r = new Random();
 		r.nextInt(int n) 返回大于等于0小于n的随机整数
 		r.nextDouble()   返回一个随机double值
+####object类
+		getClass().getName(),返回包名.类名
+		重载:
+			public static int add(int a,int b){};
+			如果参数不定长,可以使用:public static int(int...a){};
+		抽象类:
+			
 		
 	
 		  
