@@ -20,7 +20,7 @@
 		 转换符:说明:实例
 		  %tF	"年-月-日"						2008-03-25
 		  %tD 	"月/日/年"						03/25/08
-		  %tc	全部日期和时间信息				星期日 九月 25 12:07:28 CST 2016
+		  %tc	全部日期和时间信`息				星期日 九月 25 12:07:28 CST 2016
 		  %tr 	"时:分:秒 PM(AM)"(12时制)		03:22:06 下午
 		  %tT	"时:分:秒 "(24时制)				15:23:50
 		  %tr	"时:分"(24时制)					15:25
@@ -128,8 +128,12 @@
 		重载:
 			public static int add(int a,int b){};
 			如果参数不定长,可以使用:public static int(int...a){};
-		抽象类:
-			
+####final
+		static final用于定义常量   static final double a = 3;
+		final 类不能被继承         final class FinalClass{}
+####try语句
+		try...catch...finally
+####			
 		
 	
 		  
