@@ -133,7 +133,18 @@
 		final 类不能被继承         final class FinalClass{}
 ####try语句
 		try...catch...finally
-####			
+####获取资源文件的URL路径
+		java.class.getResource()
+###swing 布局
+	分为4种:绝对布局,流布局,边界布局,网格布局
+####绝对布局步骤:
+		1.使用Container.setLayout(null)取消布局管理器
+		2.使用Container.setBounds()设置每个组件的大小与位置.
+####流布局
+		public FlowLayout(int alignment,int horizGap,int vertGap)   
+			alignment参数表示使用流布局管理器后组件在每一行的具体摆放位置.LEFT = 0,CENTER = 1,RIGHT = 2
+			后两个参数表示水平间隔与垂直间隔.
+
 		
 	
 		  
