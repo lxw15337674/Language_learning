@@ -140,7 +140,40 @@
 		public FlowLayout(int alignment,int horizGap,int vertGap)   
 			alignment参数表示使用流布局管理器后组件在每一行的具体摆放位置.LEFT = 0,CENTER = 1,RIGHT = 2
 			后两个参数表示水平间隔与垂直间隔.
-
+###集合类
+####list接口的两种类
+	1.arraylist,实现可变的数组.优点:访问快.缺点:插入或删除速度较慢
+	2.Linkedlist,采用链表结构.优点:插入或删除速度快,缺点:访问慢
+	例子:List<E> list = new ArrayList<>(); 
+			E:代表合法的java数据类型.例如String
+####set集合
+	set集合不能有重复值.
+	1.HashSet,由哈希表支持.不保证Set的迭代顺序,允许null元素
+	2.TreeSet,保证迭代,按照自然顺序递增排序.
+		TreeSet类增加的方法
+			first()  返回第一个元素
+			last()	 返回最后一个元素
+			comparator() 	返回对此Set中的元素进行排序的比较器.如果此Set使用自然顺序,则返回null
+			headSet(E toElement)	返回一个新的Set集合,包含toElement(不包含)之前的对象
+			subSet(E fromElement,E fromElement)	包含fromElement(包含)到fromElement(不包含)之间的对象
+			tailSet(E fromElement) 包含之后的对象
+####Map集合
+	提供key到value的映射.map允许value为null
+			例:Map<String,String> map = new HashMap<>()
+		方法:
+			put(key,value) 添加key与value的映射关系
+			containsKey(Object key)	如果此映射包含制定key的映射关系,则返回true
+			containsKey(Object value) 
+			get(object key)  如果存在key,返回对应的值,否则返回null
+			keySet()	返回key对象形成的Set集合
+			values()	返回所欲值对象形成的Collection集合
+		Map接口常用的实现类有HashMap和TreeMap.建议使用HashMap类,因为由HashMap类实现的Map集合添加和删除映射关系效率更高.
+			1.HashMap是基于哈希表的Map接口的实现,通过哈希码对其映射关系进行快速查找.允许使用null值和键.但必须保证键的唯一性.此类不保证映射的顺序.
+			2.TreeMap:适用于希望Map集合中的对象存在一定的顺序.在添加,删除和定位映射关系时,TreeMap类比HashMao类性能稍差.由于TreeMap类实现的Map集合中的映射关系是根据键对象按照一定的顺序排列的,因此不允许键对象是null.
+		可以通过HashMap类创建Map集合,当需要顺序输出时,在创建一个相同的TreeMap类实例.
+			treemap.putAll(map); #全部添加对象
+			
+			
 		
 	
 		  
