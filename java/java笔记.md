@@ -119,10 +119,6 @@
 		Math.max(x,y)		取x,b的最大值
 		Math.abs(x)			取x的绝对值
 		Math.random()		0到1之间的double型数字
-####随机数
-	Random r = new Random();
-		r.nextInt(int n) 返回大于等于0小于n的随机整数
-		r.nextDouble()   返回一个随机double值
 ####object类
 		getClass().getName(),返回包名.类名
 		重载:
