@@ -111,9 +111,7 @@ public class FilereaderTest extends JFrame { // 创建类，继承Jframe类
         thisClass.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         thisClass.setVisible(true); // 设置该窗体为显示状态
     }
-    /**
-     * @return
-     */
+
     protected JScrollPane getScrollPane() {
         if (scrollPane == null) {
             scrollPane = new JScrollPane();
