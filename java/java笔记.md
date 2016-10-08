@@ -173,7 +173,6 @@
 		可以通过HashMap类创建Map集合,当需要顺序输出时,在创建一个相同的TreeMap类实例.
 			treemap.putAll(map); #全部添加对象
 ##IO
-###流
 ####输入流
 	1.read()方法:从输入流中读取数据的下一个字节.返回0-255范围内的int字节值.如果已到流末尾而没有可用的直接.则返回值-1.
 	2.read(byte[] b):从输入流中读入一定长度的字节.
@@ -192,11 +191,34 @@
 	1.创建路径
 		new File(String pathname)
 			File file = new File("d:/1.txt");
-		File(String parent,String child)
+		New File(String parent,String child)
 			parent:父路径字符串.例如,D:/doc
 			child:子路径字符串,例如:letter.txt
-		File(File f,String child)
+		New File(File f,String child)
 			f:父路径对象,例如,D:/doc/
+	2.获取文件信息:
+		方法			返回值			说明	
+		getName() 		String			获取文件的名称
+		canRead()		boolean			判断是否可读
+		canWrite() 		boolean
+		exits()			boolean			判断文件是否存在
+		length() 		long			判断文件的长度
+		getAbsolutePath()	String		获取绝对路径
+		getParent()		String			获取父路径
+		isFile()		boolean			判断文件是否存在
+		isDirectory		boolean			判断是否是一个目录
+		isHidden()		boolean			判断是否是隐藏文件
+		lastModified	long			获取最后修改时间
+###文件输入/输出流
+	1.FileInputStream与FileOutputStream类
+		用来操作磁盘文件.用于需求简单.
+	2.FileReader和FileWriter类
+		使用第一种类,存在一点不足,即这两个类都只提供了对字节或字节数组的读取方法.由于汉字在文件中占用两个字节,如果使用字节流,读取可能出现乱码现象.
+		FileReader流顺序地读取文件,只要不关闭流,每次调用read()方法就顺序地读取源中其余的内容,直到源的末尾或关闭.
+	3.带缓存的输入/输出流
+		缓存是I/O的一种性能优化.缓存流为I/O流增加内存缓存区.使skip(),mark(),reset()方法成为可能.
+		1.BufferedInputStream与BufferedOutputStream类
+			
 		
 			
 		
