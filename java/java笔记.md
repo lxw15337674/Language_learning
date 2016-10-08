@@ -172,7 +172,32 @@
 			2.TreeMap:适用于希望Map集合中的对象存在一定的顺序.在添加,删除和定位映射关系时,TreeMap类比HashMao类性能稍差.由于TreeMap类实现的Map集合中的映射关系是根据键对象按照一定的顺序排列的,因此不允许键对象是null.
 		可以通过HashMap类创建Map集合,当需要顺序输出时,在创建一个相同的TreeMap类实例.
 			treemap.putAll(map); #全部添加对象
-			
+##IO
+###流
+####输入流
+	1.read()方法:从输入流中读取数据的下一个字节.返回0-255范围内的int字节值.如果已到流末尾而没有可用的直接.则返回值-1.
+	2.read(byte[] b):从输入流中读入一定长度的字节.
+	3.mark(int readlimit)方法:在输入流的当前位置放置一个标记,readlimit参数告知允许读取的字节数.
+	4.reset()方法:将输入指针返回到当前所处的标记处.
+	5.skip(long n)方法:跳过输入流上的n个字节并返回.
+	5.markSupported()方法:如果当前流支持mark()/reset()操作就返回true
+	6.close方法:关闭并释放此输入流
+####输出流
+	1.write(int b)方法: 将制定的字节写入此输出流.
+	2.write(byte[] b)方法:将b个字节从指定的byte数组写入此输出流.
+	3.write(byte[] b,int off,int len)
+	4.flush()方法:彻底完成输出并清空缓存区
+	5.close()方法:关闭输出流.
+###File类
+	1.创建路径
+		new File(String pathname)
+			File file = new File("d:/1.txt");
+		File(String parent,String child)
+			parent:父路径字符串.例如,D:/doc
+			child:子路径字符串,例如:letter.txt
+		File(File f,String child)
+			f:父路径对象,例如,D:/doc/
+		
 			
 		
 	
