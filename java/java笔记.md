@@ -218,8 +218,11 @@
 	3.带缓存的输入/输出流
 		缓存是I/O的一种性能优化.缓存流为I/O流增加内存缓存区.使skip(),mark(),reset()方法成为可能.
 		1.BufferedInputStream与BufferedOutputStream类
+			BufferedInputStream(InputStream in).
+			BufferedInputStream(InputStream in,int size).
+			第一种构造方法创建一个带有32字节的缓存流,第二种按指定的大小来创建缓存区.
+		2.BufferedReader与BufferedWriter类
 			
-		
 			
 		
 	
