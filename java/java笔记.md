@@ -228,7 +228,17 @@
 		2.write(byte[] b,int off,int len)		void		将字节数组写入当前ZIP条目数据
 		3.finish()								void 		完成写入内容
 		4.setComment(String comment)			void		设置ZIP文件的注释文字
-				
+##反射
+	通过反射可访问的方法:
+	1.
+		getPackage()		获取包的存放路径
+		getName()			类的名称
+		getSuperclass()		类继承的类
+		getInterface()		类实现的所有接口
+	2.构造方法
+		getConstructors()	返回数组	获取所有权限为public的构造方法
+		getConstructors(Class<?>...parameterTypes)		获取指定的构造方法
+		getDeclaredConstructors
 			
 			
 		
