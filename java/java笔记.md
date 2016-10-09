@@ -222,6 +222,13 @@
 			BufferedInputStream(InputStream in,int size).
 			第一种构造方法创建一个带有32字节的缓存流,第二种按指定的大小来创建缓存区.
 		2.BufferedReader与BufferedWriter类
+	4.ZIP压缩输入/输出流
+		zipOutputStream(OutputStream out)
+		1.putNextEntry(ZipEntry e) 	  			void 		开始写一个新的zipEntry,并将流内的位置移至此entry所值数据的开头
+		2.write(byte[] b,int off,int len)		void		将字节数组写入当前ZIP条目数据
+		3.finish()								void 		完成写入内容
+		4.setComment(String comment)			void		设置ZIP文件的注释文字
+				
 			
 			
 		
