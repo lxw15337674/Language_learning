@@ -238,7 +238,29 @@
 	2.构造方法
 		getConstructors()	返回数组	获取所有权限为public的构造方法
 		getConstructors(Class<?>...parameterTypes)		获取指定的构造方法
-		getDeclaredConstructors
+		getDeclaredConstructors()		返回数组		获得所有构造方法,按声明顺序返回
+		getDeclaredConstrucotes(Class<?>...parameterTypes)
+	3.方法
+		getMethods()		返回数组	获取所有权限为public的方法
+		getMethods(String name,Class<?>...parameterTypes)
+		getDeclaredMethods()	返回数组	获取所有方法,按声明顺序返回
+		getDeclaredMethods(String name,Class<?>...parameterTypes)
+	4.成员变量
+		getFields()			返回数组	获得所有权限为public的成员变量 
+		getFields(String name)		获得指定成员变量
+		getDeclaredFiedls()	返回数组			获得所有成员变量,按声明顺序返回.
+		getDeclaredFiedls(String name)	获得指定成员变量
+	5.内部类
+		getClasses()		返回数组	获得所有权限为public的内部类
+		getDeclaredclasses()	返回数组	获得所有内部类
+		getDeclaredclass()		如果该类为内部类,这返回它的成员类,否则返回null    
+##枚举
+	###枚举类型
+		1.枚举类型成员的方法
+			枚举类型名称.values()	将枚举类型成员以数组的形式返回
+			枚举类型名称.valueOf("abc")		实现将普通字符串转换为枚举实例
+			枚举对象.compareTo()	比较两个枚举对象在定义时的顺序  正值代表在对象位置之前,0代表位置相同,负值代表对象位置之后
+			枚举对象.oridinal()		得到枚举成员的位置索引
 			
 			
 		
