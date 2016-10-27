@@ -1,5 +1,6 @@
 package Enum_and_generic;
 
+import static java.lang.System.clearProperty;
 import static java.lang.System.out;
 
 /**
@@ -31,7 +32,10 @@ public class EnumIndexTest1 {
 
     public static void main(String[] args) {
         for (int i=0;i<Constants2.values().length;i++){
-            out.print(Constants2.values()[i]);
+            out.println(Constants2.values()[i]+"调用getDescription()方法:"
+                    + Constants2.values()[i].getDescription());
         }
+        out.println(Constants2.valueOf("Constants_D")+"调用get1()方法为:"
+                    +Constants2.valueOf("Constants_D").getl());
     }
 }
