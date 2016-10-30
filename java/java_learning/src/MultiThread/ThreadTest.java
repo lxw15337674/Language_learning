@@ -1,3 +1,5 @@
+package MultiThread;
+
 public class ThreadTest extends Thread{
     private int count =100;
     public void run(){

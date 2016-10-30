@@ -13,7 +13,7 @@ public class SwingAndThread extends JFrame{
     public SwingAndThread(){
         setBounds(300,200,250,100);
         container.setLayout(null);
-        URL url = SwingAndThread.class.getResource("/1.jpg");
+        URL url = SwingAndThread.class.getResource("/1.gif");
         Icon icon = new ImageIcon(url);
         jl.setIcon(icon);
         jl.setHorizontalAlignment(SwingConstants.LEFT);
@@ -36,7 +36,7 @@ public class SwingAndThread extends JFrame{
                 }
             }
         });
-        t.start();;
+        t.start();
         container.add(jl);
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -44,6 +44,4 @@ public class SwingAndThread extends JFrame{
 
     public static void main(String[] args) {
         new SwingAndThread();
-    }
-
-}
+    }}
