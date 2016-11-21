@@ -25,7 +25,6 @@ abstract class MyShape{
 class Circle extends MyShape{
 
     public static final double PI = 3.14;
-
     double r;
 
     public Circle(double r){
@@ -80,6 +79,8 @@ public class Polymorphism1 {
         MyShape m = getShape(0); //调用了使用多态的方法，定义的变量类型要与返回值类型一致。
         m.getArea();
         m.getLength();
+
+
 
 
     }
