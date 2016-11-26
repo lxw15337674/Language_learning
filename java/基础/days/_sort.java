@@ -9,5 +9,5 @@ public class _sort {
         Arrays.sort(arr);
         String info = Arrays.toString(arr);
         System.out.println(info);
-    }
-}
+        }
+        }

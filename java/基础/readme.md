@@ -537,9 +537,38 @@
 		用于比较两个对象的内存地址，判断两个对象是否为同一个对象。
 	hashCode();
 		返回该对象的哈希码值(大家可以把哈希码就 理解成是对象的内存地址.
+		
+
+###字符串方法
+	注意:字符串的内容不适宜频繁修改,因为一旦修改马上就会创建一个新的对象.
+		如果需要频繁修改字符串的内容,建议使用字符串缓冲类(StringBuffer)
+####Stringbuffer(存储字符的容器)
+	StringBuffer默认的初始容量为16,如果字符数组的长度不够使用时,自动增长1倍.
+	添加数据
+	
 ####字符串类
 	1.String str = "hello" 创建字符串的时候,jvm会先检查方法池中的字符串常量池中是否存在该字符串的对象,如果已经存在,那么就不再创建,直接返回该字符串在字符串常量池中内存地址.
 		如果字符串不存在字符串常量池中,就会在字符串常量池中先创建该字符串对象,然后再返回.
 	2.new String("hello") 如果在字符串常量池中创建字符串对象,然后还会到堆内存中再创建一份字符串对象,然后返回堆内存中字符串对象的内存地址.
 	
-			
+####获取方法
+	length() 获取字符串你的长度
+	charAT(int index) 获取特定位置的字符
+	indexOf(String str) 获取特定字符的位置,找不到返回-1
+	lastIndexOf(int ch) 获取最后出现特定字符的位置,找不到返回-1
+####判断方法
+	endsWith(String str) 是否以指定字符结束
+	isEmpty() 是否为空
+	contaubs() 是否包含指定序列
+	equal() 是否相等
+	equalsIgnoreCase() 忽略大小写,是否相等
+####转换方法
+	toCharArray() 将字符串转换为字符数组.
+	getBytes() 转换为字节数组
+####其他方法
+	String replace(oldChar,newChar)替换
+	split(String regex)切割
+	subString(beginIndex,endIndex)截取
+	toUpperCase() 转大写
+	toLowercase() 转小写
+	trim() 去除空格
