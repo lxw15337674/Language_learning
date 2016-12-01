@@ -539,14 +539,35 @@
 		返回该对象的哈希码值(大家可以把哈希码就 理解成是对象的内存地址.
 		
 
-###字符串方法
+##字符串
 	注意:字符串的内容不适宜频繁修改,因为一旦修改马上就会创建一个新的对象.
 		如果需要频繁修改字符串的内容,建议使用字符串缓冲类(StringBuffer)
-####Stringbuffer(存储字符的容器)
+		
+###Stringbuffer(存储字符的容器)
 	StringBuffer默认的初始容量为16,如果字符数组的长度不够使用时,自动增长1倍.
-	添加数据
+####StringBuilder 与StringBuffer的相同与不同:
+	建议使用StringBuilder.除非遇到线程问题.
+	相同点:
+		1.两个类都是字符串缓冲类.
+		2.两个类的方法都是一致的.
+	不同点:
+		1.StringBuffer是线程安全的,操作效率低.StringBuilder是线程非安全的.操作效率高.
+		2.StringBuffer是jdk1.0出现的,StringBuilder是jdk1.5出现的.
 	
-####字符串类
+####Stringbuffer基本方法
+	append() 添加
+	insert(int offset,String str) 插入
+	capacity() 返回当前容量
+	charAt(int index) 返回指定索引处的char值
+	delete(int start, int end) 删除序列的子字符串中的字符
+	deleteCharAt(int index) 移除指定位置的char
+	indexOf(String str) 返回指定字符串的索引.
+	replace() 替换
+	reverse() 反转
+	length() 返回长度
+
+		
+###字符串类
 	1.String str = "hello" 创建字符串的时候,jvm会先检查方法池中的字符串常量池中是否存在该字符串的对象,如果已经存在,那么就不再创建,直接返回该字符串在字符串常量池中内存地址.
 		如果字符串不存在字符串常量池中,就会在字符串常量池中先创建该字符串对象,然后再返回.
 	2.new String("hello") 如果在字符串常量池中创建字符串对象,然后还会到堆内存中再创建一份字符串对象,然后返回堆内存中字符串对象的内存地址.
@@ -572,3 +593,25 @@
 	toUpperCase() 转大写
 	toLowercase() 转小写
 	trim() 去除空格
+
+##类
+###System类(系统类 主要用于获取系统的属性数据)
+	currentTimeMillis() 获取当前系统时间
+	arraycopy(Object src, int srcPos, Object dest, int destPos, int length) 
+          从指定源数组中复制一个数组，复制从指定的位置开始，到目标数组的指定位置结束。
+	exit() 退出jvm 如果参数是0表示正常退出,非0表示异常退出
+	gc() 建议jvm赶快启动垃圾回收器回收垃圾
+		finalize() 如果一个对象被垃圾回收器回收的时候,会先调用对象的finalize()方法.
+	gettenv(String name) 根据环境变量的名字获取环境变量
+	getPeoperties() 返回系统的所有属性
+	
+###runtime类(代表应用程序运行的环境）
+	getRuntime() 返回当前程序的运行环境对象(用于创建实例对象).
+	exec(String command) 根据指定的路径执行对应的可执行文件.
+	freeMemory() 返回jvm空闲的内存,以字节为单位.
+	maxMemory() 返回jvm试图使用的最大内存量.
+	totalMemory() 返回jvm中的内存总量
+	
+###Random类
+	nextInt(int x) 生成一个从0到x之间的值
+	
