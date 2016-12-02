@@ -8,13 +8,10 @@ import java.util.Random;
 public class _Random {
     public static void main(String[] args) {
         Random random = new Random();
-        int num = random.nextInt(11);//产生的0-11之间
+        int num;//产生的0-11之间
         while(true){
             num = random.nextInt(11);//产生的0-11之间
             System.out.println(num);
         }
     }
-
-
-
 }
