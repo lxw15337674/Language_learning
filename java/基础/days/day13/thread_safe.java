@@ -5,7 +5,7 @@ package day13;
  */
 class SaleTicket extends Thread{
     static int num = 50;//票数,非静态的成员变量,非静态的成员变量数据是在每个对象中都会维护一份数据的.
-    Object o = new Object();
+//    static Object o = new Object();
     public SaleTicket(String name){
         super(name);
     }
@@ -13,9 +13,15 @@ class SaleTicket extends Thread{
     @Override
     public void run() {
         while(true){
-            synchronized (o) {
+//            synchronized (o) {
+            synchronized ("锁") {
                 if (num > 0) {
                     System.out.println(Thread.currentThread().getName() + "售出第" + num + "号票");
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     num--;
                 } else {
                     System.out.println("卖完了");
