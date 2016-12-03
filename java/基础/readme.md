@@ -589,7 +589,7 @@
 ####其他方法
 	String replace(oldChar,newChar)替换
 	split(String regex)切割
-	subString(beginIndex,endIndex)截取
+	substring(beginIndex,endIndex)截取
 	toUpperCase() 转大写
 	toLowercase() 转小写
 	trim() 去除空格
