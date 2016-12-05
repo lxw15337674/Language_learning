@@ -1,8 +1,5 @@
 package day13;
 
-/**
- * Created by 40417 on 2016/12/2 0002.
- */
 class SaleTicket extends Thread{
     static int num = 50;//票数,非静态的成员变量,非静态的成员变量数据是在每个对象中都会维护一份数据的.
 //    static Object o = new Object();
