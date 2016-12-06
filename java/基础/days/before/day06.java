@@ -1,3 +1,5 @@
+package before;
+
 //需求:跑之前要检测轮子是否少于4个,如果少于,则要送到修理厂琉璃,.
 class Car{
     String name;

@@ -1,3 +1,5 @@
+package before;
+
 //需求:使用java类描述一个学生类
 class Student{
     int num;
@@ -6,6 +8,7 @@ class Student{
         System.out.println("好好学习");
     }
 }
+
 public class Anonymous_object {
     public static void main(String[] args) {
 //        new Student().name = "李希望";

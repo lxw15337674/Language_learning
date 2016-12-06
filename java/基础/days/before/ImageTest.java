@@ -1,4 +1,9 @@
-import java.io.*;
+package before;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * Created by 40417 on 2016/11/14 0014.

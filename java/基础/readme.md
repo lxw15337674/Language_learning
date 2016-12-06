@@ -186,10 +186,16 @@
 		isEmpty() 是否为空
 		contains(Object o)  是否包含指定元素,contains方法内部是依赖equals方法来比较的.
 		containsAll(Collection<?> c)  是否包含集合中的所有元素
-	迭代
-		toArray() 返回包含此collection中所有元素的数组
-		iterator() 
-	
+	遍历集合的元素:
+		方式一:
+		    toArray() 返回包含此collection中所有元素的Object数组
+		方式二:
+		 迭代器的作用:用于抓取集合中的元素
+			iterator() 返回一个迭代器
+		迭代器的方法:
+			hasNext() 当前指针是否有指向元素,如果有返回true,否则返回false.
+			next()  返回当前指针指向的元素,然后指针向下移动一个单位.如果没有元素则报错
+			remove() 移除迭代器返回的最后一个元素,即指针指向的前一个元素.所以必须使用一次next(),才能使用remove()否则报错.
 ####集合	
 	集合是存储对象数据的集合容器
 	集合比数组的优势:
