@@ -168,12 +168,19 @@
 		1.Array.toString(数组名) 数组转字符串
 		2.Array.sort(数组名)	(选择排序算法)排序数组
 		3.Arrays.binarySearch(数组名.目标值)	(二分法查找)查找数值.如果能找到对应的元素,返回索引值,如果没有找到那么返回一个负数表示.
+
 ###collection
 	单例集合的根接口.
 		List: 有序,可重复.
 		Set: 无序,不可重复.
+		
+	集合是存储对象数据的集合容器
+	集合比数组的优势:
+		1.集合可以存储任意类型的对象数据,数组只能存储同一种数组类型的数据.
+		2.集合的长度是会发生变化的.数组的长度是固定的.
+		
 	增加
-		add(E e)  添加成功返回true，添加 失败返回false.
+		add(E e)  添加成功返回true，添加失败返回false.
 		addAll(Collection c)  把一个集合的元素添加到另外一个集合中去。
 	删除
 		clear() 清空
@@ -196,12 +203,27 @@
 			hasNext() 当前指针是否有指向元素,如果有返回true,否则返回false.
 			next()  返回当前指针指向的元素,然后指针向下移动一个单位.如果没有元素则报错
 			remove() 移除迭代器返回的最后一个元素,即指针指向的前一个元素.所以必须使用一次next(),才能使用remove()否则报错.
-####集合	
-	集合是存储对象数据的集合容器
-	集合比数组的优势:
-		1.集合可以存储任意类型的对象数据,数组只能存储同一种数组类型的数据.
-		2.集合的长度是会发生变化的.数组的长度是固定的.
-	
+####list特有方法
+	List: 有序,可重复.
+	list接口下面的集合类才具备索引值.
+	增加:
+		add(int index,E element)
+		addAll(int index,Collection c)
+	获取:
+		get(int index)
+		indexOf(Object o)
+		lastIndexOf(object o)
+		subList(int fromIndex,int toIndex)   
+	修改:
+		set(int index, E element)
+	迭代:
+		listIterator()
+		list迭代器特有的方法:
+			add(E e)	将指定的元素插入列表
+			hasPrevious() 判断是否存在上一个元素.不会移动指针.
+			previous() 当前指针先向上移动一个单位,然后再取出当前指针指向的元素.
+			add(E e) 把当前有元素插入到当前指针指向的位置上.
+			set(E e) 替换迭代器最后一次返回的元素. 
 	
 	
 	
