@@ -1,24 +1,819 @@
-####å­—ç¬¦ä¸²ç”Ÿæˆå™¨:
-	æ…¢æ–¹æ³•:
-		str=str+i
-	å¿«æ–¹æ³•:
-		(1)str.append(i)
-		(2)insert(int offset,arg)
-			offset  å­—ç¬¦ä¸²ç”Ÿæˆå™¨çš„ä½ç½®.
-			arg		æ’å…¥å­å­—ç¬¦ä¸²ç”Ÿæˆå™¨çš„ä½ç½®.
-		(3)delete(int start int end)
-####éšæœºæ•°
-	Math.random()å¯èŽ·å¾—ä¸€ä¸ª0.0-1.0ä¹‹é—´çš„éšæœºæ•°.
-	Random r = new Random();
-		r.nextInt(int n) è¿”å›žå¤§äºŽç­‰äºŽ0å°äºŽnçš„éšæœºæ•´æ•°
-		r.nextDouble()   è¿”å›žä¸€ä¸ªéšæœºdoubleå€¼
-####ç›¸ç­‰
-	"=="è¿ç®—ç¬¦æ¯”è¾ƒçš„æ˜¯ä¸¤ä¸ªå¯¹è±¡å¼•ç”¨çš„åœ°å€æ˜¯å¦ç›¸ç­‰.
-	æ¯”è¾ƒå­—ç¬¦ä¸²æ˜¯å¦ç›¸åŒéœ€è¦ç”¨equals.		str.equals(str2)
-####é›†åˆå¾ªçŽ¯è¾“å‡º
-	while(it.hasNext()){
-            System.out.println(it.next());
-        }
+###java Í¨¹ýÐéÄâ»úÊµÏÖ¿çÆ½Ì¨(Ò»´Î±àÒë,µ½´¦ÔËÐÐ)
+	±àÒë³Éclass,Í¨¹ýjavaÐéÄâ»úÔÚ²Ù×÷ÏµÍ³ÉÏÔËÐÐ
+###jreÓëjdk
+	jre javaÔËÐÐ»·¾³.  jre = javaÐéÄâ»ú+ºËÐÄÀà¿â(javaÐéÄâ»úÔËÐÐµÄÎÄ¼þ)
+	jdk	 java¿ª·¢¹¤¾ß¼¯	 jdk = jre+java¿ª·¢¹¤¾ß
+	
+	java.exe Æô¶¯javaÐéÄâ»ú±àÒë²¢Ö´ÐÐÖ¸¶¨µÄclassÎÄ¼þ
+	javac.exe Æô¶¯java±àÒëÆ÷¶ÔÖ¸¶¨µÄjavaÔ´ÎÄ¼þ½øÐÐ±àÒë5
+###ÅäÖÃpath»·¾³µÄÄ¿µÄ
+		¿ØÖÆÌ¨¿ÉÒÔÔÚÈÎÒâµÄÂ·¾¶ÏÂÕÒµ½java¿ª·¢¹¤¾ß
+###main·½·¨:
+	³ÌÐòµÄÖ÷Èë¿Ú,´úÂëÊÇ´Ó×¡·½·¨ÉÏ¿ªÊ¼Ö´ÐÐµÄ.
+	¶¨ÒåÒ»¸öÀàÖÐÊ¹ÓÃ,Èç¹ûÒ»¸öÀàÐèÒª¶ÀÁ¢ÔËÐÐµÄÊ±ºò,¾ÍÐèÒªmain·½·¨.
+###×¢ÊÍ
+		µ¥ÐÐ×¢ÊÍ:  //×¢ÊÍÄÚÈÝ
+		¶àÐÐ×¢ÊÍ:  /*×¢ÊÍÄÚÈÝ*/
+		ÎÄµµ×¢ÊÍ:  /***×¢ÊÍÄÚÈÝ*/
+	ÎÄµµ×¢ÊÍÓë¶àÐÐ×¢ÊÍµÄÇø±ð:
+		¶àÐÐ×¢ÊÍµÄÄÚÈÝ²»ÄÜÓÃÓÚÉú³ÉÒ»¸ö¿ª·¢ÕßÎÄµµ,¶øÎÄµµ×¢ÊÍµÄÄÚÈÝ¿ÉÒÔÉú²úÒ»¸ö¿ª·¢ÕßÎÄµµ.
+	µ¥ÐÐ×¢ÊÍ¿ÉÒÔÇ¶Ì×,¶àÐÐ×¢ÊÍºÍÎÄµµ×¢ÊÍ²»ÄÜÇ¶Ì×.
+###Ê¹ÓÃjavadoc¹¤¾ß  javadoc -d Î»ÖÃ Ô´ÎÄ¼þÃû.java
+	1.Èç¹ûÒ»¸öÀàÐèÒªÊ¹ÓÃjavadoc¹¤¾ßÉú³ÉÒ»¸öÈí¼þµÄ¿ª·¢ÕßÎÄµµ,ÄÇÃ´¸ÃÀà±ØÐëÊ¹ÓÃpublicÐÞÊÎ.
+	2.ÎÄµµ×¢ÊÍ×¢ÊÍµÄÄÚÈÝÒ»°ã¶¼ÊÇÎ»ÓÚÀà»òÕß·½·¨µÄÉÏÃæ
+####³£Á¿:	
+		ÕûÊý³£Á¿
+			¶þ½øÖÆÓÃ0b¿ªÍ·
+			°Ë½øÖÆÓÃ0¿ªÍ·
+			Ê®Áù½øÖÆÓÃ0x¿ªÍ·
+		Ð¡Êý³£Á¿
+		²¼¶û³£Á¿
+		×Ö·û³£Á¿
+		×Ö·û´®³£Á¿
+####±äÁ¿Êý¾ÝÀàÐÍ
+	»ù±¾Êý¾ÝÀàÐÍ:8ÖÖÀàÐÍ
+		ÕûÊýµÄÊý¾ÝÀàÐÍ:
+			byte(×Ö½Ú)   8Î»(bit)   2*8=256	-128~127
+			short(¶ÌÕûÐÍ)	16bit
+			int(ÕûÐÍ)		32bit   
+			long(³¤ÕûÐÍ)	64bit
+				×¢Òâ:Èç¹ûÓÃlongÀàÐÍµÄÊý¾Ý,Êý¾ÝºóÐèÒª¼ÓL±êÊ¶
+		Ð¡ÊýµÄÊý¾ÝÀàÐÍ:
+			float(µ¥¾«¶È¸¡µãÐÍ)		32bit
+			double(Ë«¾«¶È¸¡µãÐÍ)	64bit
+				×¢Òâ:Èç¹ûÒ»¸öÐ¡ÊýÃ»ÓÐ¼ÓÉÏÈÎºÎ±êÊ¶µÄÊ±ºò,ÄÇÃ´¸ÃÐ¡ÊýÄ¬ÈÏÊÇdoubleÀàÐÍµÄÊý¾Ý,
+					Èç¹ûÐèÒªÓÃfloat,Êý¾ÝºóÃæÐèÒª¼Óf±êÊ¶
+		²¼¶ûÀàÐÍ:
+			boolean:Ö»ÓÐtrue»òÕßfalse	1¸ö×Ö½Ú»ò4¸ö×Ö½Ú
+			×¢Òâ:Èç¹ûÊ¹ÓÃbooleanÉùÃ÷Ò»¸ö»ù±¾ÀàÐÍµÄ±äÁ¿Ê±,ÄÇÃ´¸Ã±äÁ¿Õ¼4¸ö×Ö½Ú,Èç¹ûÉùÃ÷Ò»¸öÊý×éÀàÐÍÊ±,ÄÇÃ´Ã¿¸öÊý×éµÄÔªËØÕ¼Ò»¸ö×Ö½Ú.
+		×Ö·ûÀàÐÍ:
+			char   'a' µ¥ÒýºÅÊÇ×Ö·û.   "a"Ë«ÒýºÅÊÇ×Ö·û´®
+	Êý¾ÝÀàÐÍ×ª»»×¢Òâ:
+		1.·²ÊÇbyte,short,charÊý¾ÝÔÚÔËËãµÄÊ±ºò¶¼»á×Ô¶¯×ª»»ÎªintÀàÐÍµÄÊý¾ÝÔÙÔËËã.
+		2.Á½¸ö²»Í¬Êý¾ÝÀàÐÍµÄÊý¾ÝÔÚÔËËãµÄÊ±ºò,½á¹ûÈ¡¾öÓÚ´óµÄÊý¾ÝÀàÐÍ
+		3.java±àÒëÆ÷ÔÚ±àÒëµÄÊ±ºò²¢²»ÄÜÈ·ÈÏ±äÁ¿Ëù´æ´¢µÄÖµ,±äÁ¿´æ´¢µÄÖµÊÇÔÚÔËÐÐµÄÊ±ºò²ÅÔÚÄÚ´æÖÐ·ÖÅä¿Õ¼ä.
+	ÒýÓÃÊý¾ÝÀàÐÍ:
+		×Ö·û´®µÄÊý¾ÝÀàÐÍ
+			String
+			×¢Òâ:×Ö·û´®ÊôÓÚÒýÓÃÊý¾ÝÀàÐÍ,²»ÊôÓÚ»ù±¾Êý¾ÝÀàÐÍ
+		×¢Òâ:"=="ÓÃÓÚÒýÓÃÀàÐÍ±äÁ¿Ê±,±È½ÏµÄÊÇÄÚ´æµØÖ·.
+			 Èç¹û±È½ÏÁ½¸ö×Ö·û´®µÄÄÚÈÝÊÇ·ñÒ»ÖÂ,Ê¹ÓÃequals·½·¨.
+###ÔËËã·û
+####ËãÊýÔËËã·û
+	+	×¢Òâ:ÈÎºÎÀàÐÍµÄÊý¾ÝÓë×Ö·û´®Ê¹ÓÃ+Á¬½Ó,ÄÇÃ´½á¹û¶¼ÊÇ×Ö·û´®ÀàÐÍµÄÊý¾Ý.
+	%  È¡Ä£,È¡ÓàÊý ×¢Òâ:javaÖÐÈ¡Ä£ÔËËãÊ±,½á¹ûµÄÕý¸ººÅÈ¡¾öÓÚ±»³ýÊý
+	++ (×ÔÔö):  ²Ù×÷Êý+1 
+		Ç°×ÔÔö(++a): ÏÈ×ÔÔö,ºóÊ¹ÓÃ.
+		ºó×ÔÔö(a++):  ÏÈÊ¹ÓÃ,ºó×ÔÔö.
+####Âß¼­ÔËËã·û
+	&(Óë)
+	|(»ò)
+	^(Òì»ò)  Á½±ß²»Ò»ÖÂÔòÎªtrue,Ò»ÖÂÔòÎªfalse
+	!(·Ç)
+	&&(¶ÌÂ·Óë|Ë«Óë)	
+		Óë&²»Í¬µã: Ê¹ÓÃ¶ÌÂ·ÓëµÄÊ±ºò,Èç¹û×ó±ßµÄ²¼¶û±í´ïÊ½Îªfalse,Ôò²»»áÔÙÔËËãÓÒ±ßµÄ²¼¶û±í´ïÊ½ .
+			ÔÚ×ó²àÎªfalseµÄÇé¿öÏÂ,&&Ð§ÂÊÒª¸ßÓÚ&
+	||(¶ÌÂ·»ò)	
+		Óë|²»Í¬µã:	Ê¹ÓÃ¶ÌÂ·»òµÄÊ±ºò,µ±·¢ÏÖ×ó±ßµÄ²¼¶û±í´ïÊ½ÎªtrueÊ±,Ôò²»»áÔËËãÓÒ±ßµÄ²¼¶û±í´ïÊ½.
+####Î»ÔËËã·û
+	&(Óë)	6&2=2 ×ªÎª¶þ½øÖÆ,½øÐÐÓëÔËËã,µÃµ½½á¹ûºó×ªÎªÊ®½øÖÆ
+	|(»ò)	
+	^(Òì»ò)
+	¹æÂÉ:Èç¹û²Ù×÷ÊýAÁ¬ÐøÒì»òÍ¬Ò»¸ö²Ù×÷ÊýÁ½´Î,ÄÇÃ´½á¹û»¹ÊÇ²Ù×÷ÊýA
+	Ó¦ÓÃ:¶ÔÊý¾Ý½øÐÐ¼ÓÃÜ
+	~(È¡·´)
+####ÒÆÎ»ÔËËã·û
+	<<(×óÒÆ)	×óÒÆnÎ»,µÈÓÚ²Ù×÷Êý³ËÒÔ2µÄn´Î·½.
+	>>(ÓÒÒÆ)	
+	>>>(ÎÞ·ûºÅÓÒÒÆ)
+		ÓëÓÒÒÆµÄÇø±ð:½øÐÐÓÒÒÆÔËËãµÄÊ±ºò,Èç¹û²Ù×÷ÊýÊÇÒ»¸öÕûÊý,ÄÇÃ´×ó±ßµÄ¿ÕÈ±Î»Ê¹ÓÃ0²¹,
+		Èç¹û²Ù×÷ÊýÊÇÒ»¸ö¸ºÊý,ÄÇÃ´×ó±ßµÄ¿ÕÈ±Î»Ê¹ÓÃ1²¹.¶øÊ¹ÓÃÎÞ·ûºÅÓÒÒÆµÄ¾ùÓÃ0²¹.
+####ÈýÔªÔËËã·û
+	¸ñÊ½:²¼¶û±í´ïÊ½?Öµ1:Öµ2;
+###Óï¾ä
+####ifÅÐ¶ÏÓï¾ä
+	Ï¸½Ú:Èç¹û·ûºÏÌõ¼þºóÖ»ÓÐÒ»¾ä´úÂëÐèÒªÖ´ÐÐ,ÄÇÃ´¿ÉÒÔÊ¡ÂÔ´óÀ¨ºÅ.
+####switchÑ¡ÔñÓï¾ä
+		¸ñÊ½:
+			switch(option){
+				case 1:
+					break;
+				case 2:
+					break;
+				default: 
+					break;
+				}
+	1.caseºóÃæ¸úµÄÊý¾Ý±ØÐëÊÇÒ»¸ö³£Á¿.
+	2.switchµÄÍ£Ö¹Ìõ¼þ:
+		witchÓï¾äÒ»µ©Æ¥ÅäÉÏÁËÆäÖÐµÄÒ»¸öcaseÓï¾ä,ÄÇÃ´¾Í»áÖ´ÐÐ¶ÔÓ¦µÄcaseÖÐµÄÓï¾ä´úÂë,
+		Ö´ÐÐÍê±ÏºóÈç¹ûÃ»ÓÐÓöµ½break»òÕß½áÊøswitchÓï¾äµÄ´óÀ¨ºÅ,ÄÇÃ´switchÓï¾ä²»»áÔÙ
+		ÅÐ¶Ï,¶øÊÇ°´ÕÕ´úÂëµÄË³Ðò´ÓÉÏÍùÏÂÖ´ÐÐËùÓÐµÄ´úÂë.
+	3.¶¼²»·ûºÏÌõ¼þ,ÔòÖ´ÐÐdefaultÓï¾ä.
+####whileÓëdo whileµÄÇø±ð:
+	while »áÏÈÅÐ¶ÏÔÙÖ´ÐÐ.
+	do while »áÏÈÖ´ÐÐÔÙÅÐ¶Ï,ËùÒÔ²»¹ÜÌõ¼þÊÇ·ñÂú×ãÖÁÉÙ»áÖ´ÐÐÒ»´Î
+####×ªÒå×Ö·û 
+	ÌØÊâ×Ö·ûÊ¹ÓÃ"\"½«Æä×ª»¯³É×Ö·ûµÄ±¾ÉíÊä³ö,ÄÇÃ´Ê¹ÓÃ"\"µÄ×Ö·û ×÷Îª×ªÒå×Ö·û
+	³£¼ûµÄ×ªÒå×Ö·û:
+		\b ÍË¸ñ¼ü
+		\t Tab¼üÅÌ(ÎªÁËÈÃÒ»ÁÐ¶ÔÆë,Ò»¸ötabÒ»°ãµÈÓÚ4¸ö¿Õ¸ñ)
+		\n »»ÐÐ
+		\r »Ø³µ(°Ñ¹â±êÒÆ¶¯µ½Ò»ÐÐµÄÊ×Î»ÖÃÉÏ)
+	×¢Òâ:Èç¹ûÊÇÔÚwindowsÏµÍ³ÉÏ²Ù×÷ÎÄ¼þµÄÊ±ºòÐèÒª»»ÐÐ,ÐèÒª\r\nÒ»ÆðÊ¹ÓÃµÄ.
+		 Èç¹ûÊÇÆäËûµÄ²Ù×÷ÏµÍ³ÉÏÐèÒª»»ÐÐ,½öÐèÒª\n¼´¿É
+####break×÷ÓÃÓÚÍâ²ãµÄforÑ­»·:
+	Í¨¹ý¶ÔÑ­»·½øÐÐ±ê¼Ç,È»ºóbreak ±ê¼Ç.
+	ÊµÀý:
+		outer:for(int a=0;a<3;a++){
+			inner:for(int b=0;b<2;b++}{
+				break outer;}
+				}
+###º¯Êý
+####¶¨Òåº¯Êý
+	¸ñÊ½:
+		ÐÞÊÎ·û ·µ»ØÖµÀàÐÍ º¯ÊýÃû(ÐÎ²ÎÁÐ±í){
+			´úÂë}
+####º¯ÊýµÄÖØÔØ
+	¶¨Òå:ÔÚÒ»¸öÀàÖÐ³öÏÖÁ½¸ö»òÕßÁ½¸öÒÔÉÏµÄÍ¬Ãûº¯Êý,³ÉÎªº¯ÊýµÄÖØÔØ
+	×÷ÓÃ:Í¬Ò»¸öº¯ÊýÃû¿ÉÒÔ³öÏÖÁË²»Í¬µÄº¯Êý,ÒÔÓ¦¶Ô²»Í¬¸öÊý»òÕß²»Í¬Êý¾ÝÀàÐÍµÄ²ÎÊý.
+####±äÁ¿ÖÖÀà:
+	¾Ö²¿±äÁ¿:Èç¹ûÒ»¸ö±äÁ¿Ê±ÔÚÒ»¸ö·½·¨µÄÄÚ²¿ÉúÃüµÄ,ÄÇÃ´¸Ã±äÁ¿¾ÍÊÇÒ»¸ö¾Ö²¿±äÁ¿.
+	³ÉÔ±±äÁ¿:³ÉÔ±±äÁ¿¾ÍÊÇ¶¨ÒåÔÚ·½·¨Ö®Íâ,ÀàÖ®ÄÚµÄ.
+####ÄÚ´æÖÖÀà:
+	Õ»ÄÚ´æÌØµã:Õ»ÄÚ´æ´æ´¢µÄ¶¼ÊÇ¾Ö²¿±äÁ¿,±äÁ¿Ò»µ©³öÁË×Ô¼ºµÄ×÷ÓÃÓÚ,ÄÇÃ´ÂíÉÏ»á´ÓÄÚ´æÖÐÏûÊ§,ÊÍ·ÅÄÚ´æ¿Õ¼ä
+		
+	¶ÑÄÚ´æÌØµã:¶ÑÄÚ´æ´æ´¢µÄ¶¼ÊÇ¶ÔÏóÊý¾Ý(³ý8ÖÖ»ù±¾Êý¾ÝÀàÐÍÒÔÍâµÄÊý¾ÝÀàÐÍ),¶ÔÏóÒ»µ©±»Ê¹ÓÃÍê,²¢²»»áÂíÉÏ´ÓÄÚ´æÖÐÐ¡Ê±,¶øÊÇµÈ´ýÀ¬»ø»ØÊÕÆÚ²»¶¨Ê±
+				°Ñ¶ÔÏó»ØÊÕ,ÕâÊ±ºò¸Ã¶ÔÏó²Å»áÏûÊ§,ÊÍ·ÅÄÚ´æ.
+		¶ÔÏóÈç¹ûÃ»ÓÐ±äÁ¿ÒýÓÃÁË,ÄÇÃ´¸Ã¶ÔÏó¾ÍÊÇÒ»¸öÀ¬»ø¶ÔÏó.
+		·²ÊÇÒÔnew¹Ø¼ü×Ö´´½¨µÄ¶ÔÏó,jvm¶¼»áÔÚ¶ÑÄÚ´æÖÐ¿ª±ÙÒ»¸öÐÂµÄ¿Õ¼ä,´´½¨Ò»¸öÐÂµÄ¶ÔÏó.
+	
+###Êý×é
+	´æ´¢Í¬Ò»ÖÖÊý¾ÝÀàÐÍµÄ¼¯ºÏÈÝÆ÷.
+	ÌØµã:
+		1.Ö»ÄÜ´æ´¢Í¬Ò»ÖÖÊý×éÀàÐÍµÄÊý¾Ý,³ýÁËobjectÊý×é.(Object[] arr = new Object[10]};
+		2.Ò»µ©³õÊ¼»¯,³¤¶È¹Ì¶¨.
+		3.Êý×éÖÐµÄÔªËØÓëÔªËØÖ®¼äµÄÄÚ´æµØÖ·ÊÇÁ¬ÐøµÄ.
+	Ò»Î¬Êý×é¶¨Òå¸ñÊ½: 
+		Êý¾ÝÀàÐÍ[] ±äÁ¿Ãû = new Êý¾ÝÀàÐÍ[³¤¶È]
+	¶þÎ¬Êý×é¶¨Òå¸ñÊ½:
+		Êý¾ÝÀàÐÍ[][] ±äÁ¿Ãû = new Êý×éÀàÐÍ[³¤¶È1][³¤¶È2]
+	Êý×éÖÐÔªËØÓëÔªËØÖ®¼äµÄÄÚ´æµØÖ·ÊÇÁ¬ÐøµÄ
+	³õÊ¼»¯·½Ê½:
+		¶¯Ì¬³õÊ¼»¯:
+			Êý¾ÝÀàÐÍ ±äÁ¿Ãû = new Êý¾ÝÀàÐÍ[³¤¶È]
+		¾²Ì¬³õÊ¼»¯:
+			Êý¾ÝÀàÐÍ[] ±äÁ¿Ãû = {ÔªËØ1,ÔªËØ2....}
+	Êý×é·½·¨:
+		ÐèÒªµ¼Èëjava.util.Arrays
+		1.Array.toString(Êý×éÃû) Êý×é×ª×Ö·û´®
+		2.Array.sort(Êý×éÃû)	(Ñ¡ÔñÅÅÐòËã·¨)ÅÅÐòÊý×é
+		3.Arrays.binarySearch(Êý×éÃû.Ä¿±êÖµ)	(¶þ·Ö·¨²éÕÒ)²éÕÒÊýÖµ.Èç¹ûÄÜÕÒµ½¶ÔÓ¦µÄÔªËØ,·µ»ØË÷ÒýÖµ,Èç¹ûÃ»ÓÐÕÒµ½ÄÇÃ´·µ»ØÒ»¸ö¸ºÊý±íÊ¾.
+
+###collection
+	¼¯ºÏµÄÌåÏµ:
+	--------Collection µ¥Àý¼¯ºÏµÄ¸ù½Ó¿Ú.
+	-------------List: ÌØµã:ÓÐÐò,¿ÉÖØ¸´.
+	----------------ArrayList  ÌØµã:²éÑ¯ËÙ¶È¿ì,ÔöÉ¾Âý. (ÒòÎªÊý×éÖÐµÄÔªËØÓëÔªËØÖ®¼äµÄÄÚ´æµØÖ·ÊÇÁ¬ÐøµÄ)
+						µ×²ãÊÇÎ¬»¤ÁËÒ»¸öobjectÊý×éÊµÏÖµÄ,Ä¬ÈÏÈÝÁ¿Îª10,µ±³¤¶È²»¹»ÊÇ,×Ô¶¯Ôö³¤0.5±¶
+	----------------LinkedList  
+						µ×²ãÊÇÊ¹ÓÃÁËÁ´±íÊý¾Ý½á¹¹ÊµÏÖµÄ.ÌØµã:²éÑ¯ËÙ¶ÈÂý,ÔöÉ¾¿ì.
+	-------------Set: ÌØµã:ÎÞÐò,²»¿ÉÖØ¸´.
+	----------------HashSet 
+						µ×²ãÊÇÊ¹ÓÃÁË¹þÏ£±íÀ´Ö§³ÖµÄ.ÌØµã:´æÈ¡ËÙ¶È¿ì,
+	----------------TreeSet 
+						Èç¹ûÔªËØ¾ß±¸×ÔÈ»Ë³ÐòµÄÌØÐÔ,ÄÇÃ´¾Í°´ÕÕÔªËØ×ÔÈ»Ë³ÐòµØÌØÐÔ½øÐÐÅÅÐò´æ´¢.
+						
+						
+				
+		
+	¼¯ºÏÊÇ´æ´¢¶ÔÏóÊý¾ÝµÄ¼¯ºÏÈÝÆ÷
+	¼¯ºÏ±ÈÊý×éµÄÓÅÊÆ:
+		1.¼¯ºÏ¿ÉÒÔ´æ´¢ÈÎÒâÀàÐÍµÄ¶ÔÏóÊý¾Ý,Êý×éÖ»ÄÜ´æ´¢Í¬Ò»ÖÖÊý×éÀàÐÍµÄÊý¾Ý.
+		2.¼¯ºÏµÄ³¤¶ÈÊÇ»á·¢Éú±ä»¯µÄ.Êý×éµÄ³¤¶ÈÊÇ¹Ì¶¨µÄ.
+		
+	Ôö¼Ó
+		add(E e)  Ìí¼Ó³É¹¦·µ»Øtrue£¬Ìí¼ÓÊ§°Ü·µ»Øfalse.
+		addAll(Collection c)  °ÑÒ»¸ö¼¯ºÏµÄÔªËØÌí¼Óµ½ÁíÍâÒ»¸ö¼¯ºÏÖÐÈ¥¡£
+	É¾³ý
+		clear() Çå¿Õ
+		remove(Object o) É¾³ýÔªËØ 
+		c1.removeAll(c2) É¾³ýc1¼¯ºÏÖÐµÄÓëc2¼¯ºÏµÄ½»¼¯ÔªËØ.
+		c1.retainAll(c2) ±£Áôc1¼¯ºÏÖÐµÄÓëc2¼¯ºÏµÄ½»¼¯ÔªËØ.
+	²é¿´
+		size() ¼¯ºÏµÄÔªËØ¸öÊý
+	ÅÐ¶Ï
+		isEmpty() ÊÇ·ñÎª¿Õ
+		contains(Object o)  ÊÇ·ñ°üº¬Ö¸¶¨ÔªËØ,contains·½·¨ÄÚ²¿ÊÇÒÀÀµequals·½·¨À´±È½ÏµÄ.
+		containsAll(Collection<?> c)  ÊÇ·ñ°üº¬¼¯ºÏÖÐµÄËùÓÐÔªËØ
+	±éÀú¼¯ºÏµÄÔªËØ:
+		·½Ê½Ò»: 
+		    toArray() ·µ»Ø°üº¬´ËcollectionÖÐËùÓÐÔªËØµÄObjectÊý×é
+		·½Ê½¶þ:
+		 µü´úÆ÷µÄ×÷ÓÃ:ÓÃÓÚ×¥È¡¼¯ºÏÖÐµÄÔªËØ
+			iterator() ·µ»ØÒ»¸öµü´úÆ÷
+		µü´úÆ÷µÄ·½·¨:
+			hasNext() µ±Ç°Ö¸ÕëÊÇ·ñÓÐÖ¸ÏòÔªËØ,Èç¹ûÓÐ·µ»Øtrue,·ñÔò·µ»Øfalse.
+			next()  ·µ»Øµ±Ç°Ö¸ÕëÖ¸ÏòµÄÔªËØ,È»ºóÖ¸ÕëÏòÏÂÒÆ¶¯Ò»¸öµ¥Î».Èç¹ûÃ»ÓÐÔªËØÔò±¨´í
+			remove() ÒÆ³ýµü´úÆ÷·µ»ØµÄ×îºóÒ»¸öÔªËØ,¼´Ö¸ÕëÖ¸ÏòµÄÇ°Ò»¸öÔªËØ.ËùÒÔ±ØÐëÊ¹ÓÃÒ»´Înext(),²ÅÄÜÊ¹ÓÃremove()·ñÔò±¨´í.
+####listÌØÓÐ·½·¨
+	List: ÓÐÐò,¿ÉÖØ¸´.
+	list½Ó¿ÚÏÂÃæµÄ¼¯ºÏÀà²Å¾ß±¸Ë÷ÒýÖµ.
+	Ôö¼Ó:
+		add(int index,E element)
+		addAll(int index,Collection c)
+	»ñÈ¡:
+		get(int index)
+		indexOf(Object o)
+		lastIndexOf(object o)
+		subList(int fromIndex,int toIndex)   
+	ÐÞ¸Ä:
+		set(int index, E element)
+	µü´ú:
+		listIterator()
+		listµü´úÆ÷ÌØÓÐµÄ·½·¨:
+			add(E e)	½«Ö¸¶¨µÄÔªËØ²åÈëÁÐ±í
+			hasPrevious() ÅÐ¶ÏÊÇ·ñ´æÔÚÉÏÒ»¸öÔªËØ.²»»áÒÆ¶¯Ö¸Õë.
+			previous() µ±Ç°Ö¸ÕëÏÈÏòÉÏÒÆ¶¯Ò»¸öµ¥Î»,È»ºóÔÙÈ¡³öµ±Ç°Ö¸ÕëÖ¸ÏòµÄÔªËØ.
+			add(E e) °Ñµ±Ç°ÓÐÔªËØ²åÈëµ½µ±Ç°Ö¸ÕëÖ¸ÏòµÄÎ»ÖÃÉÏ.
+			set(E e) Ìæ»»µü´úÆ÷×îºóÒ»´Î·µ»ØµÄÔªËØ. 
+	×¢Òâ:
+		1.ÔÚµü´úÆ÷µü´úÔªËØµÄ¹ý³ÌÖÐ,²»ÔÊÐíÊ¹ÓÃ¼¯ºÏ¶ÔÏó¸Ä±ä¼¯ºÏÖÐµÄÔªËØ¸öÊý,Èç¹ûÐèÒª,±ØÐëÊ¹ÓÃµü´úÆ÷·½·¨.
+		  Èç¹ûÊ¹ÓÃÁË¼¯ºÏ¶ÔÏó¾Í»á³öÏÖConcurrentModificationExceptionÒì³£.
+####LinkedlistÌØÓÐ·½·¨
+	1.·½·¨½éÉÜ
+		addFirst() Ìí¼Óµ½¼¯ºÏµÄÊ×Î»ÖÃ.
+		addLast() Ìí¼Óµ½¼¯ºÏµÄÄ©Î²´¦.
+		getFirst() »ñÈ¡Ê×ÔªËØµÄÔªËØ
+		getLast() »ñÈ¡Ä©Î²µÄÔªËØ
+		removeFirst() É¾³ý¼¯ºÏÖÐµÄÊÖÎ»ÖÃÔªËØ²¢·µ»Ø
+		removeLast() É¾³ý¼¯ºÏÖÐµÄÄ©Î²ÔªËØ²¢·µ»Ø
+	2.Êý¾Ý½á¹¹
+		1.Õ»:ÏÈ½øºó³ö,ºó½øÏÈ³ö
+			push() ²åÈë¼¯ºÏµÄ¿ªÍ·´¦
+			pop()	ÒÆ³ý²¢·µ»Ø¼¯ºÏÖÐµÄµÚÒ»¸öÔªËØ
+		2.¶ÓÁÐ:ÏÈ½øÏÈ³ö,ºó½øºó³ö.
+			offer() ½«ÔªËØÌí¼Óµ½Ä©Î²
+			poll() »ñÈ¡²¢ÒÆ³ý´ËÁÐ±íµÄÍ·
+			
+####HashSet	
+	¹þÏ£±íµÄÌØµã:Í°Ê½½á¹¹
+	ÊµÏÖÔ­Àí:ÍùHashsetÌí¼ÓÔªËØµÄÊ±ºò,hashset»áÏÈµ÷ÓÃÔªËØµÄhashcode·½·¨µÃµ½ÔªËØµÄ¹þÏ£Öµ
+			 È»ºóÍ¨¹ýÔªËØµÄ¹þÏ£Öµ¾­¹ýÒÆÎ»µÈÔËËã,¾Í¿ÉÒÔËã³ö¸ÃÔªËØÔÚ¹þÏ£±íÖÐµÄ´æ´¢Î»ÖÃ.
+			 ·ÖÁ½ÖÖÇé¿ö:
+				1.Èç¹ûËã³öÔªËØ´æ´¢µÄÎ»ÖÃÄ¿Ç°Ã»ÓÐÈÎºÎÔªËØ´æ´¢,ÄÇÃ´¸ÃÔªËØ¾Í¿ÉÒÔÖ±½Ó´æ´¢µ½¸ÃÎ»ÖÃÉÏ
+				2.Èç¹ûËã³öÔªËØ´æ´¢µÄÎ»ÖÃÒÑ¾­´æÔÚÓÐÆäËûµÄÔªËØ,ÄÇÃ´»áµ÷ÓÃ¸ÃÔªËØµÄequals·½·¨Óë¸ÃÎ»ÖÃµÄÔªËØÔÙ±È½ÏÒ»´Î,
+				    Èç¹ûequals·µ»Øtrue,ÄÇÃ´¸ÃÔªËØÓëÕâ¸öÎ»ÖÃÉÏµÄÔªËØ¾ÍÊÇÎªÖØ¸´ÔªËØ,²»ÔÊÐíÌí¼Ó,
+					Èç¹û·µ»Øfalse,¾Í»áÔËÐÐÌí¼Ó.
+	HashCode()Ä¬ÈÏÇé¿öÏÂ±íÊ¾µÄÊÇÄÚ´æµØÖ·,StringÀàÒÑ¾­ÖØÐ´ÁËObjectµÄhashCode·½·¨.
+
+####treeSet
+	×¢ÒâÊÂÏî:
+		1.treeSetÌí¼Ó×Ô¶¨ÒåÔªËØ:
+			1.Èç¹ûÔªËØ×ÔÉí¾ß±¸ÁË×ÔÈ»Ë³ÐòµÄÌØÐÔ,ÄÇÃ´¾Í°´ÕÕÔªËØ×ÔÈ»Ë³ÐòµØÌØÐÔ½øÐÐÅÅÐò´æ´¢.
+			2.Èç¹û²»¾ß±¸×ÔÈ»Ë³ÐòµØÌØÐÔ,ÄÇÃ´¸ÃÔªËØËùÊôµÄÀà¾Í±ØÐëÒªÊµÏÖComparable½Ó¿Ú,
+				°ÑÔªËØµÄ±È½Ï¹æÔò¶¨ÒåÔÚCompareTo()·½·¨ÉÏ
+	
+##ÃæÏò¶ÔÏó
+####ÃæÏò¶ÔÏóµÄÈý´óÌØÕ÷:·â×°,¼Ì³Ð,¶àÌ¬
+####×Ô¶¨ÒåÀà´´½¨¶ÔÏóµÄÈý²½Öè:
+		1.×Ô¶¨ÒåÀà:
+				¸ñÊ½:
+					class ÀàÃû{
+						}
+		2.Í¨¹ý×Ô¶¨ÒåÀà´´½¨¶ÔÏó .
+				¸ñÊ½:
+					ÀàÃû ±äÁ¿Ãû = new ÀàÃû()
+		3.·ÃÎÊ(ÉèÖÃ)¶ÔÏóµÄÊôÐÔ»òÕßµ÷ÓÃ¶ÔÏóµÄ¹¦ÄÜ.
+			·ÃÎÊ¶ÔÏóÊôÐÔµÄ¸ñÊ½:
+				¶ÔÏó.ÊôÐÔÃû.
+			ÉèÖÃ¶ÔÏóµÄÊôÐÔ:
+				¶ÔÏó.ÊôÐÔÃû = Êý¾Ý
+###·â×°
+	²½Öè:
+	1.Ê¹ÓÃprivateÊôÐÔ
+	2.Ìá¹©Ò»¸ö¹«¹²µÄ·½·¨ÉèÖÃ»òÕß»ñÈ¡Ë½ÓÐµÄ³ÉÔ±ÊôÐÔ.
+			ÃüÃû¹æ·¶:
+				setÊôÐÔÃû();
+				getÊôÐÔÃû();
+	¹æ·¶:ÔÚÏÖÊµ¿ª·¢ÖÐÒ»°ãÊµÌåÀàµÄËùÓÐ³ÉÔ±ÊôÐÔ(³ÉÔ±±äÁ¿)¶¼Òª·â×°.
+	ÊµÌåÀà:ÓÃÓÚÃèÊöÒ»ÀàÊÂÎïµÄ
+	¹¤¾ßÀà(arrayÊý×éµÄ¹¤¾ßÀà)
+	·â×°µÄºÃ´¦:
+		1.Ìá¸ßÊý¾ÝµÄ°²È«ÐÔ.
+		2.²Ù×÷¼òµ¥.
+		3.Òþ²ØÁËÊµÏÖ
+	
+#####È¨ÏÞÐÞÊÎ·û:¿ØÖÆ±äÁ¿µÄ¿É¼û·¶Î§.
+		public:¹«¹²µÄ.¾ù¿É·ÃÎÊ.
+		protected:ÊÜ±£»¤µÄ,¿ÉÒÔÔÚÍ¬Ò»¸ö°üµÄ±¾ÀàºÍ×ÓÀà·ÃÎÊ,²»ÄÜÔÚ²»Í¬°ü·ÃÎÊ.
+		default(È±Ê¡):¿ÉÒÔÔÚÍ¬Ò»¸ö°üµÄ±¾Àà·ÃÎÊ,²»ÄÜ×ÓÀàºÍ°ü·ÃÎÊ.
+		private:Ë½ÓÐµÄ.Ö»ÄÜÔÚ±¾ÀàÖÐÖ±½Ó·ÃÎÊ,
+	×¢Òâ:
+		1.ÔÚ²»Í¬°üÏÂÃæÖ»ÓÐpublicºÍprotected¿ÉÒÔ·ÃÎÊ,¶øÇÒprotected±ØÐëÊÇÔÚ¼Ì³Ð¹ØÏµÏÂ²ÅÄÜ·ÃÎÊ.
+	
+####³ÉÔ±±äÁ¿Óë¾Ö²¿±äÁ¿µÄÇø±ð:
+	class Person{
+		String name;//³ÉÔ±±äÁ¿
+		public void eat(){
+			String name;//¾Ö²¿±äÁ¿
+		}
+	}
+	1.¶¨ÒåÎ»ÖÃµÄÇø±ð:
+		³ÉÔ±±äÁ¿:¶¨ÒåÔÚ·½·¨Ö®Íâ,ÀàÖ®ÄÚ.
+		¾Ö²¿±äÁ¿:¶¨ÒåÔÚ·½·¨Ö®ÄÚ.
+	2.×÷ÓÃÉÏµÄÇø±ð:
+		³ÉÔ±±äÁ¿:ÓÃÓÚÃèÊöÒ»ÀàÊÂÎïµÄ¹«¹²ÊôÐÔ.
+		¾Ö²¿±äÁ¿:Ìá¹©Ò»¸÷±äÁ¿¸ø·½·¨ÄÚ²¿Ê¹ÓÃ¶øÒÑ/
+	3.ÉúÃüÖÜÆÚµÄÇø±ð:
+		1.³ÉÔ±±äÁ¿:Ëæ×Å¶ÔÏóµÄ´´½¨¶ø´æÔÚ,Ëæ×Å¶ÔÏóµÄÏûÊ§¶øÏûÊ§.
+		2.¾Ö²¿±äÁ¿:ÔÚµ÷ÓÃ¶ÔÓ¦µÄ·½·¨Ê±Ö´ÐÐµ½ÁË´´½¨¸Ã±äÁ¿µÄÓï¾äÊ±´æÔÚ,¾Ö²¿±äÁ¿Ò»µ©³öÁË×Ô¼ºµÄ×÷ÓÃÓò,ÄÇÃ´ÂíÉÏ´ÓÄÚ´æÖÐÏûÊ§.
+	4.³õÊ¼ÖµµÄÇø±ð:
+		1.³ÉÔ±±äÁ¿ÊÇÓÐÄ¬ÈÏµÄ³õÊ¼Öµ.
+			ÀýÈç:
+				String = null
+				int = 0
+				char = ' '
+		2.¾Ö²¿±äÁ¿Ã»ÓÐÄ¬ÈÏµÄ³õÊ¼Öµ,±ØÐëÒªÏÈ³õÊ¼»¯²ÅÄÜÊ¹ÓÃ.
+
+####ÄäÃû¶ÔÏó:Ã»ÓÐÒýÓÃÀàÐÍ±äÁ¿Ö¸ÏòµÄ¶ÔÏó
+	¸ñÊ½:
+		new ÀàÐÍ()
+	×¢ÒâÊÂÏî:
+		1.Ò»°ã²»»á¸øÄäÃû¶ÔÏó¸³ÓèÊôÐÔÖµ,ÒòÎªÓÀÔ¶ÎÞ·¨»ñÈ¡µ½.
+		2.Á½¸öÄäÃû¶ÔÏóÓÀÔ¶¶¼²»¿ÉÄÜÊÇÍ¬Ò»¸ö¶ÔÏó.
+	Ó¦ÓÃ³¡¾°:
+		1.Èç¹ûÒ»¸ö¶ÔÏóÐèÒªµ÷ÓÃÒ»¸ö·½·¨,¶øµ÷ÓÃÍêÕâ¸ö·½·¨Ö®ºó,²»ÔÙÊ¹ÓÃ¸Ã¶ÔÏó.
+		2.×÷ÎªÊµ²Îµ÷ÓÃÒ»¸ö²ÎÊý
+		
+####¹¹Ôìº¯Êý:
+	×÷ÓÃ:¸ø¶ÔÓ¦µÄ¶ÔÏó½øÐÐ³õÊ¼»¯.
+	¸ñÊ½:
+		ÐÞÊÎ·û	º¯ÊýÃû(ÐÎ²Îº¯Êý){
+			º¯ÊýÌå...
+		}
+	¹¹Ôìº¯ÊýÒª×¢ÒâµÄÏ¸½Ú:
+		1.Ã»ÓÐ·µ»ØÖµÀàÐÍ.
+		2.º¯ÊýÃû±ØÐëÒªÓëÀàÃûÒ»ÖÂ.
+		3.¹¹Ôìº¯Êý»áÔÚ´´½¨¶ÔÓ¦µÄ¶ÔÏóÊ±,jvm»áÖ÷¶¯µ÷ÓÃµ½¶ÔÓ¦µÄ¹¹Ôìº¯Êý
+		4.Èç¹ûÒ»¸öÀàÖÐÈç¹ûÃ»ÓÐÏÔÊ½µÄÐ­ÉÌÒ»¸ö¹¹Ôì·½·¨Ê±,java±àÒëÆ÷»áÎª¸ÃÀàÌí¼ÓÒ»¸öÎÞ²ÎµÄ¹¹Ôìº¯Êý.
+	¹¹Ôì´úÂë¿é:
+		×÷ÓÃ:¸ø¶ÔÏó½øÐÐÍ³Ò»µÄ³õÊ¼»¯.
+		¸ñÊ½:
+			{
+				¹¹Ôì´úÂë¿é
+			}
+		×¢Òâ:¹¹Ôì´úÂë¿éµÄ´óÀ¨ºÅ±ØÐëÎ»ÓÚ³ÉÔ±Î»ÖÃÉÏ.
+		Àà±ð:
+			1.¹¹Ôì´úÂë¿é.
+			2.¾Ö²¿´úÂë¿é.	´óÀ¨ºÅÎ»ÓÚ·½·¨Ö®ÄÚ.×÷ÓÃ:Ëõ¶Ì¾Ö²¿±äÁ¿µÄÉúÃüÖÜÆÚ,½ÚÊ¡ÄÚ´æ
+	×¢ÒâÊÂÏî:
+		1.java±àÒëÆ÷±àÒëÒ»¸öjavaÔ´ÎÄ¼þµÄÊ±ºò,»á°Ñ³ÉÔ±±äÁ¿µÄÉùÃ÷Óï¾äÌáÇ°ÖÁÒ»¸öÀàµÄ×îÇ°¶Ë.
+		2.³ÉÔ±±äÁ¿µÄ³õÊ¼»¯¹¤×÷ÆäÊµ¶¼ÔÚ¹¹Ôìº¯ÊýÖÐÖ´ÐÐµÄ.
+		3.Ò»µ©¾­¹ýjavav±àÒëÆ÷±àÒëºó,ÄÇÃ´¹¹Ôì´úÂë¿éµÄ´úÂë¿é¾Í»á±»ÒÆ¶¯¹¹Ôìº¯ÊýÖÐÖ´ÐÐ,¹¹Ôìº¯ÊýÖÐµÄ´úÂëÊÇ×îºóÖ´ÐÐµÄ.
+		4.³ÉÔ±±äÁ¿µÄÏÔÊ¾³õÊ¼»¯Óë¹¹Ôì´úÂë¿éµÄ´úÂëÊÇ°´µ±Ç°Ë³ÐòÖ´ÐÐµÄ
+
+####this
+	Ò»¸ö·½·¨ÒªÔËÐÐµÄÊ±ºò,jvm»áÔÚÕ»ÄÚ´æÖÐ¿ª±ÙÒ»Æ¬ÊôÓÚÕâ¸ö·½·¨µÄ¿Õ¼ä,ÔÚ¿Õ¼äÖÐÔËÐÐ.
+	½â¾öÎÊÌâ: ´æÔÚÍ¬ÃûµÄ³ÉÔ±±äÁ¿Óë¾Ö²¿±äÁ¿Ê±,ÔÚ·½·¨µÄÄÚ²¿·ÃÎÊµÄÊÇ¾Ö²¿±äÁ¿(java²ÉÈ¡"¾Í½üÔ­Ôò"»úÖÆ·ÃÎÊµÄ)
+	×÷ÓÃ:
+		1.Èç¹û´æÔÚÍ¬Ãû³ÉÔ±±äÁ¿»ò¾Ö²¿±äÁ¿.
+		2.ÔÚÒ»¸ö¹¹Ôìº¯ÊýÖÐ¿ÉÒÔµ÷ÓÃÁíÍâÒ»¸ö¹¹Ôìº¯Êý³õÊ¼»¯¶ÔÏó. this();
+	×¢ÒâÊÂÏî:
+		1.this¹Ø¼ü×Öµ÷ÓÃÆäËûµÄ¹¹Ôìº¯ÊýÊ±,this¹Ø¼ü×Ö±ØÐëÒªÎ»ÓÚ¹¹Ôìº¯ÊýÖÐµÄµÚÒ»¸öÓï¾ä.
+		2.this¹Ø¼ü×ÖÔÚ¹¹Ôìº¯ÊýÖÐ²»ÄÜ³öÏÖÏà»¥µ÷ÓÃµÄÇé¿ö.
+		
+####static (¾²Ì¬)
+	1.¾²Ì¬µÄ³ÉÔ±±äÁ¿Ö»»áÔÚÊý¾Ý¹²ÏíÇøÖÐÎ¬»¤Ò»·Ý,¶ø·Ç¾²Ì¬³ÉÔ±±äÁ¿µÄÊý¾Ý»áÔÚÃ¿¸ö¶ÔÏóÖÐÎ¬»¤Ò»·Ý.
+	×÷ÓÃ:
+		1.staticÐÞÊÎ³ÉÔ±±äÁ¿: Èç¹ûÓÐÊý¾ÝÐèÒª±»¹²Ïí¸øËùÓÐ¶ÔÏóÊ¹ÓÃÊ±,¿ÉÒÔÓÃstaticÐÞÊÎ.
+			¾²Ì¬³ÉÔ±±äÁ¿µÄ·ÃÎÊ·½Ê½:
+				·½Ê½1:¿ÉÒÔÊ¹ÓÃ¶ÔÏó½øÐÐ·ÃÎÊ.
+					¸ñÊ½:¶ÔÏó.±äÁ¿Ãû
+				·½Ê½2:¿ÉÒÔÊ¹ÓÃÀàÃû½øÐÐ·ÃÎÊ:
+					¸ñÊ½:ÀàÃû.±äÁ¿Ãû.
+			 ×¢Òâ:·Ç¾²Ì¬³ÉÔ±±äÁ¿Ö»ÄÜÍ¨¹ý·½Ê½1·ÃÎÊ.
+		2.staticÐÞÊÎ·½·¨(¾²Ì¬µÄ³ÉÔ±·½·¨):
+			Èç¹ûÒ»¸öº¯ÊýÃ»ÓÐÖ±½Ó·ÃÎÊµ½·Ç¾²Ì¬µÄ³ÉÔ±Ê±,ÄÇÃ´¾Ã¿ÉÒÔÊ¹ÓÃstaticÐÞÊÎÁË,Ò»°ãÓÃÓÚ¹¤¾ßÀàÐÍµÄ·½·¨
+					²»ÓÃ´´½¨¶ÔÏó,½ÚÊ¡ÄÚ´æ.
+			×¢Òâ:1.¾²Ì¬º¯Êý¿ÉÒÔÖ±½Ó·ÃÎÊ¾²Ì¬µÄ³ÉÔ±,µ«²»ÄÜ·ÃÎÊ·Ç¾²Ì¬³ÉÔ±. 
+				 2.¾²Ì¬º¯Êý²»ÄÜ³öÏÖthis»òÕßsuper¹Ø¼ü×Ö
+	¾²Ì¬Êý¾ÝµÄÉúÃüÖÜÆÚ:
+		¾²Ì¬µÄ³ÉÔ±±äÁ¿Êý¾ÝÊÇÓÅÏÈÓÚ¶ÔÏó´æÔÚµÄ.
+	¾²Ì¬µÄ³ÉÔ±±äÁ¿Óë·Ç¾²µÄ³ÉÔ±±äÁ¿µÄÇø±ð:
+		1.×÷ÓÃÉÏµÄÇø±ð:
+		2.´æ´¢Î»ÖÃÉÏµÄÇø±ð:
+			1.¾²Ì¬³ÉÔ±±äÁ¿Ê±´æ´¢·½·¨ÇøÄÚ´æÖÐ,¶øÇÒÖ»»á´æÔÚÒ»·ÝÊý¾Ý.
+			2.·Ç¾²Ì¬µÄ³ÉÔ±±äÁ¿Ê±ÔÚ¶ÑÄÚ´æÖÐ,ÓÐn¸ö¶ÔÏó¾ÍÓÐn·ÖÊý¾Ý.
+		3.ÉúÃüÖÜÆÚµÄÇø±ð:
+			1.¾²Ì¬µÄ³ÉÔ±±äÁ¿Êý¾ÝÊÇËæ×ÅÀàµÄ¼ÓÔØ¶ø´æÔÚ,Ëæ×ÅÀàÎÄ¼þµÄÏûÊ§¶øÏûÊ§.
+			2.·Ç¾²Ì¬µÄ³ÉÔ±Êý¾ÝÊÇËæ×Å¶ÔÏóµÄ´´½¨¶ø´æÔÚ,Ëæ×Å¶ÔÏó±»À¬»ø»ØÊÕÆ÷»ØÊÕ¶øÏûÊ§.
+
+####mainº¯Êý:
+	public: ¹«¹²µÄ.±£Ö¤jvmÈÎºÎÊ±ºò¶¼¿ÉÒÔ·ÃÎÊµ½main·½·¨.
+	static:¾²Ì¬ÈÃjmµ÷ÓÃmainº¯Êý¸ü¼Ó·½±ã,²»ÐèÒªÍ¨¹ý¶ÔÏóµ÷ÓÃ...
+	void:Ã»ÓÐ·µ»ØÖµ,ÒòÎª·µ»ØµÄÊý¾ÝÊÇ¸øjvmµÄ,Ã»ÓÐÒâÒå
+	main:º¯ÊýÃû. ×¢Òâ:main²¢²»ÊÇ¹Ø¼ü×Ö,Ö»²»¹ýÊÇjvmÄÜÊ¶±ðµÄÒ»¸öÌØÊâµÄº¯ÊýÃû¶øÒÑ.
+	arguments:²ÎÊý...,,µ£ÐÄÄ³Ð©³ÌÐòÔÚÆô¶¯ÐèÒª²ÎÊý.
+
+###Éè¼ÆÄ£Ê½
+####µ¥ÀýÉè¼ÆÄ£Ê½:
+	±£Ö¤Ò»¸öÀàÔÚÄÚ´æÖÐÖ»ÓÐÒ»¸ö¶ÔÏó.
+	²½Öè:
+		1.¶öººµ¥ÀýÉè¼ÆÄ£Ê½:
+			1.Ë½ÓÐ»¯¹¹Ôìº¯Êý.
+			2.ÉùÃ÷±¾ÀàµÄÒýÓÃÀàÐÍ±äÁ¿,²¢ÇÒÊ¹ÓÃ¸Ã±äÁ¿Ö¸Ïò±¾Àà¶ÔÏó.
+			3.Ìá¹©Ò»¸ö¹«¹²¾²Ì¬µÄ·½·¨»ñÈ¡±¾ÀàµÄ¶ÔÏó.
+		2.ÀÁººµ¥ÀýÉè¼ÆÄ£Ê½:
+			1.Ë½ÓÐ»¯¹¹Ôìº¯Êý.
+			2.ÉùÃ÷±¾ÀàµÄÒýÓÃÀàÐÍ±äÁ¿,µ«ÊÇ²»Òª´´½¨¶ÔÏó.
+			3.Ìá¹©¹«¹²¾²Ì¬µÄ·½·¨»ñÈ¡±¾ÀàµÄ¶ÔÏó,»ñÈ¡Ö®Ç°ÏÈÅÐ¶ÏÊÇ·ñÒÑ¾­´´½¨ÁË±¾Àà¶ÔÏó.Ã»ÓÐÔòÏÈ´´½¨ÔÙ·µ»Ø.
+		ÍÆ¼öÊ¹ÓÃ:¶öºº,ÒòÎªÀÁºº´æÔÚÏß³Ì°²È«ÎÊÌâ,²»ÄÜ±£Ö¤¸ÃÀàÄÚ´æÖÐÖ»ÓÐÒ»¸ö¶ÔÏó.
+
+####Ä£°åÄ£Ê½:
+	½â¾öÄ³ÀàÊÂÇéµÄ²½ÖèÓÐÐ©ÊÂ¹Ì¶¨µÄ,ÓÐÐ©ÊÂ·¢Éú±ä»¯µÄ,ÄÇÃ´ÎªÕâÀàÊÂÇéÌá¹©Ò»ÀàÄ£°å´úÂë,´Ó¶øÌá¸ßÐ§ÂÊ.
+	²½Öè:
+		1.ÏÈÐ´³ö½â¾ö¸ÃÀàÊÂÇéÆäÖÐµÄÒ»¼þµÄ½â¾ö·½°¸.
+		2.·ÖÎö´úÂë,°Ñ»á·¢Éú±ä»¯µÄ´úÂë³éÈ¡³öÀ´¶ÀÁ¢³ÉÒ»¸ö·½·¨.°Ñ¸Ã·½·¨ÃèÊö³ÉÒ»¸ö³éÏóµÄ·½·¨
+		3.Ê¹ÓÃfinalÐÞÊÎÄ£°å·½·¨,·ÀÖ¹±ðÈËÖØÐ´Ä£°å·½·¨.
+		
+###¼Ì³Ð
+	¼Ì³ÐÍ¨¹ý¹Ø¼ü×ÖextendsÌåÏÖ.
+	¸ñÊ½:
+		class ÀàÃû1 extends ÀàÃû2{
+		}
+	×¢ÒâÊÂÏî::1.¸¸ÀàË½ÓÐµÄ³ÉÔ±²»ÄÜ±»¼Ì³Ð.
+		 2.¸¸ÀàµÄ¹¹Ôìº¯Êý²»ÄÜ±»¼Ì³Ð.
+		 3.´´½¨×ÓÀà¶ÔÏóÊ±Ä¬ÈÏ»áÏÈµ÷ÓÃ¸¸ÀàµÄÎÞ²Î¹¹Ôìº¯Êý.
+	Ò»¸öÀà×î¶àÖ»ÄÜÓÐÒ»¸ö×Ö½ÚµÄ¸¸Àà
+####super¹Ø¼ü×Ö:
+	super´ú±íÁË¸¸Àà¿Õ¼äµÄÒýÓÃ.
+	×÷ÓÃ:
+		1.×Ó¸¸Àà´æÔÚÍ¬ÃûµÄ³ÉÔ±Ê±,Í¨¹ýsuper·ÃÎÊÖ¸¶¨·ÃÎÊ¸¸ÀàµÄ³ÉÔ±
+		2.´´½¨×ÓÀà¶ÔÏóÊ±,Ä¬ÈÏ»áÏÈµ÷ÓÃ¸¸ÀàÎÞ²ÎµÄ¹¹Ôì·½·¨,¿ÉÒÔÍ¨¹ýsuper¹Ø¼ü×ÖÖ¸¶¨µ÷ÓÃ¸¸ÀàµÄ¹¹Ôì·½·¨.
+	×¢ÒâÊÂÏî:
+		1.Èç¹ûÃ»ÓÐÖ¸¶¨¸¸ÀàµÄ¹¹Ôì·½·¨,ÄÇÃ´java±àÒëÆ÷»áÔÚ×ÓÀàµÄ¹¹Ôì·½·¨ÉÏÏß¼ÓÉÏsuper()Óï¾ä.
+		2.superÓëthis¹Ø¼ü×Ö²»ÄÜÍ¬Ê±³öÏÖÔÚÍ¬Ò»¸ö¹¹Ôìº¯ÊýÖÐ,ÒòÎªÁ½¸öÓï¾ä¶¼ÐèÒªÎ»ÓÚµÚÒ»¸öÓï¾ä.
+####ÖØÐ´:
+	×Ó¸¸Àà³öÁËÍ¬ÃûµÄº¯Êý,³ÆÖ®Îª·½·¨µÄÖØÐ´.
+	×¢Òâ:
+		1.·½·¨ÖØÐ´Ê±,·½·¨ÃûÓëÐÎ²ÎÁÐ±í±ØÐëÒ»ÖÂ.
+		2.·½·¨ÖØÐ´Ê±,×ÓÀàµÄÈ¨ÏÞÐÞÊÎ·û±ØÐëÒª´óÓÚ»òÕßµÈÓÚ¸¸ÀàµÄÈ¨ÏÞÐÞÊÎ·û.
+####instanceof¹Ø¼ü×Ö
+	×÷ÓÃ:ÅÐ¶ÏÒ»¸ö¶ÔÏóÊÇ·ñÊôÓÚÖ¸¶¨µÄÀà±ð.
+	Ç°Ìá:ÅÐ¶ÏµÄ¶ÔÏóÓëÖ¸¶¨µÄÀà±ð±ØÐëÒª´æÔÚ¼Ì³Ð»òÕßÊµÏÖµÄ¹ØÏµ.
+	¸ñÊ½:
+		¶ÔÏó instanceof Àà±ð
+
+####final(×îÖÕ)
+	Ã¿¸ö·½·¨ÒªÔËÐÐµÄÊ±ºò,jvm¶¼»áÎª¸Ã·½·¨¿ª±ÙÒ»Æ¬ÄÚ´æ¿Õ¼äÊÇÊôÓÚÕâ¸ö·½·¨µÄ.
+	ÓÃ·¨:
+		1.finalÐÞÊÎÒ»¸ö»ù±¾ÀàÐÍµÄ±äÁ¿Ê±,¸Ã±äÁ¿²»ÄÜÖØÐÂ¸³Öµ.
+		2.finalÐÞÊÎÒ»¸öÒýÓÃÀàÐÍ±äÁ¿Ê±,¸Ã±äÁ¿²»ÄÜÖØÐÂÖ¸ÏòÐÂµÄ¶ÔÏó.
+		3.finalÐÞÊÎÒ»¸öº¯ÊýÊ±,¸Ãº¯Êý²»ÄÜ±»ÖØÐ´.
+		4.finalÐÞÊÎÒ»¸öÀàÊ±,¸ÃÀà²»ÄÜ±»¼Ì³Ð
+	³£Á¿µÄÐÞÊÎ·ûÒ»°ãÎª:public static final
+	³£Á¿µÄÃüÃû¹æ·¶:È«²¿×ÖÄ¸´óÐ´
+####³éÏóÀà
+	Ó¦ÓÃ³¡¾°:ÃèÊöÒ»ÀàÊÂÎïµÄÊ±ºò,·¢ÏÖÊÂÎï´æÔÚÄ³ÖÖÐÐÎª,µ«ÊÇÕâÖÖÐÐÎªÄ¿Ç°²»¾ßÌåµÄ,ÎÒÃÇ¿ÉÒÔ³éÈ¡ÕâÖÖÐÐÎªµÄÉúÃü,
+	µ«ÊÇ²»È¥ÊµÏÖ.
+	ºÃ´¦:Ç¿ÖÆÒªÇó×ÓÀàÒÆ¶¯ÒªÊµÏÖÖ¸¶¨µÄ·½·¨.
+	×¢ÒâÏ¸½Ú:
+		1.Èç¹ûÒ»¸öº¯ÊýÃ»ÓÐ·½·¨Ìå,ÄÇÃ´¸Ãº¯Êý±ØÐëÒªÊ¹ÓÃabstractÐÞÊÎ,°Ñ¸Ãº¯ÊýÐÞÊÎ³É³éÏóµÄº¯Êý. 
+		2.Èç¹ûÒ»¸öÀà³öÏÖÁË³éÏóµÄº¯Êý,ÄÇÃ´¸ÃÀàÒ²±ØÐëÊ¹ÓÃabstractÐÞÊÎ.
+		3.Èç¹ûÒ»¸ö·Ç³éÏóÀà¼Ì³ÐÁË³éÏóÀà,ÄÇÃ´±ØÐëÒª°Ñ³éÏóÀàµÄËùÓÐ³éÏó·½·¨È«²¿ÊµÏÖ.
+		4.³éÏóÀà¿ÉÒÔ´æÔÚ·Ç³éÏó·½·¨.
+		5.³éÏóÀà¿ÉÒÔ²»´æÔÚ³éÏó·½·¨µÄ.
+		6.³éÏóÀàÊÇ²»ÄÜ´´½¨¶ÔÏóµÄ.
+		7.³éÏóÀàÊÇ´æÔÚ¹¹Ôìº¯ÊýµÄ,Æä¹¹Ôìº¯ÊýÊ±Ìá¹©¸ø×ÓÀà´´½¨¶ÔÏóµÄÊ±ºò³õÊ¼»¯¸¸ÀàµÄÊôÐÔµÄ.
+	abstract²»ÄÜÓëÒÔÏÂ¹Ø¼ü×Ö¹²Í¬ÐÞÊÎÒ»¸ö·½·¨:
+		1.private
+		2.abstract
+###½Ó¿Ú
+	½Ó¿ÚµÄ×÷ÓÃ:
+		1.ÍØÕ¹¹¦ÄÜ.
+		2.¶¨ÒåÔ¼Êø¹æ·¶.
+		3.³ÌÐòµÄ½âñî.(µÍñîºÏ
+	¸ñÊ½:
+	interface ½Ó¿ÚÃû{
+		}
+	×¢ÒâÊÂÏî:
+		1.½Ó¿ÚÊÇÒ»¸öÌØÊâµÄÀà.
+		2.½Ó¿ÚµÄ³ÉÔ±±äÁ¿Ä¬ÈÏµÄÐÞÊÎ·ûÎª:public static final.Ò²¾ÍÊÇËµ½Ó¿ÚÖÐµÄ³ÉÔ±±äÁ¿¶¼ÊÇ³£Á¿.
+		3.½Ó¿ÚÖÐµÄ·½·¨¶¼ÊÇ³éÏóµÄ·½·¨.Ä¬ÈÏµÄÐÞÊÎ·ûÎª:public abstract
+		4.½Ó¿Ú²»ÄÜ´´½¨¶ÔÏó.
+		5.½Ó¿ÚÊÇÃ»ÓÐ¹¹Ôì·½·¨µÄ.
+		6.½Ó¿ÚÊÇ¸øÀàÈ¥ÊµÏÖÊ¹ÓÃµÄ.·Ç³éÏóÀàÊµÏÖ Ò»¸ö½Ó¿ÚµÄÊ±ºò,±ØÐëÒª°Ñ½Ó¿ÚÖÐËùÓÐ·½·¨È«²¿ÊµÏÖ.
+	ÊµÏÖ½Ó¿ÚµÄ¸ñÊ½:
+		class ÀàÃû implements ½Ó¿ÚÃû{
+			}
+			
+####ÀàÓë½Ó¿ÚÖ®¼äµÄ¹ØÏµ:
+	ÊµÏÖ¹ØÏµ.
+	×¢Òâ:
+		1.·Ç³éÏóÀàÊµÏÖÒ»¸ö½Ó¿ÚÊ±,±ØÐë°Ñ½Ó¿ÚÖÐËùÓÐ·½·¨È«²¿ÊµÏÖ
+		2.½Ó¿ÚÀàÊµÏÖÒ»¸ö½Ó¿ÚÊ±,¿ÉÒÔÊµÏÖÒ²¿ÉÒÔ²»ÊµÏÖ½Ó¿ÚÖÐµÄ·½·¨.
+		3.Ò»¸öÀà¿ÉÒÔÊµÏÖ¶à¸ö½Ó¿Ú
+		4.javaÀà¿ÉÒÔµ¥¼Ì³Ð,¶àÊµÏÖ.½Ó¿Ú¿ÉÒÔ¶à¼Ì³Ð		
+####½Ó¿ÚÓë½Ó¿ÚÖ®¼äµÄ¹ØÏµ:
+	¼Ì³Ð¹ØÏµ:
+	×¢Òâ:
+		1.Ò»¸ö¼Ì³ÐÊÇ¿ÉÒÔ¼Ì³Ð¶à¸ö½Ó¿ÚµÄ.
+
+###¶àÌ¬:
+	Ò»¸ö¶ÔÏó¾ßÓÐ¶àÖÖÐÎÌ¬.(¸¸ÀàµÄÒýÓÃÀàÐÍ±äÁ¿Ö¸ÏòÁË×ÓÀà¶ÔÏó
+						»òÕßÊÇ½Ó¿ÚÀàÐÍµÄÒýÓÃÀàÐÍ±äÁ¿Ö¸ÏòÁË½Ó¿ÚÊµÏÖÀàµÄ¶ÔÏó)
+	¶àÌ¬µÄÇ°Ìá:±ØÐë´æÔÚ¼Ì³Ð»òÕßÊµÏÖ¹ØÏµ.
+	¸ñÊ½:
+		¶¯Îï(¸¸Àà) a = new ¹·(×ÓÀà)
+	×¢ÒâÏ¸½Ú:
+		1.¶àÌ¬Çé¿öÏÂ,×Ó¸¸Àà´æÔÚÍ¬ÃüµÄ³ÉÔ±±äÁ¿Ê±,·ÃÎÊµÄÊÇ¸¸ÀàµÄ³ÉÔ±±äÁ¿.
+		2.¶àÌ¬Çé¿öÏÂ,×Ó¸¸Àà´æÔÚ·Ç¾²Ì¬µÄ³ÉÔ±º¯ÊýÊ±,·ÃÎÊµÄÊÇ×ÓÀàµÄ³ÉÔ±º¯Êý.
+		3.¶àÌ¬Çé¿öÏÂ,×Ó¸¸Àà´æÔÚ¾²Ì¬µÄ³ÉÔ±º¯ÊýÊ±,·ÃÎÊµÄÊÇ¸¸ÀàµÄ³ÉÔ±º¯Êý.
+		4.¶àÌ¬Çé¿öÏÂ,²»ÄÜ·ÃÎÊ×ÓÀàÌØÓÐµÄ³ÉÔ±.
+	×Ü½á:
+		¶àÌ¬Çé¿öÏÂ,×Ó¸¸Àà´æÔÚÍ¬ÃüµÄ³ÉÔ±Ê±,·¶ÎÄµÄ¶¼ÊÇ¸¸ÀàµÄ³ÉÔ±,Ö»ÓÐÔÚÍ¬Ãû·Ç¾²Ì¬º¯ÊýÊ±²ÅÊÇ·ÃÎÊ×ÓÀàµÄ.
+	Ô­Àí:
+		±àÒëÆ÷×ó±ß,ÔËÐÐ²»Ò»¶¨¿´ÓÒ±ß.
+		±àÒëÆ÷×ó±ß:java±àÒëÆ÷ÔÚ±àÒëµÄÊ±ºò,»á¼ì²éÒýÓÃÀàÐÍ±äÁ¿ËùÊôµÄÀàÊÇ·ñ¾ß±¸Ö¸¶¨µÄ³ÉÔ±,Èç¹û²»¾ß±¸ÂíÉÏ±àÒë±¨´í.
+	¶àÌ¬µÄÓ¦ÓÃ:
+		1.¶àÌ¬ÓÃÓÚÐÎ²ÎÀàÐÍµÄÊ±ºò,¿ÉÒÔ½ÓÊÜ¸ü¶àÀàÐÍµÄÊý¾Ý.
+		2.¶àÌ¬ÓÃÓÚ·µ»ØÖµÀàÐÍµÄÊ±ºò,¿ÉÒÔ·µ»Ø¸ü¶àÀàÐÍµÄÊý¾Ý.
+	¶àÌ¬µÄºÃ´¦:
+		1.Ìá¸ß´úÂëµÄÍØÕ¹ÐÔ.
+	Èç¹ûÐèÒª·ÃÎÊ×ÓÀàÌØÓÐµÄ³ÉÔ±,ÐèÒª½øÐÐÀàÐÍÇ¿ÖÆ×ª»».
+	»ù±¾Êý¾ÝÀàÐÍµÄ×ª»»:
+		Ð¡Êý¾ÝÀàÐÍ-->´óÊý¾ÝÀàÐÍ  ×Ô¶¯ÀàÐÍ×ª»»
+		´óÊý¾ÝÀàÐÍ-->Ð¡Êý¾ÝÀàÐÍ  Ç¿ÖÆÀàÐÍ×ª»»		Ð¡Êý¾ÝÀàÐÍ ±äÁ¿Ãû =(Ð¡Êý¾ÝÀàÐÍ)´óÊý¾ÝÀàÐÍ;
+
+####ÊµÏÖ¹ØÏµÏÂµÄ¶àÌ¬
+	¸ñÊ½:
+		½Ó¿Ú ±äÁ¿ = new ½Ó¿ÚÊµÏÖÀàµÄ¶ÔÏó.
+###ÄÚ²¿Àà
+	Ò»¸öÀà¶¨ÒåÔÚÁíÍâÒ»¸öÀàµÄÄÚ²¿,ÄÇÃ´¸ÃÀà³ÉÎªÄÚ²¿Àà.
+	ÄÚ²¿ÀàµÄclassÎÄ¼þÃû: Íâ²¿Àà$ÄÚ²¿Àà.  ºÃ´¦:±ãÓÚÇø·Ö¸ÃclassÎÄ¼þÊÇÊôÓÚÄÄ¸öÍâ²¿ÀàµÄ.
+	ÄÚ²¿ÀàµÄÓ¦ÓÃ³¡¾°:
+		ÎÒÃÇÔÚÃèÊöAÊÂÎïµÄÊ±ºò,·¢ÏÖÃèÊöµÄAÊÂÎïÄÚ²¿»¹´æÔÚÁíÍâÒ»¸ö±È½Ï¸´ÔÓµÄÊÂÎïBµÄÊ±ºò,¶øÇÒÕâ¸ö±È½Ï¸´ÔÓÊÂÎïB»¹ÐèÒª·ÃÎÊAÊÂÎïµÄÊôÐÔµÈÊý¾Ý,ÄÇÃ´ÕâÊ±ºòÎÒÃÇ¾Í¿ÉÒÔÊ¹ÓÃÄÚ²¿ÀàÃèÊöBÊÂÎï
+	ÄÚ²¿ÀàµÄºÃ´¦:
+		ÄÚ²¿Àà¿ÉÒÔÖ±½Ó·ÃÎÊÍâ²¿ÀàµÄËùÓÐ³ÉÔ±.
+	×¢ÒâÊÂÏî:
+		1.Èç¹ûÍâ²¿ÀàÓëÄÚ²¿Àà´æÔÚÍ¬ÃûµÄ³ÉÔ±±äÁ¿Ê±,ÔÚÄÚ²¿ÀàÄ¬ÈÏ·ÃÎÊÄÚ²¿ÀàµÄ³ÉÔ±±äÁ¿.
+			¿ÉÒÔÍ¨¹ý"Íâ²¿Àà.this.³ÉÔ±±äÁ¿Ãû" Ö¸¶¨·ÃÎÊÍâ²¿ÀàµÄ³ÉÔ±.
+		2.Ë½ÓÐµÄ³ÉÔ±ÄÚ²¿ÀàÖ»ÄÜÔÚÍâ²¿ÀàÌá¹©Ò»¸ö·½·¨´´½¨ÄÚ²¿ÀàµÄ¶ÔÏó½øÐÐ·ÃÎÊ,²»ÄÜÔÙÆäËûÀà´´½¨¶ÔÏó·ÃÎÊ.
+		3.³ÉÔ±ÄÚ²¿ÀàÒ»µ©³öÏÖÁË¾²Ì¬µÄ³ÉÔ±,ÄÇÃ´¸ÃÀàÒ²±ØÐëÊ¹ÓÃstaticÐÞÊÎ.
+			Ô­Òò:¾²Ì¬µÄ³ÉÔ±Êý¾ÝÊÇ²»ÐèÒª¶ÔÏó´æÔÚ²ÅÄÜ·ÃÎÊ. 
+	ÄÚ²¿ÀàµÄÀà±ð:
+		1.³ÉÔ±ÄÚ²¿Àà:
+			³ÉÔ±ÄÚ²¿ÀàµÄ·ÃÎÊ·½Ê½:
+				1.ÔÚÍâ²¿ÀàÌá¹©Ò»¸ö·½·¨´´½¨ÄÚ²¿ÀàµÄ¶ÔÏó½øÐÐ·ÃÎÊ.
+				2.ÔÚÆäËûÀàÖ±½Ó´´½¨ÄÚ²¿ÀàµÄ¶ÔÏó.¸ñÊ½:Íâ²¿Àà.ÄÚ²¿Àà ±äÁ¿Ãû =new Íâ²¿Àà().new ÄÚ²¿Àà()
+			×¢Òâ:Èç¹ûÊÇÒ»¸ö¾²Ì¬ÄÚ²¿Àà,ÄÇÃ´´´½¨¸ñÊ½:
+				Íâ²¿Àà.ÄÚ²¿Àà ±äÁ¿Ãû = new Íâ²¿Àà.ÄÚ²¿Àà()
+		2.¾Ö²¿ÄÚ²¿Àà:
+			ÔÚÒ»¸öÀàµÄ·½·¨ÄÚ²¿¶¨ÒåÁíÍâÒ»¸öÀà,ÄÇÃ´ÁíÍâÒ»¸öÀà¾Í³ÉÎª¾Ö²¿ÄÚ²¿Àà
+			×¢Òâ:
+				1.Èç¹û¾Ö²¿ÄÚ²¿Àà·ÃÎÊÒ»¸ö¾Ö²¿±äÁ¿,±ØÐëÒªÒªfinalÐÞÊÎ 
+		3.ÄäÃûÄÚ²¿Àà:
+			Ã»ÓÐÀàÃûµÄÀà¾Í³Æ×÷ÎªÄäÃûÄÚ²¿Àà.
+			ºÃ´¦:¼ò»¯ÊéÐ´
+			Ê¹ÓÃÇ°Ìá:±ØÐë´æÔÚ¼Ì³Ð»òÕßÊµÏÖ¹ØÏµ²ÅÄÜÊ¹ÓÃ.
+			ÄäÃûÄÚ²¿ÀàÒ»°ãÓÃÓÚÊµ²Î.
+###Òì³£
+	Òì³£ÌåÏµ:
+	---|Throwable	ËùÓÐÒì³£»òÕß´íÎóÀàµÄ³¬Àà
+	-----|Error		´íÎó	´íÎóÒ»°ãÊÇÓÃÓÚjvm»òÕßÊÇÓ²¼þÒý·¢µÄÎÊÌâ,ËùÒÔÒ»°ã²»»áÍ¨¹ý´úÂëÈ¥´¦Àí´íÎó.
+	-----|Excepttion	Òì³£	ÊÇÐèÒª´úÂëÈ¥´¦ÀíµÄ
+	Çø·Ö´íÎóÓëÒì³£:
+		Èç¹û´íÎó³öÏÖÁË²»Õý³£µÄÐÅÏ¢,Èç¹û²»Õý³£µÄÐÅÏ¢µÄÀàÃûÊÇÒÔError½áÎ²,
+		Èç¹ûÒÔException½áÎ²µÄ,ÄÇÃ´¿Ï¶¨ÊÇÒ»¸öÒì³£.
+	Throwable³£ÓÃµÄ·½·¨:
+		toString() ·µ»Øµ±Ç°Òì³£¶ÔÏóµÄÍêÕûÀàÃû(°üÃû+ÀàÃû).
+		getMessage()	·µ»Ø´´½¨Throwable´«ÈëµÄ×Ö·û´®ÐÅÏ¢.
+		printStackTrace()	´òÓ¡Òì³£µÄÕ»ÐÅÏ¢
+	Òì³£µÄ´¦Àí:
+		·½Ê½Ò»:²¶»ñ´¦Àí
+			¸ñÊ½:
+				try{
+				}catch(²¶»ñµÄÒì³£ÀàÐÍ ±äÁ¿Ãû){
+				}
+		Ï¸½Ú:
+			1.Ò»¸ötryºóÃæÊÇ¿ÉÒÔ¸ú¶à¸öcatch¿éµÄ
+			2.²¶»ñµÄÒì³£ÀàÐÍ±ØÐë´ÓÐ¡µ½´ó½øÐÐ²¶»ñ,·ñÔò±àÒë±¨´í.
+		·½Ê½¶þ:Å×³ö´¦Àí
+			×¢Òâ:
+				1.Èç¹ûÒ»¸ö·½·¨µÄÄÚ²¿Å×³öÒ»¸ö±àÒëÊ±Òì³£¶ÔÏó,ÄÇÃ´±ØÐëÒªÔÚ·½·¨ÉÏÉùÃ÷Å×³ö.
+				2.Èç¹ûµ÷ÓÃÒ»¸öÉùÃ÷Å×³ö±àÒëÊ±Òì³£µÄ·½·¨,ÄÇÃ´µ÷ÓÃÕß±ØÐëÒª´¦ÀíÒì³£.
+				3.Ò»¸ö·½·¨Óöµ½throw¹Ø¼ü×Ö,¸Ã·½·¨»áÍ£Ö¹Ö´ÐÐ.
+	
+	throwÓëthrowsÁ½¸ö¹Ø¼ü×Ö:
+		1.throwÊÇÓÃÓÚ·½·¨ÄÚ²¿µÄ,throwsÊÇÓÃÓÚ·½·¨ÉùÃ÷ÉÏµÄ.
+		2.throwÊÇÓÃÓÚ·½·¨ÄÚ²¿Å×³öÒ»¸öÒì³£¶ÔÏóµÄ,throwsÊÇÓÃÓÚÔÚ·½·¨ÉùÃ÷ÉÏÉùÃ÷Å×³öÒì³£ÀàÐÍµÄ.
+		3.throwºóÃæÖ»ÄÜÓÐÒ»¸öÒì³£¶ÔÏó,throwsºóÃæÒ»´Î¿ÉÒÔÉùÃ÷Å×³ö¶àÖÖÀàÐÍµÄÒì³£
+	×Ô¶¨ÒåÒì³£Àà²½Öè:1.×Ô¶¨ÒåÒ»¸öÀà¼Ì³ÐException¼´¿É
+####finally¿é	
+		Ç°ÌáÊÇ±ØÐëÒª´æÔÚtry¿é²ÅÄÜÊ¹ÓÃ.
+		finaaly¿éµÄ´úÂëÔÚÈÎºÎÇé¿öÏÂ¶¼»áÖ´ÐÐµÄ,³ýÁËjvmÍË³öµÄÇé¿ö.
+		finally·Ç³£ÊÊºÏ×ö×ÊÔ´ÊÍ·ÅµÄ¹¤×÷.
+###°ü
+	javaÖÐµÄ°üÏàµ±ÓÚwindowsÎÄ¼þ¼Ð
+	×÷ÓÃ:
+		1.½â¾öÀàÃûÖØ¸´²úÉú³åÍ»µÄÎÊÌâ.
+		2.±ãÓÚ°æ±¾µÄ·¢²¼. 
+	¶¨Òå°üµÄ¸ñÊ½:
+		package °üÃû;
+	×¢Òâ:
+		1.°üÃûÃüÃû¹æ·¶:È«²¿Ð¡Ð´.
+		2.packageÓï¾ä±ØÐëÎ»ÓÚjavaÎÄ¼þÖÐµÄµÚÒ»Óï¾ä.
+		3.Èç¹ûÒ»¸öÀà¼ÓÉÏÁË°üÓï¾ä,ÄÇÃ´¸ÃÀàµÄÍêÕûÀàÃû¾ÍÊÇ:°üÃû.ÀàÃû
+####jar°ü	
+	ÐèÒªÊ¹ÓÃµ½jdkµÄ¿ª·¢¹¤¾ß(jar.exe). 
+	Ê¹ÓÃ¸ñÊ½£º
+		jar cvf jarÎÄ¼þµÄÃû×Ö  classÎÄ¼þ»òÕßÊÇÎÄ¼þ¼Ð 
+	´òjar°üÒª×¢ÒâµÄÊÂÏî£º
+		1. Ò»¸ö³ÌÐò´òÍêÁËjarÖ®ºó ±ØÐëÒªÔÚÇåµ¥ÎÄ¼þÉÏÖ¸¶¨Èë¿ÚÀà£º ¸ñÊ½ Main-Class: °üÃû.ÀàÃû
+		2. jar°üË«»÷ÔËÐÐ½ö¶ÔÓÚÍ¼ÐÎ»¯½çÃæµÄ³ÌÐòÆð×÷ÓÃ£¬¶Ô¿ØÖÆÌ¨µÄ³ÌÐò²»Æð×÷ÓÃ¡£
+	jarÎÄ¼þµÄ×÷ÓÃ£º
+		1. ·½±ãÓÃ»§¿ìËÙÔËÐÐÒ»¸öÏîÄ¿¡£
+		2. Ìá¹©¹¤¾ßÀàÒÔjar°üµÄÐÎÊ½¸ø±ðÈËÊ¹ÓÃ¡£ 
+	Èç¹ûÊ¹ÓÃjar°üÀïÃæµÄÀà±ØÐëÒªÏÈÉèÖÃclasspathÂ·¾¶¡£
+	jre = jvm+ ºËÐÄÀà¿â
+
+###objectÀà
+####³£ÓÃ·½·¨:
+	toString();
+		·µ»Ø¸Ã¶ÔÏóµÄ×Ö·û´®±íÊ¾. Í¨¹ý²é¿´Ô´´úÂëµÃÖª£¬Ö±½ÓÊä³öÒ»¸ö¶ÔÏó µÄÊ±ºò£¬Êµ¼ÊÉÏÔÚprintln·½·¨ÄÚ²¿»áµ÷ÓÃÕâ¸ö µ÷ÓÃµÄtoString·½·¨£¬°ÑtoString·½·¨·µ»ØµÄÄÚÈÝÊä³ö¡£
+		µ±toString·½·¨ÎÞ·¨Âú×ã×ÓÀàµÄÐèÇó£¬ÄÇÃ´ÕâÊ±ºòÎÒÃÇ¾ÍÓ¦¸Ã¶ÔObjectÀàµÄtoString½øÐÐÖØÐ´¡£
+	equals(Object obj)   :
+		ÓÃÓÚ±È½ÏÁ½¸ö¶ÔÏóµÄÄÚ´æµØÖ·£¬ÅÐ¶ÏÁ½¸ö¶ÔÏóÊÇ·ñÎªÍ¬Ò»¸ö¶ÔÏó¡£
+	hashCode();
+		·µ»Ø¸Ã¶ÔÏóµÄ¹þÏ£ÂëÖµ(´ó¼Ò¿ÉÒÔ°Ñ¹þÏ£Âë¾Í Àí½â³ÉÊÇ¶ÔÏóµÄÄÚ´æµØÖ·.
+		
+
+##×Ö·û´®
+	×¢Òâ:×Ö·û´®µÄÄÚÈÝ²»ÊÊÒËÆµ·±ÐÞ¸Ä,ÒòÎªÒ»µ©ÐÞ¸ÄÂíÉÏ¾Í»á´´½¨Ò»¸öÐÂµÄ¶ÔÏó.
+		Èç¹ûÐèÒªÆµ·±ÐÞ¸Ä×Ö·û´®µÄÄÚÈÝ,½¨ÒéÊ¹ÓÃ×Ö·û´®»º³åÀà(StringBuffer)
+		
+###Stringbuffer(´æ´¢×Ö·ûµÄÈÝÆ÷)
+	StringBufferÄ¬ÈÏµÄ³õÊ¼ÈÝÁ¿Îª16,Èç¹û×Ö·ûÊý×éµÄ³¤¶È²»¹»Ê¹ÓÃÊ±,×Ô¶¯Ôö³¤1±¶.
+####StringBuilder ÓëStringBufferµÄÏàÍ¬Óë²»Í¬:
+	½¨ÒéÊ¹ÓÃStringBuilder.³ý·ÇÓöµ½Ïß³ÌÎÊÌâ.
+	ÏàÍ¬µã:
+		1.Á½¸öÀà¶¼ÊÇ×Ö·û´®»º³åÀà.
+		2.Á½¸öÀàµÄ·½·¨¶¼ÊÇÒ»ÖÂµÄ.
+	²»Í¬µã:
+		1.StringBufferÊÇÏß³Ì°²È«µÄ,²Ù×÷Ð§ÂÊµÍ.StringBuilderÊÇÏß³Ì·Ç°²È«µÄ.²Ù×÷Ð§ÂÊ¸ß.
+		2.StringBufferÊÇjdk1.0³öÏÖµÄ,StringBuilderÊÇjdk1.5³öÏÖµÄ.
+	
+####Stringbuffer»ù±¾·½·¨
+	append() Ìí¼Ó
+	insert(int offset,String str) ²åÈë
+	capacity() ·µ»Øµ±Ç°ÈÝÁ¿
+	charAt(int index) ·µ»ØÖ¸¶¨Ë÷Òý´¦µÄcharÖµ
+	delete(int start, int end) É¾³ýÐòÁÐµÄ×Ó×Ö·û´®ÖÐµÄ×Ö·û
+	deleteCharAt(int index) ÒÆ³ýÖ¸¶¨Î»ÖÃµÄchar
+	indexOf(String str) ·µ»ØÖ¸¶¨×Ö·û´®µÄË÷Òý.
+	replace() Ìæ»»
+	reverse() ·´×ª
+	length() ·µ»Ø³¤¶È
 
 		
+###×Ö·û´®Àà
+	1.String str = "hello" ´´½¨×Ö·û´®µÄÊ±ºò,jvm»áÏÈ¼ì²é·½·¨³ØÖÐµÄ×Ö·û´®³£Á¿³ØÖÐÊÇ·ñ´æÔÚ¸Ã×Ö·û´®µÄ¶ÔÏó,Èç¹ûÒÑ¾­´æÔÚ,ÄÇÃ´¾Í²»ÔÙ´´½¨,Ö±½Ó·µ»Ø¸Ã×Ö·û´®ÔÚ×Ö·û´®³£Á¿³ØÖÐÄÚ´æµØÖ·.
+		Èç¹û×Ö·û´®²»´æÔÚ×Ö·û´®³£Á¿³ØÖÐ,¾Í»áÔÚ×Ö·û´®³£Á¿³ØÖÐÏÈ´´½¨¸Ã×Ö·û´®¶ÔÏó,È»ºóÔÙ·µ»Ø.
+	2.new String("hello") Èç¹ûÔÚ×Ö·û´®³£Á¿³ØÖÐ´´½¨×Ö·û´®¶ÔÏó,È»ºó»¹»áµ½¶ÑÄÚ´æÖÐÔÙ´´½¨Ò»·Ý×Ö·û´®¶ÔÏó,È»ºó·µ»Ø¶ÑÄÚ´æÖÐ×Ö·û´®¶ÔÏóµÄÄÚ´æµØÖ·.
+	
+####»ñÈ¡·½·¨
+	length() »ñÈ¡×Ö·û´®ÄãµÄ³¤¶È
+	charAT(int index) »ñÈ¡ÌØ¶¨Î»ÖÃµÄ×Ö·û
+	indexOf(String str) »ñÈ¡ÌØ¶¨×Ö·ûµÄÎ»ÖÃ,ÕÒ²»µ½·µ»Ø-1
+	lastIndexOf(int ch) »ñÈ¡×îºó³öÏÖÌØ¶¨×Ö·ûµÄÎ»ÖÃ,ÕÒ²»µ½·µ»Ø-1
+####ÅÐ¶Ï·½·¨
+	endsWith(String str) ÊÇ·ñÒÔÖ¸¶¨×Ö·û½áÊø
+	isEmpty() ÊÇ·ñÎª¿Õ
+	contaubs() ÊÇ·ñ°üº¬Ö¸¶¨ÐòÁÐ
+	equal() ÊÇ·ñÏàµÈ
+	equalsIgnoreCase() ºöÂÔ´óÐ¡Ð´,ÊÇ·ñÏàµÈ
+####×ª»»·½·¨
+	toCharArray() ½«×Ö·û´®×ª»»Îª×Ö·ûÊý×é.
+	getBytes() ×ª»»Îª×Ö½ÚÊý×é
+####ÆäËû·½·¨
+	String replace(oldChar,newChar)Ìæ»»
+	split(String regex)ÇÐ¸î
+	substring(beginIndex,endIndex)½ØÈ¡
+	toUpperCase() ×ª´óÐ´
+	toLowercase() ×ªÐ¡Ð´
+	trim() È¥³ý¿Õ¸ñ
+
+##Àà
+###SystemÀà(ÏµÍ³Àà Ö÷ÒªÓÃÓÚ»ñÈ¡ÏµÍ³µÄÊôÐÔÊý¾Ý)
+	currentTimeMillis() »ñÈ¡µ±Ç°ÏµÍ³Ê±¼ä
+	arraycopy(Object src, int srcPos, Object dest, int destPos, int length) 
+          ´ÓÖ¸¶¨Ô´Êý×éÖÐ¸´ÖÆÒ»¸öÊý×é£¬¸´ÖÆ´ÓÖ¸¶¨µÄÎ»ÖÃ¿ªÊ¼£¬µ½Ä¿±êÊý×éµÄÖ¸¶¨Î»ÖÃ½áÊø¡£
+	exit() ÍË³öjvm Èç¹û²ÎÊýÊÇ0±íÊ¾Õý³£ÍË³ö,·Ç0±íÊ¾Òì³£ÍË³ö
+	gc() ½¨Òéjvm¸Ï¿ìÆô¶¯À¬»ø»ØÊÕÆ÷»ØÊÕÀ¬»ø
+		finalize() Èç¹ûÒ»¸ö¶ÔÏó±»À¬»ø»ØÊÕÆ÷»ØÊÕµÄÊ±ºò,»áÏÈµ÷ÓÃ¶ÔÏóµÄfinalize()·½·¨.
+	gettenv(String name) ¸ù¾Ý»·¾³±äÁ¿µÄÃû×Ö»ñÈ¡»·¾³±äÁ¿
+	getPeoperties() ·µ»ØÏµÍ³µÄËùÓÐÊôÐÔ
+	
+###runtimeÀà(´ú±íÓ¦ÓÃ³ÌÐòÔËÐÐµÄ»·¾³£©
+	getRuntime() ·µ»Øµ±Ç°³ÌÐòµÄÔËÐÐ»·¾³¶ÔÏó(ÓÃÓÚ´´½¨ÊµÀý¶ÔÏó).
+	exec(String command) ¸ù¾ÝÖ¸¶¨µÄÂ·¾¶Ö´ÐÐ¶ÔÓ¦µÄ¿ÉÖ´ÐÐÎÄ¼þ.
+	freeMemory() ·µ»Øjvm¿ÕÏÐµÄÄÚ´æ,ÒÔ×Ö½ÚÎªµ¥Î».
+	maxMemory() ·µ»ØjvmÊÔÍ¼Ê¹ÓÃµÄ×î´óÄÚ´æÁ¿.
+	totalMemory() ·µ»ØjvmÖÐµÄÄÚ´æ×ÜÁ¿
+	
+###RandomÀà
+	nextInt(int x) Éú³ÉÒ»¸ö´Ó0µ½xÖ®¼äµÄÖµ
+
+##Ïß³Ì
+####ºÃ´¦:
+	1.½â¾öÁËÒ»¸ö½ø³ÌÈçºÎÍ¬Ê±Ö´ÐÐ¶à¸öÈÎÎñµÄÎÊÌâ.
+	2.Ìá¸ß×ÊÔ´µÄÀûÓÃÂÊ
+	
+####±×¶Ë:
+	1.Ôö¼ÓcpuµÄ¸ºµ£.
+	2.½µµÍÁËÒ»¸ö½ø³ÌÖÐÏß³ÌµÄÖ´ÐÐ¸ÅÂÊ.
+	3.Òý·¢ÁËÏß³Ì°²È«ÎÊÌâ.
+	4.³öÏÖÁËËÀËøÏÖÏó.
+	
+####¹ØÓÚjvm
+	ÔËÐÐÈÎºÎÒ»¸öjava³ÌÐò,jvmÔÚÔËÐÐµÄÊ±ºò¶¼»á´´½¨Ò»¸ömainÏß³ÌÖ´ÐÐmain·½·¨ÖÐËùÓÐ´úÂë .
+	Ò»¸öjava³ÌÐòÖÁÉÙÓÐ2¸öÏß³Ì,Ò»¸öÊÇÖ÷Ïß³Ì¸ºÔðmain·½·¨´úÂëµÄÖ´ÐÐ,Ò»¸öÊÇÀ¬»ø»ØÊÕ»úÖÆ
+	
+####´´½¨Ïß³ÌµÄ·½Ê½
+	·½Ê½Ò»:
+		1.×Ô¶¨ÒåÒ»¸öÀà¼Ì³ÐThreadÀà,ÖØÐ´ThreadµÄrun·½·¨
+		ÖØÐ´run·½·¨µÄÄ¿µÄ:
+			°Ñ×Ô¶¨ÒåÏß³ÌµÄÈÎÎñ´úÂëÐ´ÔÚrun·½·¨ÖÐ.
+		2.´´½¨ThreadµÄ×ÓÀà¶ÔÏó,²¢ÇÒµ÷ÓÃstart·½·¨¿ªÆôÏß³Ì.
+		
+	·½Ê½¶þ:
+		1.×Ô¶¨ÒåÒ»¸öÀàÊµÏÖRunable½Ó¿Ú.
+		2.ÊµÏÖRunnable½Ó¿ÚµÄrun·½·¨,°Ñ×Ô¶¨ÒåÏß³ÌµÄÈÎÎñ¶¨ÒåÔÚ run·½·¨ÉÏ.
+		3.´´½¨RunnableÊµÏÖÀà¶ÔÏó.
+		4.´´½¨ThreadÀà¶ÔÏó,²¢ÇÒ°ÑRunnableÊµÏÖÀàµÄ¶ÔÏó×÷ÎªÊµ²Î´«µÝ.
+		5.µ÷ÓÃThread¶ÔÏóµÄstart·½·¨¿ªÆôÒ»¸öÏß³Ì.
+	  
+	  ×¢Òâ:
+		 1.RunnableÊµÏÖÀàµÄ¶ÔÏó²¢²»ÊÇÒ»¸öÏß³Ì¶ÔÏó,Ö»²»¹ýÊÇÏÔÊ¾ÁËRunnable½Ó¿ÚµÄ¶ÔÏó¶øÒÑ.
+		   Ö»ÓÐThread»òÕßThreadµÄ×ÓÀà²ÅÊÇÏß³Ì¶ÔÏó.
+		 2.RunnableÊµÏÖÀàµÄ¶ÔÏóµÄrun·½·¨×÷ÎªÁËÏß³ÌµÄÈÎÎñ´úÂëÈ¥Ö´ÐÐ.
+	  ÍÆ¼öÊ¹ÓÃ:µÚ¶þÖÖ.ÊµÏÖRunnable½Ó¿ÚµÄrun·½·¨
+		Ô­Òò:ÒòÎªjavaµ¥¼Ì³Ð,¶àÊµÏÖµÄ.
+		
+####Ïß³Ì³£ÓÃ·½·¨
+	Thread(String name)  ³õÊ¼»¯Ïß³ÌµÄÃû×Ö
+	getName()	»ñÈ¡Ïß³ÌµÄÃû×Ö
+	setName(string name) ÉèÖÃÏß³Ì¶ÔÏóÃû
+	sleep() Ïß³ÌË¯ÃßÖ¸¶¨µÄºÁÃëÊý
+		ThreadÀàµÄrun·½·¨Ã»ÓÐÅ×³öÒì³£ÀàÐÍ,ËùÒÔ×ÓÀà²»ÄÜÅ×³öÒì³£ÀàÐÍ.
+	currentThread() ·µ»Øµ±Ç°Ïß³Ì¶ÔÏó,¸Ã·½·¨ÊÇÒ»¸ö¾²Ì¬µÄ·½·¨
+	getPriority()	·µ»Øµ±Ç°Ïß³Ì¶ÔÏóµÄÓÅÏÈ¼¶,Ä¬ÈÏÓÅÏÈ¼¶Îª5
+	setProiorty(int x) ÉèÖÃÏß³ÌµÄÓÅÏÈ¼¶.·¶Î§ÊÇ1-10
+
+####Ïß³Ì°²È«ÎÊÌâ
+	³öÏÖÏß³Ì°²È«ÎÊÌâµÄÔ­Òò:
+		1.´æÔÚÁ½¸ö»òÕßÁ½¸öÒÔÉÏµÄÏß³Ì¶ÔÏó,¶øÇÒÏß³ÌÖ®¼ä¹²Ïí×ÅÒ»¸ö×ÊÔ´
+		2.ÓÐ¶à¸öÓï¾ä²Ù×÷ÁË¹²Ïí×ÊÔ´
+	
+	½â¾ö·½°¸:Ïß³ÌÍ¬²½»úÖÆ
+		·½Ê½Ò»:Í¬²½´úÂë¿é
+			¸ñÊ½:
+				synchronized(Ëø¶ÔÏó){
+					ÐèÒª±»Í¬²½µÄ´úÂë.
+				}
+			×¢ÒâÊÂÏî:
+				1.ÈÎÒâµÄÒ»¸ö¶ÔÏó¶¼¿ÉÒÔ×÷ÎªËø¶ÔÏó.
+				2.·²ÊÇ¶ÔÏóÄÚ²¿¶¼Î¬»¤Ò»¸ö×´Ì¬µÄ,javaÍ¬²½»úÖÆ¾ÍÊÇÊ¹ÓÃÁË¶ÔÏóÖÐµÄ×´Ì¬×÷ÎªÁËËøµÄ±êÊ¶.
+				3.ÔÚÍ¬²½´úÂë¿éÖÐµ÷ÓÃÁËsleep·½·¨²¢²»ÊÇÊÍ·ÅËø¶ÔÏóµÄ.
+				4.¶àÏß³Ì²Ù×÷µÄËø¶ÔÏó±ØÐëÊÇÎ¨Ò»¹²ÏíµÄ,·ñÔòÎÞÐ§.
+				5.Èç¹û²»´æÔÚÏß³Ì°²È«ÎÊÌâÊ¹ÓÃÍ¬²½´úÂë¿é,»á½µµÍÐ§ÂÊ.
+		·½Ê½¶þ:Í¬²½º¯Êý:Ê¹ÓÃsynchronizedÐÞÊÎÒ»¸öº¯Êý.
+			×¢ÒâÊÂÏî:
+				1.Èç¹ûÊÇÒ»¸ö·Ç¾²Ì¬µÄÍ¬²½º¯ÊýµÄËø ¶ÔÏóÊÇthis¶ÔÏó,Èç¹ûÊÇ¾²Ì¬µÄÍ¬²½º¯ÊýµÄËø¶ÔÏóÊÇµ±Ç°º¯ÊýËùÊôµÄÀàµÄ×Ö½ÚÂëÎÄ¼þ(class¶ÔÏó).
+				2.Í¬²½º¯ÊýµÄËø¶ÔÏóÊÇ¹Ì¶¨µÄ,²»ÄÜÓÉÄãÀ´Ö¸¶¨µÄ.
+	ÍÆ¼ö:Í¬²½´úÂë¿é
+		1.Í¬²½´úÂë¿éµÄËø´øÏò¿ÉÒÔÓÉÎÒÃÇËæÒâÖ¸¶¨,·½±ã¿ØÖÆ.Í¬²½º¯ÊýµÄËø¶ÔÏóÊÇ¹Ì¶¨µÄ,²»ÄÜÓÉÎÒÃÇÖ¸¶¨.
+		2.Í¬²½´úÂë¿é¿ÉÒÔºÜ·½±ã¿ØÖÆ±»Í¬²½´úÂëµÄ·¶Î§,Í¬²½º¯Êý±ØÐëÊÇÕû¸öº¯ÊýµÄËùÓÐ´úÂë¶¼±»Í¬²½ÁË.
+####ËÀËø
+	javaÍ¬²½»úÖÆ½â¾öÁËÏß³Ì°²È«ÎÊÌâ,µ«ÊÇÒ²Í¬Ê±Òý·¢ËÀËøÏÖÏó.
+	³öÏÖµÄÔ­Òò:
+		1.´æÔÚÁ½¸ö»òÕßÁ½¸öÒÔÉÏµÄÏß³Ì.
+		2.´æÔÚÁ½¸ö»òÕßÁ½¸öÒÔÉÏµÄ¹²Ïí×ÊÔ´.
+	½â¾ö·½°¸:
+
+####Ïß³ÌÍ¨Ñ¶
+	Ò»¸öÏß³ÌÍê³ÉÁË×Ô¼ºµÄÈÎÎñÊ±,ÒªÍ¨ÖªÁíÍâÒ»¸öÏß³ÌÈ¥Íê³ÉÁíÍâÒ»¸öÈÎÎñ.
+	Éú²úÕßÓëÏû·ÑÕß
+	wait(): µÈ´ý Èç¹ûÏß³ÌÖ´ÐÐÁËwait·½·¨,ÄÇÃ´¸ÃÏß³Ì»á½øÈëµÈ´ýµÄ×´Ì¬,µÈ´ý×´Ì¬ÏÂµÄÏß³Ì±ØÐëÒª±»ÆäËûÏß³Ìµ÷ÓÃnotify·½·¨²ÅÄÜ»½ÐÑ.
+	notify(): »½ÐÑµÈ´ýµÄÏß³Ì.
+		×¢ÒâÊÂÏî:
+			1.wait·½·¨Óënotify·½·¨ÊÇÊôÓÚobject¶ÔÏóµÄ.
+			2.wait·½·¨Óënotify·½·¨±ØÐëÒªÔÚÍ¬²½´úÂë¿é»òÕßÍ¬²½º¯ÊýÖÐ²ÅÄÜÊ¹ÓÃ.
+			3.±ØÐëÒªÓÉËø¶ÔÏóµ÷ÓÃ.
+####ÊØ»¤Ïß³Ì(ºóÌ¨Ïß³Ì)
+    ÊØ»¤Ïß³ÌÈç¹û¹Ø±Õ,ÔòÆäËûÏß³Ì¶¼»á¹Ø±Õ.
+	Ïß³Ì¶ÔÏó.isDaemon() ÅÐ¶ÏÏß³ÌÊÇ·ñÎªÊØ»¤Ïß³Ì.
+	Ïß³Ì¶ÔÏó.setDamon(boolean)ÉèÖÃÏß³ÌÊÇ·ñÎªÊØ»¤Ïß³Ì,trueÎªÊØ»¤Ïß³Ì.
+####join·½·¨: 
+		Ò»¸öÏß³ÌÈç¹ûÖ´ÐÐjoinÓï¾ä,ÄÇÃ´¾ÍÓÐÐÂµÄÏß³Ì¼ÓÈë,Ö´ÐÐ¸ÃÓï¾äµÄÏß³Ì±ØÐëÒªÈÃ²½¸øÐÂ¼ÓÈëµÄÏß³ÌÏÈÍê³ÉÈÎÎñ,È»ºó²ÅÄÜ¼ÌÐøÖ´ÐÐ.
 	
