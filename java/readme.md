@@ -181,8 +181,8 @@
 	----------------HashSet 
 						底层是使用了哈希表来支持的.特点:存取速度快,
 	----------------TreeSet 
-						如果元素具备自然顺序的特性,那么就按照元素自然顺序地特性进行排序存储.
-								
+						底层是使用了红黑树(二叉树)数据结构实现的.特点:会对元素进行排序存储
+	----------------	
 	集合是存储对象数据的集合容器
 	集合比数组的优势:
 		1.集合可以存储任意类型的对象数据,数组只能存储同一种数组类型的数据.
@@ -270,19 +270,51 @@
 			把元素的比较规则定义在CompareTo()方法上
 		3.如果比较元素的时候,compareTo方法返回的是,那么该元素就被视为重复元素,不允许添加.(TreeSet与HasCode和equals方法是没有任何关系的)
 		4.往TreeSet添加元素的时候,如果元素本身没有具备自然顺序地特性,那元素所属的类也没有实现Comparable接口,那么必须要在创建TreeSet中传入一个比较器.
-			如何自定义定义比较器:自定义一个个类实现Comparator接口即可,把元素与元素之间的比较规则定义在compare方法中即可.
+			如何自定义定义比较器:自定义一个类实现Comparator接口即可,把元素与元素之间的比较规则定义在compare方法中即可.
 				格式:
 					class 类名 implements Comparator{
 						public int compare(Object o1, Object o2) {
 						}
 					}
 		5.如果同时存在Comparable接口和比较器,会优先使用比较器
-		推荐使用比较器.
+		推荐使用比较器.	
 	2.Tree是可以对字符串进行排序的,因为字符串已经实现了Comparable接口.
 		字符串比较规则:
 			情况一: 可以找到对应不同的字符,比较的就是对应位置上不同的字符.
 			情况二: 找不到对应不同的字符,比较的就是字符串的长度.
 
+###双列集合
+	--------|Map 特点:存储的数据都是以键值对的形式存在的,键不可重复,值可以重复.
+	-----------| HashMap 
+	-----------| TreeMap 
+	-----------| HashTable 
+
+####Map接口的方法:
+	添加:
+		put(K key,V value)				添加
+		putAll(Map<? extends K,? extends V> m)  添加集合到另一个集合
+		
+	删除:
+		remove(Object key)
+		clear()	
+		
+	获取:
+		get(object key)
+		size()
+		
+	判断:
+		containsKey(Object key)
+		containsValue(Object key)
+		isEmpty()
+		
+	
+		
+	迭代:
+		keySet()
+		values()
+		entrySet()
+		
+	
 ###泛型			
 	格式:
 		ArrayList<String> list = new ArrayList<String>();
