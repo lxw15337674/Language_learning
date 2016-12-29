@@ -16,7 +16,8 @@ public class _Map {
 
         Map<String,String> map2 = new HashMap<String,String>();
         map2.put("杨振宁","往返");
-        map2.put("阿斯顿","阿斯顿");
+        map2.put("阿斯顿",
+                "阿斯顿");
         map.putAll(map2);
         System.out.println(map);
     }

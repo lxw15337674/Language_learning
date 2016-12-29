@@ -169,8 +169,8 @@
 		2.Array.sort(数组名)	(选择排序算法)排序数组
 		3.Arrays.binarySearch(数组名.目标值)	(二分法查找)查找数值.如果能找到对应的元素,返回索引值,如果没有找到那么返回一个负数表示.
 
-###collection
-	集合的体系:
+###collection(单列集合)
+	单列集合的体系:
 	--------Collection 单例集合的根接口.
 	-------------List: 特点:有序,可重复.
 	----------------ArrayList  特点:查询速度快,增删慢. (因为数组中的元素与元素之间的内存地址是连续的)
@@ -182,7 +182,6 @@
 						底层是使用了哈希表来支持的.特点:存取速度快,
 	----------------TreeSet 
 						底层是使用了红黑树(二叉树)数据结构实现的.特点:会对元素进行排序存储
-	----------------	
 	集合是存储对象数据的集合容器
 	集合比数组的优势:
 		1.集合可以存储任意类型的对象数据,数组只能存储同一种数组类型的数据.
@@ -212,6 +211,7 @@
 			hasNext() 当前指针是否有指向元素,如果有返回true,否则返回false.
 			next()  返回当前指针指向的元素,然后指针向下移动一个单位.如果没有元素则报错
 			remove() 移除迭代器返回的最后一个元素,即指针指向的前一个元素.所以必须使用一次next(),才能使用remove()否则报错.
+
 ####list特有方法
 	List: 有序,可重复.
 	list接口下面的集合类才具备索引值.
@@ -259,8 +259,8 @@
 			 分两种情况:
 				1.如果算出元素存储的位置目前没有任何元素存储,那么该元素就可以直接存储到该位置上
 				2.如果算出元素存储的位置已经存在有其他的元素,那么会调用该元素的equals方法与该位置的元素再比较一次,
-				    如果equals返回true,那么该元素与这个位置上的元素就是为重复元素,不允许添加,
-					如果返回false,就会运行添加.
+				    如果equals返回true,那么该元素与这个位置上的元素就是为重复元素,不允许添加.
+					如果返回false,则会运行添加.
 	HashCode()默认情况下表示的是内存地址,String类已经重写了Object的hashCode方法.
 
 ####treeSet
@@ -285,36 +285,56 @@
 
 ###双列集合
 	--------|Map 特点:存储的数据都是以键值对的形式存在的,键不可重复,值可以重复.
-	-----------| HashMap 
-	-----------| TreeMap 
-	-----------| HashTable 
+	-----------| HashMap 	底层也是基于哈希表来实现的.
+				原理同上面的HashSet集合.
+	-----------| TreeMap 	基于红黑树(二叉树)数据结构来实现的. 特点:会对元素的键进行排序存储.
+				原理同上面的TreeSet集合.
 
 ####Map接口的方法:
 	添加:
-		put(K key,V value)				添加
+		put(K key,V value)		添加
 		putAll(Map<? extends K,? extends V> m)  添加集合到另一个集合
 		
 	删除:
-		remove(Object key)
-		clear()	
+		remove(Object key)		根据key键删除数据,并返回value值,如果不存在key,则返回null
+		clear()		清空
 		
 	获取:
-		get(object key)
-		size()
+		get(object key)		根据key键获取对应的值,
+		size()		长度
 		
 	判断:
-		containsKey(Object key)
+		containsKey(Object key)		
 		containsValue(Object key)
-		isEmpty()
+		isEmpty()		
 		
-	
-		
-	迭代:
-		keySet()
-		values()
-		entrySet()
-		
-	
+###Collctions(集合的工具类)
+	1.对list进行二分查找
+		int binarySearch(list,key)
+		int binarySearch(list,key,Comparator)
+	2.对list集合进行排序.
+		sort(list)
+		sort(list,comparator)
+	3.对集合取最大值或最小值
+		max(Collection)
+		max(Collection,comparator)
+		min(Collection)
+		min(Collection,comparator)
+	4.对list集合进行反转
+		reverse(list)
+	5.可以将不同步的集合变成同步的集合
+		Set synchronizedSey(Set<T> s)
+		Map synchronizedMap(Map<K,V> m)
+		List synchronizedList(List<T> list)
+###Arrays(数组的工具类)
+	1.复制数组
+		copyOf();
+	2.复制部分数组.
+		copyOfRange()
+	3.比较两个数组是否相同.
+		equals(int[],int[])
+	4.将数组变成集合
+		asList(T[]);
 ###泛型			
 	格式:
 		ArrayList<String> list = new ArrayList<String>();
