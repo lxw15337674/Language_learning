@@ -3,9 +3,13 @@
 ###jre与jdk
 	jre java运行环境.  jre = java虚拟机+核心类库(java虚拟机运行的文件)
 	jdk	 java开发工具集	 jdk = jre+java开发工具
-	
 	java.exe 启动java虚拟机编译并执行指定的class文件
-	javac.exe 启动java编译器对指定的java源文件进行编译5
+	javac.exe 启动java编译器对指定的java源文件进行编译
+###断点调试
+	可以让程序停留在指定的地方,然后去观察目前程序的数据.然后分析错误的原因.
+	step over 跳过本行代码
+	step into 进入方法内部
+	step return 结束方法,返回数据
 ###配置path环境的目的
 		控制台可以在任意的路径下找到java开发工具
 ###main方法:
@@ -934,4 +938,6 @@
 	线程对象.setDamon(boolean)设置线程是否为守护线程,true为守护线程.
 ####join方法: 
 		一个线程如果执行join语句,那么就有新的线程加入,执行该语句的线程必须要让步给新加入的线程先完成任务,然后才能继续执行.
+##正则表达式
+	匹配:matches()
 	
