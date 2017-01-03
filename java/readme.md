@@ -310,7 +310,12 @@
 	判断:
 		containsKey(Object key)		
 		containsValue(Object key)
-		isEmpty()		
+		isEmpty()	
+	
+	迭代:
+		keySet()	把map集合中的键保存到一个set中,并返回
+		values()   	把所有的值存储到一个collection集合中并返回
+		entrySet()
 		
 ###Collctions(集合的工具类)
 	1.对list进行二分查找
@@ -938,6 +943,32 @@
 	线程对象.setDamon(boolean)设置线程是否为守护线程,true为守护线程.
 ####join方法: 
 		一个线程如果执行join语句,那么就有新的线程加入,执行该语句的线程必须要让步给新加入的线程先完成任务,然后才能继续执行.
-##正则表达式
-	匹配:matches()
+##jdk1.5新特性
+####增强for循环
+	格式:
+		for(数据类型 变量名:遍历的目标){
+		}
+####可变函数
+	格式:
+		数据类型...	变量名
+	注意事项:
+		1. 如果一个函数的形参使用上了可变参数之后,那么调用该方法的时候可以传递参数也可以不传递参数.
+		2. 可变参数实际上是一个数组对象.
+		3. 一个函数形参只能存在一个可变参数,可变参数必须位于形参中的最后一个参数.
+####自动装箱与自动拆箱
+	八种基本数据类型		包装类型
+	byte					Byte
+	short					Short
+	int						Integer
+	long					Long
+	float					Float
+	double					Double
+	boolean					Boolean	
+	char					Character
+	
+	基本数据类型数据有了对应的包装类型的好处:
+	
+	
+		
+	
 	
