@@ -10,7 +10,7 @@ import java.net.DatagramSocket;
 public class SafeReceive {
     public static void main(String[] args) throws IOException, InterruptedException {
         //建立udp的服务
-        DatagramSocket socket = new DatagramSocket(9092);
+        DatagramSocket socket = new DatagramSocket(9095);
         //建立空的数据包存储数据
         byte[] buf = new byte[1024];
         DatagramPacket packet = new DatagramPacket(buf, buf.length);
