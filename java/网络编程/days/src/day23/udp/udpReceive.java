@@ -1,5 +1,5 @@
 
-package day23;
+package day23.udp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
