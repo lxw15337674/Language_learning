@@ -31,7 +31,6 @@ public class ChatServer {
         String line = null;
         while((line = socketReader.readLine())!=null){
             System.out.println("服务端接收到的数据："+ line);
-
             System.out.println("请输入回送给客户端的数据：");
             line = keyReader.readLine();
             socketOut.write(line+"\r\n");
