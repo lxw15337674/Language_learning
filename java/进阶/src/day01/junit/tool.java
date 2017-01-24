@@ -1,4 +1,4 @@
-package days.junit;
+package day01.junit;
 
 /**
  * Created by 40417 on 2017/1/23 0023.

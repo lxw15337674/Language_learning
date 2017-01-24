@@ -1,4 +1,4 @@
-package days.junit;
+package day01.junit;
 
 import org.junit.*;
 

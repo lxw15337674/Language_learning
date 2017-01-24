@@ -1,6 +1,6 @@
-package days.beanUtils;
+package day01.beanUtils;
 
-import days.introspector.Person;
+import day01.introspector.Person;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.Converter;

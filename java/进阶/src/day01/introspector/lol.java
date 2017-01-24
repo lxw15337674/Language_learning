@@ -1,4 +1,4 @@
-package days.introspector;
+package day01.introspector;
 
 import org.junit.Test;
 

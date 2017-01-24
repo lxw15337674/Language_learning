@@ -1,6 +1,5 @@
-package days.introspector;
+package day01.introspector;
 
-import javax.xml.crypto.Data;
 import java.util.Date;
 
 /**

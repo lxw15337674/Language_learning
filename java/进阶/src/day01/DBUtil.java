@@ -1,4 +1,4 @@
-package days;
+package day01;
 
 import java.io.File;
 import java.io.IOException;
