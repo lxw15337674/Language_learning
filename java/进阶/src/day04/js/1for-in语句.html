@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+
+        var a = [1,2,3,4,5];
+        for(var b in a){
+            document.write(a[b])
+        }
+        document.write("</br>")
+
+        function Person(id,name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        //创建一个对象
+        var p = new Person(110,"李希望");
+        for(var b in p){
+            document.write(b)
+            document.write("</br>")
+        }
+        for(var b in p){
+            document.write(p[b])
+            document.write("<br/>")
+        }
+
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
