@@ -4,16 +4,21 @@
 	特点:
 		1.跨平台
 		2.安全性.(javaScript的代码不能直接访问硬盘的内容)
-####javaScript与java的区别:
+	javaScript与java的区别:
 		1.javaScript是属于网景公司的产品,java是sun公司的
 		2.javaScript是基于对象的语言,java是面向对象的语言.
 		3.javaScript是解释型语,java是解释,编译型语言.
 		4.javaScript是弱类型语言,java是强类型语言
 			javaScript声明变量不需要明确是何种数据类型,任何的变量都是使用一个关键字var去声明即可.
 			java声明变量的时候必须明确该变量的数据类型. 
-####javascript查看错误
-	javaScript出现错误,网页会不显示.
-	查看错误需要在浏览器中用F12调用开发者工具重新打开网页查看错误.
+	javascript查看错误
+		javaScript出现错误,网页会不显示.
+		查看错误需要在浏览器中用F12调用开发者工具重新打开网页查看错误.
+##javaScript组成部分:
+	1.EMCAScript(基本语法)
+	2.BOM(Browser object model)浏览器对象模型
+	3.DOM
+###EMCAScript(基本语法)
 ####编写javaScript的代码
 	方式1:
 		可以使用<Script>标签体内进行编写.
@@ -219,4 +224,22 @@ Math对象常用的方法：
 		2.	prototype的值是一个对象
 		3.	可以任意修改函数的prototype属性的值。
 		4.	一个对象会自动拥有prototype的所有成员属性和方法。
+###BOM
+	浏览器对象模型中把浏览器的各个部分都是用了一个对象进行藐视,如果我们要操作浏览器的一些属性,可以通过浏览器对象模型的对象进行操作.
+		window代表了一个新开的窗口
+		location代表了地址栏对象
+		screen代表整个屏幕的对象
+####windows对象常用方法
+	open() 打开一个新窗口
+	resizeTo()  将窗口的大小更改为指定的宽度和高度值
+	moveBy()	相对于原来的窗口移动指定的x,y值.
+	moveTo()	移动窗口
+	
+	setInterval() 设置循环时间重复执行代码
+	clearInterval()	根据一个任务的ID取消的定时任务.
+	setTimeOut()	定时时间后执行指定的代码一次
+####事件
+	注册时间的方式:
+		方式1:直接在html元素上注册
 		
+		方式2:可以js代码向找到对应的对象再注册.
