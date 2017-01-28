@@ -16,19 +16,9 @@ function Tool() {
     this.find = function (arr, target) {
         for (var a in arr) {
             if (target == arr[a]) {
-                return i;
+                return a;
             }
         }
         return -1;
     }
 }
-
-function test() {
-    a = [1,2,3,4,5]
-    for(var b in a ){
-        document.write(a[b])
-    }
-
-}
-
-test()
