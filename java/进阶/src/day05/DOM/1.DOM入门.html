@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
 </head>
 <body>
-
+<a href="#">标题1</a>
+<a href="#">标题2</a>
+<a href="#">标题3</a>
+<input type="button" onClick="writeUrl()" value="设置a标的地址"/>
 </body>
+<script type="text/javascript">
+
+    function writeUrl(){
+        var links = document.links; // 获取文档中含有href的属性的标签。
+        for(var i = 0; i<links.length ; i++){
+            links[i].href = "http://www.itcast.cn";
+
+        }
+
+    }
+</script>
 </html>
