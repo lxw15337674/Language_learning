@@ -25,3 +25,4 @@
 		1、Ctrl+单击 需要查看源码的类
 		2、Ctrl+Shift+T
 	Ctrl + D            删除当前行
+	ctrl+2+l 			自动补全

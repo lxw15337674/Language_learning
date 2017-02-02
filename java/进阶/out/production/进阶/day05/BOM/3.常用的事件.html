@@ -35,15 +35,22 @@
             alert("城市改变了..");
         }
 
+        function lol() {
+            alert("lol");
+            var text = document.getElementById("lol");
+            text.innerHTML= 123;
+        }
+
 
     </script>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>无标题文档</title>
 </head>
-<body>
+<body >
 <input type="button" onclick="clickTest()"  value="单击" />
 <input type="button" ondblclick="dbClick()" value="双击"/>
+
 <span onmousemove="showTime()" onmouseout="hideTime()" >查看当前系统时间：</span><span id="timeSpan"></span>
 用户名<input type="text" onfocus="showInfo()"  onblur="hideInfo()"  /> <span id="userName"></span>
 
@@ -52,6 +59,7 @@
     <option>深圳</option>
     <option>上海</option>
 </select>
+<span id = "lol" onmousemove="lol()">test</span>
 
 
 </body>
