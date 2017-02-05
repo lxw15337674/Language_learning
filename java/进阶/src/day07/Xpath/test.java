@@ -5,7 +5,6 @@ import org.dom4j.DocumentException;
 import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 import org.junit.Test;
-
 import java.util.List;
 
 /**
