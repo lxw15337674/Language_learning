@@ -108,40 +108,40 @@
 		
 	格式:	
 		<form   method="传送方式"   action="服务器文件">
-					1.input type: 
-							当type="text"时，输入框为文本输入框;当type="password"时, 输入框为密码输入框。
-									<form>
-										<input type="text/password" name="名称" value="文本" />
-									</form>
-							当 type="radio" 时，控件为单选框,当 type="checkbox" 时，控件为复选框:
-								value：提交数据到服务器的值（后台程序PHP使用）
-								checked：当设置 checked="checked" 时，该选项被默认选中
-									<input   type="radio/checkbox"   value="值"    name="名称"   checked="checked"/>
-							当type = "submit",使用提交按钮,提交数据:
-								此处value表示按钮上显示的文字
-							当type="reset",使用重置按钮,重置输入框
-								此处value表示按钮上显示的文字
-					2、name：为文本框命名，以备后台程序ASP 、PHP使用。
-					3、value：为文本输入框设置默认值。(一般起到提示作用)
-									<form>
-										姓名：
-										<input type="text" name="myName">
-										<br/>
-										密码：
-										<input type="password" name="pass">
-									</form>
-				<textarea>标签，支持多行文本输入
-						<textarea  rows="行数" cols="列数">文本</textarea>
-						1、<textarea>标签是成对出现的，以<textarea>开始，以</textarea>结束。
-						2、cols ：多行输入域的列数。
-						3、rows ：多行输入域的行数。
-						4、在<textarea></textarea>标签之间可以输入默认值。
-				<select>标签,使用下拉列表框
-						<option value="向服务器提交的值">显示的值</option>
-						设置selected="selected"属性，则该选项就被默认选中。
-						在<select>标签中设置multiple="multiple"属性，就可以实现多选功能
-				<label>标签就是你点击文字也能在按钮或者选择框里获取焦点
-						<label for="控件id名称">	
+			1.input type: 
+					当type="text"时，输入框为文本输入框;当type="password"时, 输入框为密码输入框。
+							<form>
+								<input type="text/password" name="名称" value="文本" />
+							</form>
+					当 type="radio" 时，控件为单选框,当 type="checkbox" 时，控件为复选框:
+						value：提交数据到服务器的值（后台程序PHP使用）
+						checked：当设置 checked="checked" 时，该选项被默认选中
+							<input   type="radio/checkbox"   value="值"    name="名称"   checked="checked"/>
+					当type = "submit",使用提交按钮,提交数据:
+						此处value表示按钮上显示的文字
+					当type="reset",使用重置按钮,重置输入框
+						此处value表示按钮上显示的文字
+			2、name：为文本框命名，以备后台程序ASP 、PHP使用。
+			3、value：为文本输入框设置默认值。(一般起到提示作用)
+							<form>
+								姓名：
+								<input type="text" name="myName">
+								<br/>
+								密码：
+								<input type="password" name="pass">
+							</form>
+		<textarea>标签，支持多行文本输入
+				<textarea  rows="行数" cols="列数">文本</textarea>
+				1、<textarea>标签是成对出现的，以<textarea>开始，以</textarea>结束。
+				2、cols ：多行输入域的列数。
+				3、rows ：多行输入域的行数。
+				4、在<textarea></textarea>标签之间可以输入默认值。
+		<select>标签,使用下拉列表框
+				<option value="向服务器提交的值">显示的值</option>
+				设置selected="selected"属性，则该选项就被默认选中。
+				在<select>标签中设置multiple="multiple"属性，就可以实现多选功能
+		<label>标签就是你点击文字也能在按钮或者选择框里获取焦点
+				<label for="控件id名称">	
 		
 		
 		
