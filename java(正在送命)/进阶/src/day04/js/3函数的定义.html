@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+
+        function  add(a,b){
+            var sum = a+b;
+            document.write("两个参数的总和："+ sum);
+            //return sum;
+        }
+        function  add(a,b,c){
+            var sum = a+b+c;
+            document.write("两个参数的总和："+ sum);
+            //return sum;
+        }
+
+        add(1,2);//直接覆盖前面的函数导致前面的函数不能使用.
+
+
+        document.write("</br>")
+        function add() {
+            var sum = 0;
+            for(var a in arguments){
+                sum+=arguments[a]
+            }
+            document.write(sum);
+        }
+
+
+
+        //调用函数
+        add(11,21,13,14);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

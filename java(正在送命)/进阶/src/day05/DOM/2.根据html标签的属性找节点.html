@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+
+        function showText() {
+            var inputNode = document.getElementById("username");
+            inputNode.value = "设置好了文本";
+        }
+
+        function showImage() {
+            alert("lol");
+            var images = document.getElementsByTagName("img");
+            for (var i = 0; i < images.length; i++) {
+                images[i].src = "user.png";
+                images[i].width = "100";
+                images[i].height = "100";
+
+            }
+        }
+        function showDiv() {
+            var divs = document.getElementsByName("info");
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].innerHTML = "哈哈".fontcolor("red");
+            }
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="username"/><input type="button" onclick="showText()" value="设置文本"/>
+<hr/>
+<img src="">
+<img src="">
+<img src="">
+<input type="button" onclick="showImage()" value="显示图片">
+<hr/>
+<div name="info"></div>
+<div name="info"></div>
+<div name="info"></div>
+<input type="button" onclick="showDiv()" value="设置div内容"/>
+</body>
+</html>

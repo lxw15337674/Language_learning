@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>Servlet</servlet-name>
+        <servlet-class>Servlet.helloServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Get_Post</servlet-name>
+        <servlet-class>Servlet.Get_Post</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>for_ad</servlet-name>
+        <servlet-class>Servlet.forad</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet</servlet-name>
+        <url-pattern>/first</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Get_Post</servlet-name>
+        <url-pattern>/get_post</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>for_ad</servlet-name>
+        <url-pattern>/ad</url-pattern>
+    </servlet-mapping>
+</web-app>

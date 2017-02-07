@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        function addFile() {
+            //先要创建一个tr对象
+            var trNode = document.createElement("tr");
+            var tdNode1 = document.createElement("td");
+            var tdNode2 = document.createElement("td");
+
+            tdNode1.innerHTML = "<input type='file'/>";
+            tdNode2.innerHTML = "<a href='#'>删除附件</a>";
+            //把td的节点添加到tr节点上
+            trNode.appendChild(tdNode1);
+            trNode.appendChild(tdNode2);
+
+            var tbodyNode = document.getElementsByTagName("tbody")[0];
+            var lastRow = document.getElementById("lastRow");
+
+            tbodyNode.insertBefore(trNode,lastRow);
+
+        }
+
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><input type="file"/></td><td><a href="#" onclick="delFile(this)" >删除附件</a></td>
+    </tr>
+
+    <tr id="lastRow">
+        <td colspan="2"><input onclick="addFile()" type="button" value="添加附件"/></td>
+    </tr>
+</table>
+</body>
+</html>
