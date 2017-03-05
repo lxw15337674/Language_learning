@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        var str = "hello123";
+        var reg = /^[A-Z0-9]+/;
+//        alert(reg.test(str));
+
+        var str = "da jia hao hao xue xi a";
+        var reg = /\b[a-z]{3}\b/ig;
+        var line = "";
+        while ((line = reg.exec(str))!=null){
+            document.write(line+"<br/>");
+        }
+
+
+
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>

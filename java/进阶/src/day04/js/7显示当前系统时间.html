@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        function getCurrentTime() {
+            //获取到当前的系统时间
+            var date = new Date();
+            with (date) {
+                var time = getFullYear() + " " + (getMonth() + 1) + " " +getDate()+" "+getSeconds();
+            }
+            //设置span对象
+            var a = document.getElementById("time");
+            //设置span标签体的内容
+            a.innerHTML = time.fontcolor("red");
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    当前系统时间:<span id="time"></span>
+
+    <script>
+        window.setInterval("getCurrentTime()",1000);
+    </script>
+
+</body>
+</html>
