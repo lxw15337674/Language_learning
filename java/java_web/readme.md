@@ -1,4 +1,4 @@
-####软件的结构
+#### 软件的结构
 	C/S(Client Server 客户端-服务器端)结构:即各种应用软件
 		特点:
 			1.必须下载特定的客户端程序
@@ -8,10 +8,10 @@
 		特点:
 			1.不需要安装特定的客户端
 			2.只需要升级服务端,浏览器不需要升级
-###web服务软件
+### web服务软件
 	作用:把本地的资源共享给外部访问.
-###tomcat
-####Tomcat目录结构
+### tomcat
+#### Tomcat目录结构
 	|-bin: 存放tomcat的命令。
 			catalina.bat 命令：
 				startup.bat  -> catalina.bat start	
@@ -34,7 +34,7 @@
 
 	|-work： tomcat的运行目录。jsp运行时产生的临时文件就存放在这里	
 	
-####Servlet
+#### Servlet
 	Servlet : 用java语言来编写动态资源的开发技术。
 	
 	特点：
@@ -87,7 +87,7 @@
 							response.getWriter().writer();   发送字符实体内容
 							response.getOutputStream().writer()  发送字节实体内容 
 		4.tomcat服务器把response对象的内容转换成响应格式内容,再发送给浏览器解析
-###获取传递的请求参数
+### 获取传递的请求参数
 	GET方式： 参数放在URI后面
 	POST方式： 参数放在实体内容中
 		获取GET方式参数：
@@ -102,13 +102,13 @@
 			request.getParameterValue("参数名“)；根据参数名获取参数值（可以获取多个值的参数）
 
 			request.getParameterNames();   获取所有参数名称列表 
-####请求参数编码问题
+#### 请求参数编码问题
 	修改POST方式参数编码：
 		全局设置编码:
 			在调用request.getParameter()前设置查询的码表:request.setCharacterEncoding("utf-8");
 	修改GET方式参数编码：
 		手动解码：String name = new String(name.getBytes("iso-8859-1"),"utf-8");
-####Servlet的映射路径
+#### Servlet的映射路径
 	精确匹配		/first				http://localhost:8080/day10/first
 					/itcast/demo1		http://localhost:8080/day10/itcast/demo1
 	模糊匹配		/*					http://localhost:8080/day10/*
@@ -121,7 +121,7 @@
 		3）当有输入的URL有多个servlet同时被匹配的情况下：
 				3.1 精确匹配优先。（长的最像优先被匹配）
 				3.2 以后缀名结尾的模糊url-pattern优先级最低！！！
-####servlet缺省路径
+#### servlet缺省路径
 	servlet的缺省路径是在tomcat服务器内置的一个路径.
 	该路径对应的是一个DefaultServlet(缺省servlet).用于解析web应用的静态资源文件.
 	
@@ -134,7 +134,7 @@
 		5）如果找不到该文件，则返回404错误页面。
 			
 			结论： 先找动态资源，再找静态资源。
-####Servlet生命周期
+#### Servlet生命周期
 	
 
 
@@ -142,3 +142,4 @@
 
 	
 	
+

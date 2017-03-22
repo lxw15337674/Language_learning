@@ -1,16 +1,16 @@
-##XML
+## XML
 	作用:
 		1.作为软件配置文件
 		2.作为小型的数据库
-###XML语法:
+### XML语法:
 	1.所有 XML 元素都须有关闭标签
 	2.XML 标签对大小写敏感
 	3.XML 文档必须有根元素
 	4.XML 的属性值须加引号
 	5.在 XML 中，空格会被保留
-####CDATA块
+#### CDATA块
 	作用:可以让一些需要进行包含的特殊字符的内容统一进行原样输出.
-###DOm解析与SAX解析的区别
+### DOm解析与SAX解析的区别
 	1.Dom原理： 一次性加载xml文档，不适合大容量的文件读取
 	  SAX原理:	加载一点，读取一点，处理一点。适合大容量文件的读取
 	2.DOM解析可以任意进行增删改成
@@ -20,7 +20,7 @@
 	4.DOM解析面向对象的编程方法（Node，Element，Attribute）,Java开发者编码比较简单。
 	  SAX解析基于事件的编程方法。java开发编码相对复杂		
 		
-####解析工具
+#### 解析工具
 	DOM解析:
 		1.JAXP
 		2.JDOM
@@ -28,8 +28,8 @@
 			三大框架(默认读取xml的工具就是DOM4J)
 	SAX解析:
 		1.sax解析工具
-###Dom解析
-####DOM4J
+### Dom解析
+#### DOM4J
 	读取:
 		节点分类:
 			标签节点 
@@ -87,7 +87,7 @@
 			删除
 				Element.detach();  删除标签  
 				Attribute.detach();  删除属性
-####xPath
+#### xPath
 	作用:
 		主要是用于快速获取所需的节点对象
 	在dom4j下使用xpath:
@@ -105,7 +105,7 @@
 		@     属性            表示选择属性节点
 		and     关系          表示条件的与关系（等价于&&）
 		text()    文本           表示选择文本内容
-###SAX解析
+### SAX解析
 	核心的API：
 		SAXParser类： 用于读取和解析xml文件对象
 			parse（File f, DefaultHandler dh）方法： 解析xml文件
@@ -133,3 +133,4 @@
 			parser.parse(new File("src/day07/SAX/lol.xml"), new MyDefaultHandler());
 
 	
+

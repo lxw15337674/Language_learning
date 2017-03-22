@@ -29,7 +29,7 @@
 		*args表示一个tuple
 		**kw表示一个dict
 	Dict{}使用键-值存储，具有极快的查找速度
-####列表list操作的函数和方法:
+#### 列表list操作的函数和方法:
 		列表操作包含以下函数:
 		1、cmp(list1, list2)：比较两个列表的元素 
 		2、len(list)：列表元素个数 
@@ -52,13 +52,13 @@
 		7、list.remove(obj)：移除列表中某个值的第一个匹配项
 		8、list.reverse()：反向列表中元素
 		9、list.sort([func])：对原列表进行排序
-####元组tuple的函数
+#### 元组tuple的函数
 		1、cmp(tuple1, tuple2)：比较两个元组元素。
 		2、len(tuple)：计算元组元素个数。
 		3、max(tuple)：返回元组中元素最大值。
 		4、min(tuple)：返回元组中元素最小值。
 		5、tuple(seq)：将列表转换为元组。
-####字典dict的函数和方法:
+#### 字典dict的函数和方法:
 		1、cmp(dict1, dict2)：比较两个字典元素。
 		2、len(dict)：计算字典元素个数，即键的总数。
 		3、str(dict)：输出字典可打印的字符串表示。
@@ -73,4 +73,6 @@
 		8、radiansdict.setdefault(key, default=None)：和get()类似, 但如果键不已经存在于字典中，将会添加键并将值设为default
 		9、radiansdict.update(dict2)：把字典dict2的键/值对更新到dict里
 		10、radiansdict.values()：以列表返回字典中的所有值
+
+
 

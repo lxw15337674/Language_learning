@@ -1,7 +1,7 @@
-#sql语法
-###[mysql数据类型](http://www.w3school.com.cn/sql/sql_datatypes.asp)
-##SQL 约束
-####NOT NULL 非空约束
+# sql语法
+### [mysql数据类型](http://www.w3school.com.cn/sql/sql_datatypes.asp)
+## SQL 约束
+#### NOT NULL 非空约束
 	NOT NULL 约束强制列不接受 NULL 值。
 		实例:
 			CREATE TABLE Persons
@@ -12,7 +12,7 @@
 			Address varchar(255),
 			City varchar(255)
 			)
-####UNIQUE 唯一约束
+#### UNIQUE 唯一约束
 	UNIQUE 约束唯一标识数据库表中的每条记录。
 	UNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。
 	PRIMARY KEY 拥有自动定义的 UNIQUE 约束。
@@ -44,7 +44,7 @@
 			MySQL:
 				ALTER TABLE Persons
 				DROP INDEX uc_PersonID
-####PRIMARY KEY 主键约束
+#### PRIMARY KEY 主键约束
 		实例:
 			MySQL:
 				CREATE TABLE Persons
@@ -63,7 +63,7 @@
 			MySQL:
 				ALTER TABLE Persons
 				DROP PRIMARY KEY
-####FOREIGN KEY 外键约束
+#### FOREIGN KEY 外键约束
 	一个表中的 FOREIGN KEY 指向另一个表中的 PRIMARY KEY。
 		实例:
 			下面的 SQL 在 "Orders" 表创建时为 "Id_P" 列创建 FOREIGN KEY：
@@ -85,7 +85,7 @@
 				MySQL:
 				ALTER TABLE Orders
 				DROP FOREIGN KEY fk_PerOrders
-####CHECK 限制约束
+#### CHECK 限制约束
 	CHECK 约束用于限制列中的值的范围。
 		实例:
 			下面的 SQL 在 "Persons" 表创建时为 "Id_P" 列创建 CHECK 约束。CHECK 约束规定 "Id_P" 列必须只包含大于 0 的整数。
@@ -115,7 +115,7 @@
 			撤销 CHECK 约束:
 				ALTER TABLE Persons
 				DROP CHECK chk_Person
-####DEFAULT 默认值约束
+#### DEFAULT 默认值约束
 		实例:
 			在 "Persons" 表创建时为 "City" 列创建 DEFAULT 约束：
 				CREATE TABLE Persons
@@ -143,39 +143,39 @@
 			MySQL:
 				ALTER TABLE Persons
 				ALTER City DROP DEFAULT
-##SQL基本语句
-####select
+## SQL基本语句
+#### select
 				语法:SELECT 列名称 FROM 表名称
 	关键词: DISTINCT : 用于返回唯一不同的值
 				语法:SELECT DISTINCT 列名称 FROM 表名称
-####where:
+#### where:
 				语法:SELECT 列名称 FROM 表名称 WHERE 列 运算符 值
 	LIKE   搜索某种模式
 	BETWEEN	在某个范围内
-####ORDER BY 子句:
+#### ORDER BY 子句:
 	用于根据指定的列对结果以字母或数字顺序进行排序。
 	使用 DESC 关键字,可以降序
 	
 				语法:SELECT 列名称, 列名称 FROM 表名称 ORDER BY 列名称 DESC
-####insert
+#### insert
 	用于向表格中插入新的行
 				语法:INSERT INTO  表名称  (列1, 列2,...) VALUES (值1, 值2,....)
-####update
+#### update
 	用于修改表中的数据。
 				语法：UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值
-####delete
+#### delete
 	用于删除表中的行
 				语法:DELETE FROM 表名称 WHERE 列名称 = 值
 	删除所有行:
 	可以在不删除表的情况下删除所有的行。这意味着表的结构、属性和索引都是完整的：
 				语法:DELETE FROM table_name或者：DELETE * FROM table_name
-##SQL高级语句		
-####top
+## SQL高级语句		
+#### top
 	用于规定要返回的记录的数目
 				MySQL 语法:SELECT column_name(s)
 						  FROM table_name
 						  LIMIT number
-####like
+#### like
 	用于在 WHERE 子句中搜索列中的指定模式
 				语法:SELECT column_name(s)
 					FROM table_name
@@ -195,7 +195,7 @@
 		例子:从上面的 "Persons" 表中选取居住的城市以 "A" 或 "L" 或 "N" 开头的人：
 			SELECT * FROM Persons
 			WHERE City LIKE '[ALN]%'
-####BETWEEN 
+#### BETWEEN 
 	操作符 BETWEEN ... AND 会选取介于两个值之间的数据范围。这些值可以是数值、文本或者日期。
 				语法:SELECT column_name(s)
 					FROM table_name
@@ -249,7 +249,7 @@
 					FROM table_name1
 					FULL JOIN table_name2 
 					ON table_name1.column_name=table_name2.column_name
-####union
+#### union
 	UNION 操作符用于合并两个或多个 SELECT 语句的结果集。
 	请注意，UNION 内部的 SELECT 语句必须拥有相同数量的列。列也必须拥有相似的数据类型。同时，每条 SELECT 语句中的列的顺序必须相同。
 				语法:
@@ -262,7 +262,7 @@
 					UNION ALL
 					SELECT column_name(s) FROM table_name2
 					另外，UNION 结果集中的列名总是等于 UNION 中第一个 SELECT 语句中的列名。
-####SELECT INTO
+#### SELECT INTO
 	可用于创建表的备份复件。
 	SELECT INTO 语句从一个表中选取数据，然后把数据插入另一个表中。
 	SELECT INTO 语句常用于创建表的备份复件或者用于对记录进行存档。
@@ -301,7 +301,7 @@
 				FROM Persons
 				INNER JOIN Orders
 				ON Persons.Id_P=Orders.Id_P
-####INDEX 语句
+#### INDEX 语句
 	CREATE INDEX 语句用于在表中创建索引。
 	在不读取整个表的情况下，索引使数据库应用程序可以更快地查找数据。
 			 语法:
@@ -312,10 +312,10 @@
 				删除索引:
 				用于 MySQL 的语法:
 					ALTER TABLE table_name DROP INDEX index_name
-####DROP 语句:
+#### DROP 语句:
 		如果我们仅仅需要除去表内的数据，但并不删除表本身:
 			语法:TRUNCATE TABLE 表名称
-####ALTER TABLE 语句
+#### ALTER TABLE 语句
 		ALTER TABLE 语句用于在已有的表中添加、修改或删除列。
 			语法:
 			如需在表中添加列，请使用下列语法:
@@ -328,14 +328,14 @@
 			要改变表中列的数据类型，请使用下列语法：
 				ALTER TABLE table_name
 				ALTER COLUMN column_name datatype
-####SQL NULL 值
+#### SQL NULL 值
 		IS NULL 语法:
 				SELECT LastName,FirstName,Address FROM Persons
 				WHERE Address IS NULL
 		IS NOT NULL 语法:
 				SELECT LastName,FirstName,Address FROM Persons
 				WHERE Address IS NOT NULL
-##VIEW（视图）
+## VIEW（视图）
 	在 SQL 中，视图是基于 SQL 语句的结果集的可视化的表。
 	视图包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。我们可以向视图添加 SQL 函数、WHERE 以及 JOIN 语句，我们也可以提交数据，就像这些来自于某个单一的表。
 	注释：数据库的设计和结构不会受到视图中的函数、where 或 join 语句的影响。
@@ -356,7 +356,7 @@
 		    撤销视图:
 				SQL DROP VIEW Syntax
 				DROP VIEW view_name
-##Date函数
+## Date函数
 	MySQL Date 函数:
 		NOW()	返回当前的日期和时间
 		CURDATE()	返回当前的日期
@@ -379,37 +379,37 @@
 				请注意，OrderDate 列规定 NOW() 作为默认值。作为结果，当您向表中插入行时，当前日期和时间自动插入列中。
 				现在，我们希望在 "Orders" 表中插入一条新记录：
 				INSERT INTO Orders (ProductName) VALUES ('Computer')
-##SQL函数
-####AVG()函数：
+## SQL函数
+#### AVG()函数：
 	返回数值列的平均值
 		语法：
 			SELECT AVG(column_name) FROM table_name
-####COUNT()函数
+#### COUNT()函数
 	返回匹配制定条件的行数
 		语法：
 			SELECT COUNT(*) FROM table_name;
-####First()函数
+#### First()函数
 	返回指定的列中第一个记录的值。
 		MYSQL语法：
 			SELECT column_name FROM table_name
 			ORDER BY column_name ASC
 			LIMIT 1;
-####LAST() 函数
+#### LAST() 函数
 	函数返回指定的列中最后一个记录的值。
 		MySQL 语法：
 			SELECT column_name FROM table_name
 			ORDER BY column_name DESC
 			LIMIT 1;
-####MAX，MIN() 函数
+#### MAX，MIN() 函数
 	函数返回指定列的最大，最小值。
 		语法：
 			SELECT MAX(column_name) FROM table_name
 			SELECT MIN(column_name) FROM table_name;
-####SUM() 函数
+#### SUM() 函数
 	函数返回数值列的总数
 		语法:
 			SELECT SUM(column_name) FROM table_name;
-####GROUP BY 语句
+#### GROUP BY 语句
 		GROUP BY 语句用于结合聚合函数，根据一个或多个列对结果集进行分组。
 			语法：
 				SELECT column_name, aggregate_function(column_name)
@@ -427,13 +427,13 @@
 				HAVING aggregate_function(column_name) operator value;
 			实例：
 				http://www.runoob.com/sql/sql-having.html
-####UCASE()， LCASE()  函数
+#### UCASE()， LCASE()  函数
 	UCASE() 函数把字段的值转换为大写。
 	LCASE() 函数把字段的值转换为小写。
 			语法：	
 				SELECT UCASE(column_name) FROM table_name;
 				SELECT LCASE(column_name) FROM table_name;
-####MID() 函数
+#### MID() 函数
 	函数用于从文本字段中提取字符。
 			语法：
 				SELECT MID(column_name,start,length) FROM table_name;
@@ -442,19 +442,19 @@
 		start		必需。规定开始位置（起始值是 1）。
 		length		可选。要返回的字符数。如果省略，则 MID() 函数返回剩余文本。
 			
-####LEN() 函数
+#### LEN() 函数
 	返回文本字段中值的长度。
 		MySQL 中函数为 LENGTH():
 			语法：
 				SELECT LENGTH(column_name) FROM table_name;
-####ROUND() 函数
+#### ROUND() 函数
 	用于把数值字段舍入为指定的小数位数。
 			语法：
 				SELECT ROUND(column_name,decimals) FROM table_name;
 			参数	描述
 			column_name	必需。要舍入的字段。
 			decimals	必需。规定要返回的小数位数。
-####FORMAT() 函数
+#### FORMAT() 函数
 	用于对字段的显示进行格式化。
 			语法：
 			SELECT FORMAT(column_name,format) FROM table_name;
@@ -464,4 +464,6 @@
 
 	
 			
+
+
 
