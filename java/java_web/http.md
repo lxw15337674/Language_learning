@@ -1,14 +1,14 @@
-###httpåè®®
-	æµè§ˆå™¨ ------> æœåŠ¡å™¨  è¯·æ±‚(request)
-	æœåŠ¡å™¨ ------> æµè§ˆå™¨  å“åº”(response)
+### httpÐ­Òé
+	ä¯ÀÀÆ÷ ------> ·þÎñÆ÷  ÇëÇó(request)
+	·þÎñÆ÷ ------> ä¯ÀÀÆ÷  ÏìÓ¦(response)
 	
-	tcp/ipåè®®: å…³æ³¨çš„æ˜¯å®¢æˆ·ç«¯ä¸ŽæœåŠ¡å™¨ä¹‹é—´æ•°æ®æ˜¯å¦ä¼ è¾“æˆåŠŸ
-	httpåè®®: å¯¹æµè§ˆå™¨å®¢æˆ·ç«¯ä¸ŽæœåŠ¡å™¨ç«¯ä¹‹é—´çš„æ•°æ®ä¼ è¾“çš„æ ¼å¼è§„èŒƒ.
-				æ˜¯åœ¨tcp/ipåè®®ä¹‹å‰å°è£…çš„ä¸€å±‚åè®®.
-####æŸ¥çœ‹httpåè®®çš„å·¥å…·	
+	tcp/ipÐ­Òé: ¹Ø×¢µÄÊÇ¿Í»§¶ËÓë·þÎñÆ÷Ö®¼äÊý¾ÝÊÇ·ñ´«Êä³É¹¦
+	httpÐ­Òé: ¶Ôä¯ÀÀÆ÷¿Í»§¶ËÓë·þÎñÆ÷¶ËÖ®¼äµÄÊý¾Ý´«ÊäµÄ¸ñÊ½¹æ·¶.
+				ÊÇÔÚtcp/ipÐ­ÒéÖ®Ç°·â×°µÄÒ»²ãÐ­Òé.
+#### ²é¿´httpÐ­ÒéµÄ¹¤¾ß	
 	chrome--> F12--> Network--> Headers
-####httpåè®®å†…å®¹
-	è¯·æ±‚ï¼ˆæµè§ˆå™¨-ã€‹æœåŠ¡å™¨ï¼‰
+#### httpÐ­ÒéÄÚÈÝ
+	ÇëÇó£¨ä¯ÀÀÆ÷-¡··þÎñÆ÷£©
 		GET /day09/hello HTTP/1.1
 		Host: localhost:8080
 		User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0
@@ -17,107 +17,107 @@
 		Accept-Encoding: gzip, deflate
 		Connection: keep-alive
 	
-	å“åº”ï¼ˆæœåŠ¡å™¨-ã€‹æµè§ˆå™¨ï¼‰
+	ÏìÓ¦£¨·þÎñÆ÷-¡·ä¯ÀÀÆ÷£©
 		HTTP/1.1 200 OK
 		Server: Apache-Coyote/1.1
 		Content-Length: 24
 		Date: Fri, 30 Jan 2015 01:54:57 GMT
 
 		this is hello servlet!!!
-###httpè¯·æ±‚(request)
-	-è¯·æ±‚è¡Œ
+### httpÇëÇó(request)
+	-ÇëÇóÐÐ
 		GET /day09/hello HTTP/1.1        
-	-è¯·æ±‚å¤´
+	-ÇëÇóÍ·
 		Host: localhost:8080                  
 		User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0
 		Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 		Accept-Language: zh-cn,en-us;q=0.8,zh;q=0.5,en;q=0.3
 		Accept-Encoding: gzip, deflate
 		Connection: keep-alive
-	-ä¸€ä¸ªç©ºè¡Œ
+	-Ò»¸ö¿ÕÐÐ
 	
-	-ï¼ˆå¯é€‰ï¼‰å®žä½“å†…å®¹
+	-£¨¿ÉÑ¡£©ÊµÌåÄÚÈÝ
 		name=eric&password=123456  
 		
-####è¯·æ±‚è¡Œ
-	ç”¨äºŽæè¿°å®¢æˆ·ç«¯çš„è¯·æ±‚æ–¹å¼,è¯·æ±‚çš„èµ„æºåç§°,ä»¥åŠä½¿ç”¨çš„HTTPåè®®ç‰ˆæœ¬å·.
-		ä¾‹å­: GET /day09/hello HTTP/1.1 
+#### ÇëÇóÐÐ
+	ÓÃÓÚÃèÊö¿Í»§¶ËµÄÇëÇó·½Ê½,ÇëÇóµÄ×ÊÔ´Ãû³Æ,ÒÔ¼°Ê¹ÓÃµÄHTTPÐ­Òé°æ±¾ºÅ.
+		Àý×Ó: GET /day09/hello HTTP/1.1 
 		
-	httpåè®®ç‰ˆæœ¬
-		http1.0ï¼šå½“å‰æµè§ˆå™¨å®¢æˆ·ç«¯ä¸ŽæœåŠ¡å™¨ç«¯å»ºç«‹è¿žæŽ¥ä¹‹åŽï¼Œåªèƒ½å‘é€ä¸€æ¬¡è¯·æ±‚ï¼Œä¸€æ¬¡è¯·æ±‚ä¹‹åŽè¿žæŽ¥å…³é—­ã€‚
-		http1.1ï¼šå½“å‰æµè§ˆå™¨å®¢æˆ·ç«¯ä¸ŽæœåŠ¡å™¨ç«¯å»ºç«‹è¿žæŽ¥ä¹‹åŽï¼Œå¯ä»¥åœ¨ä¸€æ¬¡è¿žæŽ¥ä¸­å‘é€å¤šæ¬¡è¯·æ±‚ã€‚ï¼ˆåŸºæœ¬éƒ½ä½¿ç”¨1.1ï¼‰
+	httpÐ­Òé°æ±¾
+		http1.0£ºµ±Ç°ä¯ÀÀÆ÷¿Í»§¶ËÓë·þÎñÆ÷¶Ë½¨Á¢Á¬½ÓÖ®ºó£¬Ö»ÄÜ·¢ËÍÒ»´ÎÇëÇó£¬Ò»´ÎÇëÇóÖ®ºóÁ¬½Ó¹Ø±Õ¡£
+		http1.1£ºµ±Ç°ä¯ÀÀÆ÷¿Í»§¶ËÓë·þÎñÆ÷¶Ë½¨Á¢Á¬½ÓÖ®ºó£¬¿ÉÒÔÔÚÒ»´ÎÁ¬½ÓÖÐ·¢ËÍ¶à´ÎÇëÇó¡££¨»ù±¾¶¼Ê¹ÓÃ1.1£©
 	
-	è¯·æ±‚èµ„æº
-		URL:ç»Ÿä¸€èµ„æºå®šä½ç¬¦,åªèƒ½å®šä½äº’è”ç½‘èµ„æºã€‚æ˜¯URIçš„å­é›†ã€‚
-			http://localhost:8080/day09/testImg.htmlã€‚
-		URI: ç»Ÿä¸€èµ„æºæ ‡è®°ç¬¦ã€‚/day09/helloã€‚ç”¨äºŽæ ‡è®°ä»»ä½•èµ„æºã€‚å¯ä»¥æ˜¯æœ¬åœ°æ–‡ä»¶ç³»ç»Ÿï¼Œä¹Ÿå¯ä»¥æ˜¯äº’è”ç½‘ã€‚
+	ÇëÇó×ÊÔ´
+		URL:Í³Ò»×ÊÔ´¶¨Î»·û,Ö»ÄÜ¶¨Î»»¥ÁªÍø×ÊÔ´¡£ÊÇURIµÄ×Ó¼¯¡£
+			http://localhost:8080/day09/testImg.html¡£
+		URI: Í³Ò»×ÊÔ´±ê¼Ç·û¡£/day09/hello¡£ÓÃÓÚ±ê¼ÇÈÎºÎ×ÊÔ´¡£¿ÉÒÔÊÇ±¾µØÎÄ¼þÏµÍ³£¬Ò²¿ÉÒÔÊÇ»¥ÁªÍø¡£
 	
-	è¯·æ±‚æ–¹å¼
-		å¸¸ç”¨çš„è¯·æ±‚æ–¹å¼ï¼š GET  å’Œ POST	
-			è¡¨å•æäº¤ï¼š
-				<form action="æäº¤åœ°å€" method="GET/POST">	
+	ÇëÇó·½Ê½
+		³£ÓÃµÄÇëÇó·½Ê½£º GET  ºÍ POST	
+			±íµ¥Ìá½»£º
+				<form action="Ìá½»µØÖ·" method="GET/POST">	
 					
 				<form>
-	GETä¸ŽPoståŒºåˆ«
-		Getæ–¹å¼æäº¤
-			1.åœ°å€æ (URI)ä¼šè·Ÿä¸Šå‚æ•°æ•°æ®.ä»¥?å¼€å¤´,å¤šä¸ªå‚æ•°ä¹‹é—´ä»¥&åˆ†å‰².
-			2.Getæäº¤å‚æ•°æ•°æ®æœ‰é™åˆ¶,ä¸è¶…è¿‡1kb
-			3.Getæ–¹å¼ä¸æ˜¯å’Œæäº¤æ•æ„Ÿå¯†ç .
-			4.æ³¨æ„:æµè§ˆå™¨ç›´æŽ¥è®¿é—®çš„è¯·æ±‚,é»˜è®¤æäº¤æ–¹å¼æ˜¯GETæ–¹å¼.
-		Postæ–¹å¼æäº¤:
-			1.å‚æ•°ä¸ä¼šè·Ÿç€URIåŽé¢,å‚æ•°è€Œæ˜¯è·Ÿåœ¨è¯·æ±‚çš„å®žä½“å†…å®¹ä¸­.
-			2.POSTæäº¤çš„å‚æ•°æ•°æ®æ²¡æœ‰é™åˆ¶ã€‚
-			3.POSTæ–¹å¼æäº¤æ•æ„Ÿæ•°æ®ã€‚
-####è¯·æ±‚å¤´
-	ç”±å¤šä¸ªkey-valueå¯¹è±¡, ç”¨äºŽæè¿°å®¢æˆ·ç«¯è¯·æ±‚çš„ä¸»æœºå’Œå®¢æˆ·ç«¯çš„ä¸€äº›çŽ¯å¢ƒä¿¡æ¯.
-		Accept: text/html,image/*      -- æµè§ˆå™¨æŽ¥å—çš„æ•°æ®ç±»åž‹
-		Accept-Charset: ISO-8859-1     -- æµè§ˆå™¨æŽ¥å—çš„ç¼–ç æ ¼å¼
-		Accept-Encoding: gzip,compress  --æµè§ˆå™¨æŽ¥å—çš„æ•°æ®åŽ‹ç¼©æ ¼å¼
-		Accept-Language: en-us,zh-       --æµè§ˆå™¨æŽ¥å—çš„è¯­è¨€
-		Host: www.it315.org:80          --ï¼ˆå¿…é¡»çš„ï¼‰å½“å‰è¯·æ±‚è®¿é—®çš„ç›®æ ‡åœ°å€ï¼ˆä¸»æœº:ç«¯å£ï¼‰
-		If-Modified-Since: Tue, 11 Jul 2000 18:23:51 GMT  --æµè§ˆå™¨æœ€åŽçš„ç¼“å­˜æ—¶é—´
-		Referer: http://www.it315.org/index.jsp      -- å½“å‰è¯·æ±‚æ¥è‡ªäºŽå“ªé‡Œ
-		User-Agent: Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0)  --æµè§ˆå™¨ç±»åž‹
-		Cookie:name=eric                     -- æµè§ˆå™¨ä¿å­˜çš„cookieä¿¡æ¯
-		Connection: close/Keep-Alive            -- æµè§ˆå™¨è·ŸæœåŠ¡å™¨è¿žæŽ¥çŠ¶æ€ã€‚close: è¿žæŽ¥å…³é—­  keep-aliveï¼šä¿å­˜è¿žæŽ¥ã€‚
-		Date: Tue, 11 Jul 2000 18:23:51 GMT      -- è¯·æ±‚å‘å‡ºçš„æ—¶é—´
-####å®žä½“å†…å®¹	
-	åªæœ‰POSTæäº¤çš„å‚æ•°ä¼šæ”¾åˆ°å®žä½“å†…å®¹ä¸­
+	GETÓëPostÇø±ð
+		Get·½Ê½Ìá½»
+			1.µØÖ·À¸(URI)»á¸úÉÏ²ÎÊýÊý¾Ý.ÒÔ?¿ªÍ·,¶à¸ö²ÎÊýÖ®¼äÒÔ&·Ö¸î.
+			2.GetÌá½»²ÎÊýÊý¾ÝÓÐÏÞÖÆ,²»³¬¹ý1kb
+			3.Get·½Ê½²»ÊÇºÍÌá½»Ãô¸ÐÃÜÂë.
+			4.×¢Òâ:ä¯ÀÀÆ÷Ö±½Ó·ÃÎÊµÄÇëÇó,Ä¬ÈÏÌá½»·½Ê½ÊÇGET·½Ê½.
+		Post·½Ê½Ìá½»:
+			1.²ÎÊý²»»á¸ú×ÅURIºóÃæ,²ÎÊý¶øÊÇ¸úÔÚÇëÇóµÄÊµÌåÄÚÈÝÖÐ.
+			2.POSTÌá½»µÄ²ÎÊýÊý¾ÝÃ»ÓÐÏÞÖÆ¡£
+			3.POST·½Ê½Ìá½»Ãô¸ÐÊý¾Ý¡£
+#### ÇëÇóÍ·
+	ÓÉ¶à¸ökey-value¶ÔÏó, ÓÃÓÚÃèÊö¿Í»§¶ËÇëÇóµÄÖ÷»úºÍ¿Í»§¶ËµÄÒ»Ð©»·¾³ÐÅÏ¢.
+		Accept: text/html,image/*      -- ä¯ÀÀÆ÷½ÓÊÜµÄÊý¾ÝÀàÐÍ
+		Accept-Charset: ISO-8859-1     -- ä¯ÀÀÆ÷½ÓÊÜµÄ±àÂë¸ñÊ½
+		Accept-Encoding: gzip,compress  --ä¯ÀÀÆ÷½ÓÊÜµÄÊý¾ÝÑ¹Ëõ¸ñÊ½
+		Accept-Language: en-us,zh-       --ä¯ÀÀÆ÷½ÓÊÜµÄÓïÑÔ
+		Host: www.it315.org:80          --£¨±ØÐëµÄ£©µ±Ç°ÇëÇó·ÃÎÊµÄÄ¿±êµØÖ·£¨Ö÷»ú:¶Ë¿Ú£©
+		If-Modified-Since: Tue, 11 Jul 2000 18:23:51 GMT  --ä¯ÀÀÆ÷×îºóµÄ»º´æÊ±¼ä
+		Referer: http://www.it315.org/index.jsp      -- µ±Ç°ÇëÇóÀ´×ÔÓÚÄÄÀï
+		User-Agent: Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0)  --ä¯ÀÀÆ÷ÀàÐÍ
+		Cookie:name=eric                     -- ä¯ÀÀÆ÷±£´æµÄcookieÐÅÏ¢
+		Connection: close/Keep-Alive            -- ä¯ÀÀÆ÷¸ú·þÎñÆ÷Á¬½Ó×´Ì¬¡£close: Á¬½Ó¹Ø±Õ  keep-alive£º±£´æÁ¬½Ó¡£
+		Date: Tue, 11 Jul 2000 18:23:51 GMT      -- ÇëÇó·¢³öµÄÊ±¼ä
+#### ÊµÌåÄÚÈÝ	
+	Ö»ÓÐPOSTÌá½»µÄ²ÎÊý»á·Åµ½ÊµÌåÄÚÈÝÖÐ
 
-####Httpå“åº”(response)
-	å“åº”è¡Œ
+#### HttpÏìÓ¦(response)
+	ÏìÓ¦ÐÐ
 		HTTP/1.1 200 OK
-	å“åº”å¤´
+	ÏìÓ¦Í·
 		Server: Apache-Coyote/1.1
 		Content-Length: 24
 		Date: Fri, 30 Jan 2015 01:54:57 GMT
-	ä¸€ä¸ªç©ºè¡Œ
+	Ò»¸ö¿ÕÐÐ
 	
-	å®žä½“å†…å®¹
+	ÊµÌåÄÚÈÝ
 		this is hello servlet!!!
-####å“åº”è¡Œ
-	httpåè®®ç‰ˆæœ¬
-		çŠ¶æ€ç :æœåŠ¡å™¨å¤„ç†è¯·æ±‚çš„ç»“æžœ(çŠ¶æ€)
-			å¸¸ç”¨çš„çŠ¶æ€:
-				200: è¡¨ç¤ºè¯·æ±‚å¤„ç†å®Œæˆå¹¶å®Œç¾Žè¿”å›ž
-				302: è¡¨ç¤ºè¯·æ±‚éœ€è¦è¿›ä¸€æ­¥ç»†åŒ–.é‡å®šå‘
-				303: è¡¨ç¤ºè®¿é—®çš„èµ„æºæ‰¾ä¸åˆ° 
-				500: è¡¨ç¤ºæœåŠ¡å™¨çš„èµ„æºå‘é€é”™è¯¯.(æœåŠ¡å™¨å†…éƒ¨é”™è¯¯).
-####å¸¸è§çš„å“åº”å¤´
-	Location: http://www.it315.org/index.jsp   -è¡¨ç¤ºé‡å®šå‘çš„åœ°å€ï¼Œè¯¥å¤´å’Œ302çš„çŠ¶æ€ç ä¸€èµ·ä½¿ç”¨ã€‚
-	Server:apache tomcat                 ---è¡¨ç¤ºæœåŠ¡å™¨çš„ç±»åž‹
-	Content-Encoding: gzip                 -- è¡¨ç¤ºæœåŠ¡å™¨å‘é€ç»™æµè§ˆå™¨çš„æ•°æ®åŽ‹ç¼©ç±»åž‹
-	Content-Length: 80                    --è¡¨ç¤ºæœåŠ¡å™¨å‘é€ç»™æµè§ˆå™¨çš„æ•°æ®é•¿åº¦
-	Content-Language: zh-cn               --è¡¨ç¤ºæœåŠ¡å™¨æ”¯æŒçš„è¯­è¨€
-	Content-Type: text/html; charset=GB2312   --è¡¨ç¤ºæœåŠ¡å™¨å‘é€ç»™æµè§ˆå™¨çš„æ•°æ®ç±»åž‹åŠå†…å®¹ç¼–ç 
-	Last-Modified: Tue, 11 Jul 2000 18:23:51 GMT  --è¡¨ç¤ºæœåŠ¡å™¨èµ„æºçš„æœ€åŽä¿®æ”¹æ—¶é—´
-	Refresh: 1;url=http://www.it315.org     --è¡¨ç¤ºå®šæ—¶åˆ·æ–°
-	Content-Disposition: attachment; filename=aaa.zip --è¡¨ç¤ºå‘Šè¯‰æµè§ˆå™¨ä»¥ä¸‹è½½æ–¹å¼æ‰“å¼€èµ„æºï¼ˆä¸‹è½½æ–‡ä»¶æ—¶ç”¨åˆ°ï¼‰
+#### ÏìÓ¦ÐÐ
+	httpÐ­Òé°æ±¾
+		×´Ì¬Âë:·þÎñÆ÷´¦ÀíÇëÇóµÄ½á¹û(×´Ì¬)
+			³£ÓÃµÄ×´Ì¬:
+				200: ±íÊ¾ÇëÇó´¦ÀíÍê³É²¢ÍêÃÀ·µ»Ø
+				302: ±íÊ¾ÇëÇóÐèÒª½øÒ»²½Ï¸»¯.ÖØ¶¨Ïò
+				303: ±íÊ¾·ÃÎÊµÄ×ÊÔ´ÕÒ²»µ½ 
+				500: ±íÊ¾·þÎñÆ÷µÄ×ÊÔ´·¢ËÍ´íÎó.(·þÎñÆ÷ÄÚ²¿´íÎó).
+#### ³£¼ûµÄÏìÓ¦Í·
+	Location: http://www.it315.org/index.jsp   -±íÊ¾ÖØ¶¨ÏòµÄµØÖ·£¬¸ÃÍ·ºÍ302µÄ×´Ì¬ÂëÒ»ÆðÊ¹ÓÃ¡£
+	Server:apache tomcat                 ---±íÊ¾·þÎñÆ÷µÄÀàÐÍ
+	Content-Encoding: gzip                 -- ±íÊ¾·þÎñÆ÷·¢ËÍ¸øä¯ÀÀÆ÷µÄÊý¾ÝÑ¹ËõÀàÐÍ
+	Content-Length: 80                    --±íÊ¾·þÎñÆ÷·¢ËÍ¸øä¯ÀÀÆ÷µÄÊý¾Ý³¤¶È
+	Content-Language: zh-cn               --±íÊ¾·þÎñÆ÷Ö§³ÖµÄÓïÑÔ
+	Content-Type: text/html; charset=GB2312   --±íÊ¾·þÎñÆ÷·¢ËÍ¸øä¯ÀÀÆ÷µÄÊý¾ÝÀàÐÍ¼°ÄÚÈÝ±àÂë
+	Last-Modified: Tue, 11 Jul 2000 18:23:51 GMT  --±íÊ¾·þÎñÆ÷×ÊÔ´µÄ×îºóÐÞ¸ÄÊ±¼ä
+	Refresh: 1;url=http://www.it315.org     --±íÊ¾¶¨Ê±Ë¢ÐÂ
+	Content-Disposition: attachment; filename=aaa.zip --±íÊ¾¸æËßä¯ÀÀÆ÷ÒÔÏÂÔØ·½Ê½´ò¿ª×ÊÔ´£¨ÏÂÔØÎÄ¼þÊ±ÓÃµ½£©
 	Transfer-Encoding: chunked
-	Set-Cookie:SS=Q0=5Lb_nQ; path=/search   --è¡¨ç¤ºæœåŠ¡å™¨å‘é€ç»™æµè§ˆå™¨çš„cookieä¿¡æ¯ï¼ˆä¼šè¯ç®¡ç†ç”¨åˆ°ï¼‰
-	Expires: -1                           --è¡¨ç¤ºé€šçŸ¥æµè§ˆå™¨ä¸è¿›è¡Œç¼“å­˜
+	Set-Cookie:SS=Q0=5Lb_nQ; path=/search   --±íÊ¾·þÎñÆ÷·¢ËÍ¸øä¯ÀÀÆ÷µÄcookieÐÅÏ¢£¨»á»°¹ÜÀíÓÃµ½£©
+	Expires: -1                           --±íÊ¾Í¨Öªä¯ÀÀÆ÷²»½øÐÐ»º´æ
 	Cache-Control: no-cache
 	Pragma: no-cache
-	Connection: close/Keep-Alive           --è¡¨ç¤ºæœåŠ¡å™¨å’Œæµè§ˆå™¨çš„è¿žæŽ¥çŠ¶æ€ã€‚closeï¼šå…³é—­è¿žæŽ¥ keep-alive:ä¿å­˜è¿žæŽ¥
+	Connection: close/Keep-Alive           --±íÊ¾·þÎñÆ÷ºÍä¯ÀÀÆ÷µÄÁ¬½Ó×´Ì¬¡£close£º¹Ø±ÕÁ¬½Ó keep-alive:±£´æÁ¬½Ó
 
 		

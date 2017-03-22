@@ -1,7 +1,7 @@
-1.psvm = public static void main(String[] args) å³ä¸»è¯­å¥
-2.sout = System.outå³è¾“å‡º
-3.alt + insert è‡ªåŠ¨ç”Ÿæˆget/set
-4.CTRL + ALT+L æ ¼å¼åŒ–ä»£ç 
-5.ALT + ENTER 	è‡ªåŠ¨è¡¥å…¨
-####æŸ¥çœ‹æºä»£ç çš„æ–¹å¼:
-		1.æŒ‰ä½CTRLé”®,ç‚¹å‡»éœ€è¦çœ‹çš„æºä»£ç .
+1.psvm = public static void main(String[] args) ¼´Ö÷Óï¾ä
+2.sout = System.out¼´Êä³ö
+3.alt + insert ×Ô¶¯Éú³Éget/set
+4.CTRL + ALT+L ¸ñÊ½»¯´úÂë
+5.ALT + ENTER 	×Ô¶¯²¹È«
+#### ²é¿´Ô´´úÂëµÄ·½Ê½:
+		1.°´×¡CTRL¼ü,µã»÷ĞèÒª¿´µÄÔ´´úÂë.

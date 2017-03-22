@@ -8,3 +8,4 @@
 	git add -u ：他仅监控已经被add的文件（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add --update的缩写）
 	git add -A ：是上面两个功能的合集（git add --all的缩写）
 
+
